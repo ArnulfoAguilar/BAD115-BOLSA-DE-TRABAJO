@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Arnulfo/Documents/GitHub/BAD115/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Arnulfo/Documents/GitHub/BAD115/src/java/hibernate.reveng.xml</file>
+            <file>file:/C:/Users/Arnulfo/Documents/GitHub/BAD115/src/java/Modelo/HibernateUtil.java</file>
+            <file>file:/C:/Users/Arnulfo/Documents/GitHub/BAD115/src/java/Entidad/AreaDeEstudio.java</file>
+            <file>file:/C:/Users/Arnulfo/Documents/GitHub/BAD115/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Arnulfo/Documents/GitHub/BAD115/web/redirect.jsp</file>
+        </group>
     </open-files>
 </project-private>

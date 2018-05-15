@@ -46,6 +46,7 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
     <property name="hibernate.connection.username">bolsa_trabajo</property>
     <property name="hibernate.connection.password">bolsa_trabajo</property>
+    <property name="hibernate.current_session_context_class">thread</property>
     <mapping class="Entidad.Participacion"/>
     <mapping class="Entidad.Oferta"/>
     <mapping class="Entidad.NivelIdioma"/>

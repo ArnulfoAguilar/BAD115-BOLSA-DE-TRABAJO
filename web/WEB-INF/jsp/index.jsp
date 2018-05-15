@@ -5,15 +5,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
+        <title>BOLSA DE TRABAJO BAD115</title>
     </head>
 
     <body>
-        <p>Hello! This is the default welcome page for a Spring Web MVC project.</p>
-        <p><i>To display a different welcome page for this project, modify</i>
-            <tt>index.jsp</tt> <i>, or create your own welcome page then change
-                the redirection in</i> <tt>redirect.jsp</tt> <i>to point to the new
-                welcome page and also update the welcome-file setting in</i>
-            <tt>web.xml</tt>.</p>
+        <p>Fufurufa donec et guango enim guarumo jincho magna hac. Cachete volutpat casaca blandit bayunco bayunco cherche bonche vivian In ipsum coico cadejo culio ijole. Dolor hac guango ipsum aliquam juela vestibulum pisto donec. Vulputate gravida taleguiar adipiscing sit sit tincidunt ajolotar amet chotiar adipiscing. Fondiar chancleta taleguiar cacaso habitasse churute cucucho cadejo elit pharetra aliqua chirilicas paja. Empinar yunais amet sit chimbolo vergon. Chotiar fondiar tanatada volutpat Facilisi cucurucho chirilicas amet diam guayabear donec.</p>
+
+<p>Blandit Facilisi quis cucucho amet sit chunche churria cucurucho cachimbo etiam. Dendioy empinar yuca cachete cherche. Embrocar vulputate egestas chimbolo yuca pisto paja. Chiche maecenas aliquam chotiar cachete juela chajazo. Echate pharetra Neque bayunco lobortis guarumo fufurufa chambriar pasmado.</p>
+
+<p>Achis aguevo cipitio Non bicho casaca baboso. Risus erat demole erat nibh pharetra. Viverra Chame diam caliche blandit pharetra sit cipote.</p>
     </body>
 </html>
