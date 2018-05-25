@@ -1,3 +1,9 @@
+<%-- 
+    Document   : Plantilla1
+    Created on : 24-may-2018, 15:38:24
+    Author     : Kevin Posada Alegría
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -6,7 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hola mundo!</h1>
-        <a href="Home.htm" class="btn btn-secondary "role="button" aria-disabled="true">Vamos al index real XD</a>
+        <h1>Hello World!</h1>
     </body>
 </html>

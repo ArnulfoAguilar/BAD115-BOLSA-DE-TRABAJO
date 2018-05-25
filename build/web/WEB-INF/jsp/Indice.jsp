@@ -7,6 +7,6 @@
     </head>
     <body>
         <h1>Hola mundo!</h1>
-        <a href="/index.htm" class="btn btn-secondary "role="button" aria-disabled="true">Vamos al index real XD</a>
+        <a href="Home.htm" class="btn btn-secondary "role="button" aria-disabled="true">Vamos al index real XD</a>
     </body>
 </html>
