@@ -9,10 +9,35 @@
     </head>
 
     <body>
-        <p>Fufurufa donec et guango enim guarumo jincho magna hac. Cachete volutpat casaca blandit bayunco bayunco cherche bonche vivian In ipsum coico cadejo culio ijole. Dolor hac guango ipsum aliquam juela vestibulum pisto donec. Vulputate gravida taleguiar adipiscing sit sit tincidunt ajolotar amet chotiar adipiscing. Fondiar chancleta taleguiar cacaso habitasse churute cucucho cadejo elit pharetra aliqua chirilicas paja. Empinar yunais amet sit chimbolo vergon. Chotiar fondiar tanatada volutpat Facilisi cucurucho chirilicas amet diam guayabear donec.</p>
-
-<p>Blandit Facilisi quis cucucho amet sit chunche churria cucurucho cachimbo etiam. Dendioy empinar yuca cachete cherche. Embrocar vulputate egestas chimbolo yuca pisto paja. Chiche maecenas aliquam chotiar cachete juela chajazo. Echate pharetra Neque bayunco lobortis guarumo fufurufa chambriar pasmado.</p>
-
-<p>Achis aguevo cipitio Non bicho casaca baboso. Risus erat demole erat nibh pharetra. Viverra Chame diam caliche blandit pharetra sit cipote.</p>
-    </body>
+       	<form:form method="post" action="crear_empresa" commandName="datosCoche">
+            <h1>Formulario con datos del coche</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Matrícula:</td>
+                        <td><form:input path="matricula" /></td>
+                        <td><form:errors path="matricula" cssClass="campoConError"/></td>
+                    </tr>
+                    <tr>
+                        <td>Modelo:</td>
+                        <td><form:input path="modelo" /></td>
+                        <td><form:errors path="modelo" cssClass="campoConError"/></td>
+                    </tr>
+                    <tr>
+                        <td>Año:</td>
+                        <td><form:input path="anho" maxlength="4" /></td>
+                        <td><form:errors path="anho" cssClass="campoConError"/></td>
+                    </tr>
+                    <tr>
+                        <td>Kilómetros:</td>
+                        <td><form:input path="kilometros" maxlength="6" /></td>
+                        <td><form:errors path="kilometros" cssClass="campoConError"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><input type="submit" value="Enviar" /></td>
+                    </tr>
+                </tbody>
+            </table>
+	</form:form>
+</body>
 </html>
