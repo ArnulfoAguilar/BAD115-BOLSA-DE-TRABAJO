@@ -20,14 +20,16 @@
         </h4>
     <form:form commandName="comand">
          <h1 class="alert alert-info" role="alert">Datos de Acceso</h1>
+         <div class="form-group">
           <p class="col">
               <label >Usuario</label><br>
-            <input  cssClass="form-control"/>
+            <input  class="form-control"/>
         </p>
          <p class="col">
              <label>Contraseña</label> <br>
-            <input cssClass="form-control"/>
+            <input type="password"  class="form-control"/>
         </p>
+         </div>
         <hr>
         <h1 class="alert alert-info" role="alert">Datos de la Empresa</h1>
         <p>
@@ -49,7 +51,7 @@
         </p>
         <p>
             <form:label path="email">EMAIL</form:label>
-            <form:input path="email" cssClass="form-control"/>
+            <form:input path="email" type="email" cssClass="form-control"/>
         </p>
         <hr>
         
@@ -77,7 +79,7 @@
         </p>
         
         <hr>
-        <form:button class="btn btn-danger">Enviar</form:button>
+        <form:button class="btn btn-success">Enviar</form:button>
     </form:form>
                 </div>
             </div>
