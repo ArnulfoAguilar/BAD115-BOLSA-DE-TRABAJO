@@ -10,8 +10,8 @@ public class Conectar {
         
         if(dataSource==null){
         dataSource= new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Oracle");
-        dataSource.setUrl("jdbc:oracle:thin:@//localhost/dbmonitoreovih");
+        //dataSource.setDriverClassName("com.mysql.jdbc.Oracle");
+        //dataSource.setUrl("jdbc:oracle:thin:@//localhost/dbmonitoreovih");
         dataSource.setUsername("BOLSA_TRABAJO");
         dataSource.setPassword("BOLSA_TRABAJO");
         

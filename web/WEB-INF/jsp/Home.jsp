@@ -85,11 +85,11 @@
                     </div>
                     <div class="col-md-3">
                         <figure class="figure">
-                            <img src="<c:url value=""/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                            <img src="<c:url value=""/>" class="figure-img img-fluid rounded" alt="Prueba de procedimiento alamacenado, donde se hace un SELECT de logros.">
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
-                        <h2>Acceder al modulo XYZ</h2>
-                        <p><a class="btn btn-outline-success" href="<c:url value=""/>" role="button">Ir al modulo &raquo;</a></p>
+                        <h2>Prueba de procedimiento </h2>
+                        <p><a class="btn btn-outline-success" href="<c:url value="/Prueba1.htm"/>" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                 </div>
 
