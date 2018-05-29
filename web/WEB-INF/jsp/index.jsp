@@ -9,6 +9,8 @@
     </head>
 
     <body>
-        <a href="Empresa.htm">IR</a>
+        <a href="Empresa.htm">IR</a><br>
+        <a href="RegistroCandidato.htm">Nuevo Candidato</a><br>
+        <a href="PerfilCandidato.htm">Perfil Candidato</a>
 </body>
 </html>
