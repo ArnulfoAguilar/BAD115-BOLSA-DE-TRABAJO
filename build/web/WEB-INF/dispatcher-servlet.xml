@@ -22,9 +22,18 @@
                 <prop key="Home.htm">HomeController</prop>
                 <prop key="Prueba1.htm">HomeController</prop>
                 <prop key="IndexFatLab.htm">HomeController</prop>
-                
                 <prop key="Indice.htm">HomeController</prop>
+                
                 <prop key="PersonaAdd.htm">PersonaController</prop>
+
+		<prop key="index.htm">indexController</prop>
+                <prop key="Empresa.htm">EmpresaController</prop>   
+                                       
+                <prop key="PerfilCandidato.htm">CandidatoController</prop>
+                <prop key="RegistroCandidato.htm">CandidatoController</prop>
+                <prop key="CandidatoIndex.htm">CandidatoController</prop>
+
+
             </props>
         </property>
     </bean>
@@ -43,5 +52,8 @@
     
     <bean name="PersonaController" class="Controllers.PersonaController"/>
     <bean name="HomeController" class="Controllers.HomeController"/>
+
+    <bean name="EmpresaController" class="Controllers.EmpresaController"/>
+    <bean name="CandidatoController" class="Controllers.CandidatoController"/>
 
 </beans>

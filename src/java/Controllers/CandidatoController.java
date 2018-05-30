@@ -1,8 +1,9 @@
-package Controlador;
+package Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.portlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CandidatoController {
@@ -18,6 +19,13 @@ public class CandidatoController {
        ModelAndView MV = new ModelAndView();
        MV.setViewName("PerfilCandidato");
        return MV;
+    }
+    
+    @RequestMapping(value="CandidatoIndex.htm",method=RequestMethod.GET)
+    public ModelAndView CandidatoIndex(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("Candidato/CandidatoIndex");
+        return mav;
     }
    
     

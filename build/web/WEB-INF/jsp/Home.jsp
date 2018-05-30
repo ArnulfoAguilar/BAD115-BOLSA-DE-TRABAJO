@@ -65,7 +65,7 @@
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
                         <h2>Acceder al modulo Candidatos</h2>
-                        <p><a class="btn btn-outline-success" href="PersonaAdd.htm" role="button">Ir al modulo &raquo;</a></p>
+                        <p><a class="btn btn-outline-success" href="<c:url value="/CandidatoIndex.htm"/>" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                     <div class="col-md-3">
                         <figure class="figure">

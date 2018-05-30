@@ -7,7 +7,10 @@
     </head>
     <body>
         <h1>Hola mundo!</h1>
-        <a href="Home.htm" class="btn btn-secondary "role="button" aria-disabled="true">Vamos al index real XD</a><br></br><br></br>
-        <a href="IndexFatLab.htm" class="btn btn-secondary "role="button" aria-disabled="true">Vamos al index de FatLab proporcionado por Steph</a>
+        <a href="Home.htm" class="btn btn-secondary "role="button" aria-disabled="true">Vamos al HOME XD</a><br></br><br></br>
+        <br>
+        <a href="Empresa.htm">IR</a><br>
+        <a href="RegistroCandidato.htm">Nuevo Candidato</a><br>
+        <a href="PerfilCandidato.htm">Perfil Candidato</a>
     </body>
 </html>

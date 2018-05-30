@@ -6,7 +6,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Bolsa de trabajo - Home</title>
+        <title>BDT - Candidatos</title>
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
@@ -52,7 +52,7 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="display-4">Bienvenidos a la bolsa de trabajo !</h1>
+                    <h1 class="display-4"> Seccion de candidatos</h1>
                 </div>
             </div>
 
@@ -64,8 +64,8 @@
                             <img src="<c:url value=""/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
-                        <h2>Acceder al modulo Candidatos</h2>
-                        <p><a class="btn btn-outline-success" href="<c:url value="/CandidatoIndex.htm"/>" role="button">Ir al modulo &raquo;</a></p>
+                        <h2>Registrar Candidatos</h2>
+                        <p><a class="btn btn-outline-success" href="RegistroCandidato.htm" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                     <div class="col-md-3">
                         <figure class="figure">
