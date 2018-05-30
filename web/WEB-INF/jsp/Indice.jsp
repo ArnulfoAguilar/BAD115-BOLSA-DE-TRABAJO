@@ -7,6 +7,7 @@
     </head>
     <body>
         <h1>Hola mundo!</h1>
-        <a href="Home.htm" class="btn btn-secondary "role="button" aria-disabled="true">Vamos al index real XD</a>
+        <a href="Home.htm" class="btn btn-secondary "role="button" aria-disabled="true">Vamos al index real XD</a><br></br><br></br>
+        <a href="IndexFatLab.htm" class="btn btn-secondary "role="button" aria-disabled="true">Vamos al index de FatLab proporcionado por Steph</a>
     </body>
 </html>

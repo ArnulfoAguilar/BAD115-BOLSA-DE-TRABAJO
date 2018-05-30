@@ -46,10 +46,18 @@ public class HomeController {
         mav.setViewName("Indice");
         return mav;
     }
+    
     @RequestMapping(value="Home.htm",method=RequestMethod.GET)
     public ModelAndView Home(){
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Home");
+        return mav;
+    }
+    
+    @RequestMapping(value="IndexFatLab.htm",method=RequestMethod.GET)
+    public ModelAndView IndexFatLab(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("FatLab/IndexFatLab");
         return mav;
     }
     

@@ -21,6 +21,7 @@
             <props>
                 <prop key="Home.htm">HomeController</prop>
                 <prop key="Prueba1.htm">HomeController</prop>
+                <prop key="IndexFatLab.htm">HomeController</prop>
                 
                 <prop key="Indice.htm">HomeController</prop>
                 <prop key="PersonaAdd.htm">PersonaController</prop>
