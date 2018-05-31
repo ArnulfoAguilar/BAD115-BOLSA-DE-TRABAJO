@@ -1,14 +1,18 @@
 
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+ <%@include file="/WEB-INF/jsp/include/Principal/taglib.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-        <title>JSP Page</title>
+        <title>Registrar Empresa</title>
+         <%@include file="/WEB-INF/jsp/include/Admin/cssAdmin.jsp" %>
     </head>
     <body>
+         <%@include file="/WEB-INF/jsp/include/Admin/headerAdmin.jsp" %>
+         <section id="main-content">
+          <section class="wrapper">
         <div class="container-fluid">
             <div class="panel panel-primary">
                 
@@ -84,5 +88,9 @@
                 </div>
             </div>
         </div>
+        <%@include file="/WEB-INF/jsp/include/Admin/footerAdmin.jsp" %>
+        <%@include file="/WEB-INF/jsp/include/Admin/jsAdmin.jsp" %>
+          </section>
+         </section>
     </body>
 </html>

@@ -21,6 +21,8 @@
             <props>
                  <prop key="index.htm">indexController</prop>
                 <prop key="Empresa.htm">EmpresaController</prop>
+                 <prop key="login.htm">LoginController</prop>
+                 <prop key="signup.htm">LoginController</prop>
             </props>
         </property>
     </bean>
@@ -39,6 +41,9 @@
     
     <bean name="EmpresaController"
           class="Controlador.EmpresaController"
+    />
+    <bean name="LoginController"
+          class="Controlador.LoginController"
     />
 
 </beans>
