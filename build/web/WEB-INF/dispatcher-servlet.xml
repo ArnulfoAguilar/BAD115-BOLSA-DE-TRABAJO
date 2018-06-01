@@ -20,15 +20,15 @@
         <property name="mappings">
             <props>
 
-                 <prop key="index.htm">indexController</prop>
+                <prop key="index.htm">indexController</prop>
                 <prop key="Empresa.htm">EmpresaController</prop>
-                 <prop key="login.htm">LoginController</prop>
-                 <prop key="signup.htm">LoginController</prop>
+                <prop key="login.htm">LoginController</prop>
+                <prop key="signup.htm">LoginController</prop>
                 <prop key="index.htm">indexController</prop>
                 <prop key="Empresa.htm">EmpresaController</prop>                          
                 <prop key="PerfilCandidato.htm">CandidatoController</prop>
                 <prop key="RegistroCandidato.htm">CandidatoController</prop>
-
+                <prop key="OfertaEmpleo.htm">OfertaEmpleoController</prop>
             </props>
         </property>
     </bean>
@@ -56,5 +56,8 @@
     
     <bean name="CandidatoController"
             class="Controlador.CandidatoController"/>
-
+            
+    <!--bean de la oferta empleo-->
+    <bean name="OfertaEmpleoController"
+            class="Controlador.OfertaEmpleoController"/>
 </beans>
