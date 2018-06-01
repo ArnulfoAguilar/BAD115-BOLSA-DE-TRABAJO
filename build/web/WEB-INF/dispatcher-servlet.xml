@@ -32,6 +32,8 @@
                 <prop key="PerfilCandidato.htm">CandidatoController</prop>
                 <prop key="RegistroCandidato.htm">CandidatoController</prop>
                 <prop key="CandidatoIndex.htm">CandidatoController</prop>
+                <prop key="Exito.htm">CandidatoController</prop>
+                
 
 
             </props>

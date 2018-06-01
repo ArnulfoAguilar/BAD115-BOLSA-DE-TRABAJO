@@ -52,7 +52,7 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="display-4"> Seccion de candidatos</h1>
+                    <h1 class="display-4"> Se encuentra en la Seccion de candidatos</h1>
                 </div>
             </div>
 

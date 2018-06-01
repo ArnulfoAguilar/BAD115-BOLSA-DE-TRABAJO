@@ -38,7 +38,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="">Opcion</a>
                     </li>
-                    
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Digite" aria-label="Search">
@@ -52,50 +52,26 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="display-4">Bienvenidos al Sistema de Bolsa de Trabajo !</h1>
+                    <h1 class="display-4" align="center">Proceso hecho satisfactoriamente!</h1>
                 </div>
             </div>
 
             <div class="container">
-                <!-- Example row of columns -->
+                <hr>
                 <div class="row">
-                    <div class="col-md-3">
-                        <figure class="figure">
-                            <img src="<c:url value=""/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
-                        </figure>
-                        <h2>Acceder al modulo Candidatos</h2>
-                        <p><a class="btn btn-outline-success" href="<c:url value="/CandidatoIndex.htm"/>" role="button">Ir al modulo &raquo;</a></p>
+                    <div class="col-lg-6">
+                        <h4>Puede volver a la pagina de administracion de candidatos dando click en el siguiente boton </h4><br>
+                        <a role="button" class="btn btn-outline-warning" href="CandidatoIndex.htm">Regresar a Gestion de candidatos</a>
                     </div>
-                    <div class="col-md-3">
-                        <figure class="figure">
-                            <img src="<c:url value=""/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
-                        </figure>
-                        <h2>Acceder al modulo Y</h2>
-                        <p><a class="btn btn-outline-success" href="" role="button">Ir al modulo &raquo;</a></p>
-                    </div>
-                    <div class="col-md-3">
-                        <figure class="figure">
-                            <img src="<c:url value=""/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
-                        </figure>
-                        <h2>Acceder al modulo Z</h2>
-                        <p><a class="btn btn-outline-success" href="<c:url value=""/>" role="button">Ir al modulo &raquo;</a></p>
-                    </div>
-                    <div class="col-md-3">
-                        <figure class="figure">
-                            <img src="<c:url value=""/>" class="figure-img img-fluid rounded" alt="Prueba de procedimiento alamacenado, donde se hace un SELECT de logros.">
-                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
-                        </figure>
-                        <h2>Prueba de procedimiento </h2>
-                        <p><a class="btn btn-outline-success" href="<c:url value="/Prueba1.htm"/>" role="button">Ir al modulo &raquo;</a></p>
+                    <div class="col-lg-6">
+                        <h4>O puede volver a la pagina principal dando click en el siguiente boton </h4><br>
+                        <a role="button" class="btn btn-outline-primary" href="Home.htm">Regresar a Home</a>
                     </div>
                 </div>
-
+                <br>
                 <hr>
             </div> <!-- /container -->
-            
+
         </main>
 
         <footer class="container">

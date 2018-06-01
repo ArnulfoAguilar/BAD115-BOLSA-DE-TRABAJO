@@ -52,7 +52,7 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="display-4">Bienvenidos a la bolsa de trabajo !</h1>
+                    <h1 class="display-4">Bienvenidos al Sistema de Bolsa de Trabajo !</h1>
                 </div>
             </div>
 
