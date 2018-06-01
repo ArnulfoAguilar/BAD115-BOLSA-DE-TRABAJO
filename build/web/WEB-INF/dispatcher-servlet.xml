@@ -19,10 +19,16 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
+
                  <prop key="index.htm">indexController</prop>
                 <prop key="Empresa.htm">EmpresaController</prop>
                  <prop key="login.htm">LoginController</prop>
                  <prop key="signup.htm">LoginController</prop>
+                <prop key="index.htm">indexController</prop>
+                <prop key="Empresa.htm">EmpresaController</prop>                          
+                <prop key="PerfilCandidato.htm">CandidatoController</prop>
+                <prop key="RegistroCandidato.htm">CandidatoController</prop>
+
             </props>
         </property>
     </bean>
@@ -40,10 +46,15 @@
           p:viewName="index" />
     
     <bean name="EmpresaController"
+
           class="Controlador.EmpresaController"
     />
     <bean name="LoginController"
           class="Controlador.LoginController"
     />
+
+    
+    <bean name="CandidatoController"
+            class="Controlador.CandidatoController"/>
 
 </beans>
