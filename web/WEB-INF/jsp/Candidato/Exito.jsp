@@ -52,7 +52,7 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="display-4" align="center">Proceso hecho satisfactoriamente!</h1>
+                    <h1 class="display-4" align="center">Proceso realizado satisfactoriamente!</h1>
                 </div>
             </div>
 

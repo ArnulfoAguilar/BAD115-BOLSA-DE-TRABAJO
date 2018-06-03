@@ -20,7 +20,7 @@
             <form:form method="POST" commandName="candidato" >
                 <div class="row">
                     <div class="col">
-                        <form:input type="text" class="form-control" path="idPostDoc" placeholder="Identificador"/>
+                        <form:input class="form-control" path="idPostDoc" placeholder="Identificador"/>
                     </div>
                 </div>
                 <div class="row">

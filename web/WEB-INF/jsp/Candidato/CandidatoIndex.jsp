@@ -38,7 +38,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="">Opcion</a>
                     </li>
-                    
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Digite" aria-label="Search">
@@ -72,8 +72,8 @@
                             <img src="<c:url value=""/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
-                        <h2>Acceder al modulo Y</h2>
-                        <p><a class="btn btn-outline-success" href="" role="button">Ir al modulo &raquo;</a></p>
+                        <h2>Buscar un candidato</h2>
+                        <p><a class="btn btn-outline-warning" href="" role="button">Buscar &raquo;</a></p>
                     </div>
                     <div class="col-md-3">
                         <figure class="figure">
@@ -94,8 +94,32 @@
                 </div>
 
                 <hr>
+                <table class="table table-bordered table-dark">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Identificador</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach items="${CANDIDATOS}" var="CANDIDATO">
+                            <tr>
+                                <th><c:out value="${CANDIDATO.ID_POST_DOC}"/></th>
+                                <th><c:out value="${CANDIDATO.PRIMER_NOMBRE}"/></th>
+                                <th><c:out value="${CANDIDATO.PRIMER_APELLIDO}"/></th>
+                                <th>
+                                    <a href="<c:url value="/PerfilCandidato.htm?id=${CANDIDATO.ID_POST_DOC}"/>" class="btn btn-info">Ver</a>
+                                    <a href="<c:url value="/CandidatoEditar.htm?id=${CANDIDATO.ID_POST_DOC}"/>" class="btn btn-warning">Editar</a>
+                                    <a href="<c:url value="/CandidatoEliminar.htm?id=${CANDIDATO.ID_POST_DOC}"/>" class="btn btn-danger">Eliminar</a></th>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+                <c:out value="${ERRORES}"/>    
             </div> <!-- /container -->
-            
+
         </main>
 
         <footer class="container">

@@ -4,13 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/src/java/Entidad/Candidato.java</file>
-            <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/jsp/Candidato/Exito.jsp</file>
+            <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/jsp/Candidato/CandidatoIndex.jsp</file>
+            <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/jsp/Pruebas/Prueba1.jsp</file>
             <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/jsp/Candidato/RegistroCandidato.jsp</file>
-            <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/jsp/Home.jsp</file>
             <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/src/java/Controllers/CandidatoController.java</file>
             <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/src/java/Controllers/EmpresaController.java</file>
             <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/src/java/Controllers/HomeController.java</file>
-            <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/web/resources/js/jquery.min.js</file>
+            <file>file:/C:/xampp/htdocs/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/jsp/Candidato/PerfilCandidato.jsp</file>
         </group>
     </open-files>
 </project-private>
