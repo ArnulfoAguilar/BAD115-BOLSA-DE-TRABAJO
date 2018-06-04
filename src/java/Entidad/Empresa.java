@@ -1,5 +1,5 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -25,8 +26,10 @@ public class Empresa  implements java.io.Serializable {
 
      private String nit;
      private GiroEmpresa giroEmpresa;
+     private Municipio municipio;
      private Reclutador reclutador;
      private TipoEmpresa tipoEmpresa;
+     private Usuarios usuarios;
      private String razonSocial;
      private String nombreComercial;
      private String ubicacion;
@@ -42,11 +45,13 @@ public class Empresa  implements java.io.Serializable {
     public Empresa(String nit) {
         this.nit = nit;
     }
-    public Empresa(String nit, GiroEmpresa giroEmpresa, Reclutador reclutador, TipoEmpresa tipoEmpresa, String razonSocial, String nombreComercial, String ubicacion, String descripcion, String paginaWeb, String email, Set<Oferta> ofertas) {
+    public Empresa(String nit, GiroEmpresa giroEmpresa, Municipio municipio, Reclutador reclutador, TipoEmpresa tipoEmpresa, Usuarios usuarios, String razonSocial, String nombreComercial, String ubicacion, String descripcion, String paginaWeb, String email, Set<Oferta> ofertas) {
        this.nit = nit;
        this.giroEmpresa = giroEmpresa;
+       this.municipio = municipio;
        this.reclutador = reclutador;
        this.tipoEmpresa = tipoEmpresa;
+       this.usuarios = usuarios;
        this.razonSocial = razonSocial;
        this.nombreComercial = nombreComercial;
        this.ubicacion = ubicacion;
@@ -79,6 +84,18 @@ public class Empresa  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumns( { 
+        @JoinColumn(name="ID_MUNI", referencedColumnName="ID_MUNI"), 
+        @JoinColumn(name="ID_DEPTO", referencedColumnName="ID_DEPTO") } )
+    public Municipio getMunicipio() {
+        return this.municipio;
+    }
+    
+    public void setMunicipio(Municipio municipio) {
+        this.municipio = municipio;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="DUI")
     public Reclutador getReclutador() {
         return this.reclutador;
@@ -96,6 +113,16 @@ public class Empresa  implements java.io.Serializable {
     
     public void setTipoEmpresa(TipoEmpresa tipoEmpresa) {
         this.tipoEmpresa = tipoEmpresa;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_USUARIO")
+    public Usuarios getUsuarios() {
+        return this.usuarios;
+    }
+    
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
     }
 
     

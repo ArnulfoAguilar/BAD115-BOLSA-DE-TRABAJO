@@ -1,5 +1,5 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -25,23 +25,23 @@ public class Aspirante  implements java.io.Serializable {
 
 
      private AspiranteId id;
-     private Candidato candidato;
      private Oferta oferta;
+     private Candidato candidato;
      private BigDecimal porcentaje;
 
     public Aspirante() {
     }
 
 	
-    public Aspirante(AspiranteId id, Candidato candidato, Oferta oferta) {
+    public Aspirante(AspiranteId id, Oferta oferta, Candidato candidato) {
         this.id = id;
-        this.candidato = candidato;
         this.oferta = oferta;
+        this.candidato = candidato;
     }
-    public Aspirante(AspiranteId id, Candidato candidato, Oferta oferta, BigDecimal porcentaje) {
+    public Aspirante(AspiranteId id, Oferta oferta, Candidato candidato, BigDecimal porcentaje) {
        this.id = id;
-       this.candidato = candidato;
        this.oferta = oferta;
+       this.candidato = candidato;
        this.porcentaje = porcentaje;
     }
    
@@ -49,14 +49,26 @@ public class Aspirante  implements java.io.Serializable {
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="nit", column=@Column(name="NIT", nullable=false, length=100) ), 
-        @AttributeOverride(name="idPostDoc", column=@Column(name="ID_POST_DOC", nullable=false, length=200) ) } )
+        @AttributeOverride(name="idPostDoc", column=@Column(name="ID_POST_DOC", nullable=false, length=200) ), 
+        @AttributeOverride(name="idOferta", column=@Column(name="ID_OFERTA", nullable=false, precision=22, scale=0) ) } )
     public AspiranteId getId() {
         return this.id;
     }
     
     public void setId(AspiranteId id) {
         this.id = id;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumns( { 
+        @JoinColumn(name="ID_OFERTA", referencedColumnName="ID_OFERTA", nullable=false, insertable=false, updatable=false), 
+        @JoinColumn(name="NIT", referencedColumnName="NIT", insertable=false, updatable=false) } )
+    public Oferta getOferta() {
+        return this.oferta;
+    }
+    
+    public void setOferta(Oferta oferta) {
+        this.oferta = oferta;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
@@ -67,18 +79,6 @@ public class Aspirante  implements java.io.Serializable {
     
     public void setCandidato(Candidato candidato) {
         this.candidato = candidato;
-    }
-
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumns( { 
-        @JoinColumn(name="ID_OFERTA", referencedColumnName="ID_OFERTA", insertable=false, updatable=false), 
-        @JoinColumn(name="NIT", referencedColumnName="NIT", nullable=false, insertable=false, updatable=false) } )
-    public Oferta getOferta() {
-        return this.oferta;
-    }
-    
-    public void setOferta(Oferta oferta) {
-        this.oferta = oferta;
     }
 
     

@@ -1,5 +1,5 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.AttributeOverride;
@@ -23,48 +23,38 @@ public class DetalleIdioma  implements java.io.Serializable {
 
 
      private DetalleIdiomaId id;
-     private Candidato candidato;
      private Idioma idioma;
      private NivelIdioma nivelIdioma;
+     private Candidato candidato;
 
     public DetalleIdioma() {
     }
 
 	
-    public DetalleIdioma(DetalleIdiomaId id, Candidato candidato, Idioma idioma) {
+    public DetalleIdioma(DetalleIdiomaId id, Idioma idioma, Candidato candidato) {
         this.id = id;
-        this.candidato = candidato;
         this.idioma = idioma;
+        this.candidato = candidato;
     }
-    public DetalleIdioma(DetalleIdiomaId id, Candidato candidato, Idioma idioma, NivelIdioma nivelIdioma) {
+    public DetalleIdioma(DetalleIdiomaId id, Idioma idioma, NivelIdioma nivelIdioma, Candidato candidato) {
        this.id = id;
-       this.candidato = candidato;
        this.idioma = idioma;
        this.nivelIdioma = nivelIdioma;
+       this.candidato = candidato;
     }
    
      @EmbeddedId
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="idIdioma", column=@Column(name="ID_IDIOMA", nullable=false, precision=22, scale=0) ), 
-        @AttributeOverride(name="idPostDoc", column=@Column(name="ID_POST_DOC", nullable=false, length=200) ) } )
+        @AttributeOverride(name="idPostDoc", column=@Column(name="ID_POST_DOC", nullable=false, length=200) ), 
+        @AttributeOverride(name="idIdioma", column=@Column(name="ID_IDIOMA", nullable=false, precision=22, scale=0) ) } )
     public DetalleIdiomaId getId() {
         return this.id;
     }
     
     public void setId(DetalleIdiomaId id) {
         this.id = id;
-    }
-
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_POST_DOC", nullable=false, insertable=false, updatable=false)
-    public Candidato getCandidato() {
-        return this.candidato;
-    }
-    
-    public void setCandidato(Candidato candidato) {
-        this.candidato = candidato;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
@@ -85,6 +75,16 @@ public class DetalleIdioma  implements java.io.Serializable {
     
     public void setNivelIdioma(NivelIdioma nivelIdioma) {
         this.nivelIdioma = nivelIdioma;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_POST_DOC", nullable=false, insertable=false, updatable=false)
+    public Candidato getCandidato() {
+        return this.candidato;
+    }
+    
+    public void setCandidato(Candidato candidato) {
+        this.candidato = candidato;
     }
 
 

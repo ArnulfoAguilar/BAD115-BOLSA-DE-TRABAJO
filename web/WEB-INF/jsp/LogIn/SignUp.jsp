@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Mosaddek">
-    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <meta name="keyword" content="">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Form Wizard</title>
+    <title>Registrar Empresa</title>
 
     <%@include file="/WEB-INF/jsp/include/Admin/cssAdmin.jsp" %>
     <!-- Custom styles for this template -->
@@ -39,140 +39,136 @@
           <section class="wrapper site-min-height">
               <!-- page start-->
               <div class="row">
+                 
                   <div class="col-lg-12">
                       <section class="panel">
-                          <header class="panel-heading">
-                              Registrar Empresa
+                          <header class="panel-heading">DATOS DE ACCESO
                           </header>
                           <div class="panel-body">
-                              <div class="stepy-tab">
-                                  <ul id="default-titles" class="stepy-titles clearfix">
-                                      <li id="default-title-0" class="current-step">
-                                          <div>Paso 1</div>
-                                      </li>
-                                      <li id="default-title-1" class="">
-                                          <div>Paso 2</div>
-                                      </li>
-                                      <li id="default-title-2" class="">
-                                          <div>Paso 3</div>
-                                      </li>
-                                      <li id="default-title-3" class="">
-                                          <div>Paso 4</div>
-                                      </li>
-                                      <li id="default-title-4" class="">
-                                          <div>Paso 5</div>
-                                      </li>
-                                      <li id="default-title-5" class="">
-                                          <div>Paso 6</div>
-                                      </li>
-                                  </ul>
-                              </div>
-                              <form class="form-horizontal" id="default">
-                                  <fieldset title="Step1" class="step" id="default-step-0">
-                                      <legend> </legend>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Full Name</label>
-                                          <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Full Name">
-                                          </div>
+                          <form class="form-horizontal tasi-form" method="post">
+                                  <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Usuario</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="emailUsuario" class="form-control">
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Email Address</label>
-                                          <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Email Address">
-                                          </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Contraseña</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="passwUsuario" class="form-control">
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">User Name</label>
-                                          <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Username">
-                                          </div>
+                                  </div>
+                              
+                              <header class="panel-heading">DATOS DE LA EMPRESA
+                          </header>
+                              <br>
+                              <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="nombreEmpresa" class="form-control">
                                       </div>
-
-                                  </fieldset>
-                                  <fieldset title="Step 2" class="step" id="default-step-1" >
-                                      <legend> </legend>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Phone</label>
-                                          <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Phone">
-                                          </div>
+                                  </div>
+                              <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Razon Social</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="razonSocial" class="form-control">
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Mobile</label>
-                                          <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Mobile">
-                                          </div>
+                                  </div>
+                              <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">NIT</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="nitEmpresa" class="form-control">
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Address</label>
-                                          <div class="col-lg-10">
-                                              <textarea class="form-control" cols="60" rows="5"></textarea>
-                                          </div>
+                                  </div>
+                              <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Departamento</label>
+                                      <div class="col-sm-10">
+                                          <input type="number" name="departamentoEmpresa" class="form-control">
                                       </div>
-
-                                  </fieldset>
-                                  <fieldset title="Step 3" class="step" id="default-step-2" >
-                                      <legend> </legend>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Full Name</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">Tawseef Ahmed</p>
-                                          </div>
+                                  </div>
+                              <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Municipio</label>
+                                      <div class="col-sm-10">
+                                          <input type="number" name="municipioEmpresa" class="form-control">
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Email Address</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">tawseef@vectorlab.com</p>
-                                          </div>
+                                  </div>
+                               <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Giro de la empresa</label>
+                                      <div class="col-sm-10">
+                                          <input type="number" name="giroEmpresa" class="form-control">
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">User Name</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">tawseef</p>
-                                          </div>
+                                  </div>
+                              <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Direccion</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="direccionEmpresa" class="form-control">
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Phone</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">01234567</p>
-                                          </div>
+                                  </div>
+                              
+                              
+                              
+                              <header class="panel-heading">TIPO DE EMPRESA
+                              </header><br>
+                              <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Tipo de empresa</label>
+                                      <div class="col-sm-10">
+                                          <input type="number" name="tipoEmpresa" class="form-control">
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Mobile</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">01234567</p>
-                                          </div>
+                                  </div>
+                              <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Descripcion</label>
+                                      <div class="col-sm-10">
+                                          <textarea type="text" name="descripcionEmpresa" class="form-control"></textarea>
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Address</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">
-                                                  Dreamland Ave, Suite 73
-                                                  AU, PC 1361
-                                                  P: (123) 456-7891 </p>
-                                          </div>
+                                  </div>
+                              <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Pagina Web</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="paginaWeb" class="form-control">
                                       </div>
-                                  </fieldset>
-                                  <input type="submit" class="finish btn btn-danger" value="Finish"/>
-                              </form>
+                                  </div>
+                              
+                              <header class="panel-heading">DATOS DE PERSONA DE CONTACTO
+                              </header><br>
+                              <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">DUI</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="duiReclutador" class="form-control">
+                                      </div>
+                                  </div>
+                               <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Nombres</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="nombresReclutador" class="form-control">
+                                      </div>
+                                  </div>
+                               <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Apellidos</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="apellidosReclutador" class="form-control">
+                                      </div>
+                                  </div>
+                               <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Telefono</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" name="telefonoReclutador" class="form-control">
+                                      </div>
+                                  </div>
+                              
+                              <button type="submit" value="signup.htm" class="btn btn-default">Aceptar</button>
+                              </form>    
                           </div>
                       </section>
-                  </div>
-              </div>
+                 </div>
+                          </div>
+                      </section>
+
               <!-- page end-->
           </section>
       </section>
       <!--main content end-->
       <!--footer start-->
-      <footer class="site-footer">
-          <div class="text-center">
-              2013 &copy; FlatLab by VectorLab.
-              <a href="#" class="go-top">
-                  <i class="icon-angle-up"></i>
-              </a>
-          </div>
-      </footer>
+      <%@include file="/WEB-INF/jsp/include/Admin/footerAdmin.jsp" %>
       <!--footer end-->
   </section>
 

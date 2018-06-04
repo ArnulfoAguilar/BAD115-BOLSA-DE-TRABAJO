@@ -1,7 +1,8 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
+import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -12,27 +13,17 @@ import javax.persistence.Embeddable;
 public class AspiranteId  implements java.io.Serializable {
 
 
-     private String nit;
      private String idPostDoc;
+     private BigDecimal idOferta;
 
     public AspiranteId() {
     }
 
-    public AspiranteId(String nit, String idPostDoc) {
-       this.nit = nit;
+    public AspiranteId(String idPostDoc, BigDecimal idOferta) {
        this.idPostDoc = idPostDoc;
+       this.idOferta = idOferta;
     }
    
-
-
-    @Column(name="NIT", nullable=false, length=100)
-    public String getNit() {
-        return this.nit;
-    }
-    
-    public void setNit(String nit) {
-        this.nit = nit;
-    }
 
 
     @Column(name="ID_POST_DOC", nullable=false, length=200)
@@ -45,21 +36,31 @@ public class AspiranteId  implements java.io.Serializable {
     }
 
 
+    @Column(name="ID_OFERTA", nullable=false, precision=22, scale=0)
+    public BigDecimal getIdOferta() {
+        return this.idOferta;
+    }
+    
+    public void setIdOferta(BigDecimal idOferta) {
+        this.idOferta = idOferta;
+    }
+
+
    public boolean equals(Object other) {
          if ( (this == other ) ) return true;
 		 if ( (other == null ) ) return false;
 		 if ( !(other instanceof AspiranteId) ) return false;
 		 AspiranteId castOther = ( AspiranteId ) other; 
          
-		 return ( (this.getNit()==castOther.getNit()) || ( this.getNit()!=null && castOther.getNit()!=null && this.getNit().equals(castOther.getNit()) ) )
- && ( (this.getIdPostDoc()==castOther.getIdPostDoc()) || ( this.getIdPostDoc()!=null && castOther.getIdPostDoc()!=null && this.getIdPostDoc().equals(castOther.getIdPostDoc()) ) );
+		 return ( (this.getIdPostDoc()==castOther.getIdPostDoc()) || ( this.getIdPostDoc()!=null && castOther.getIdPostDoc()!=null && this.getIdPostDoc().equals(castOther.getIdPostDoc()) ) )
+ && ( (this.getIdOferta()==castOther.getIdOferta()) || ( this.getIdOferta()!=null && castOther.getIdOferta()!=null && this.getIdOferta().equals(castOther.getIdOferta()) ) );
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + ( getNit() == null ? 0 : this.getNit().hashCode() );
          result = 37 * result + ( getIdPostDoc() == null ? 0 : this.getIdPostDoc().hashCode() );
+         result = 37 * result + ( getIdOferta() == null ? 0 : this.getIdOferta().hashCode() );
          return result;
    }   
 

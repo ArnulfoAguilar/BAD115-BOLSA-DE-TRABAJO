@@ -57,6 +57,7 @@ Contributor(s):
     <mapping class="Entidad.TipoExamen"/>
     <mapping class="Entidad.Recomendaciones"/>
     <mapping class="Entidad.Aspirante"/>
+    <mapping class="Entidad.Roles"/>
     <mapping class="Entidad.Reclutador"/>
     <mapping class="Entidad.AspiranteId"/>
     <mapping class="Entidad.Telefono"/>
@@ -66,7 +67,11 @@ Contributor(s):
     <mapping class="Entidad.Logros"/>
     <mapping class="Entidad.GiroEmpresa"/>
     <mapping class="Entidad.DetalleIdiomaId"/>
+    <mapping class="Entidad.Departamento"/>
+    <mapping class="Entidad.MunicipioId"/>
     <mapping class="Entidad.TelefonoId"/>
+    <mapping class="Entidad.Genero"/>
+    <mapping class="Entidad.Municipio"/>
     <mapping class="Entidad.OfertaId"/>
     <mapping class="Entidad.CatalogoOfimatica"/>
     <mapping class="Entidad.Empresa"/>
@@ -74,11 +79,13 @@ Contributor(s):
     <mapping class="Entidad.Examen"/>
     <mapping class="Entidad.Preguntas"/>
     <mapping class="Entidad.TipoTelefono"/>
+    <mapping class="Entidad.Usuarios"/>
     <mapping class="Entidad.AreaEmpresa"/>
     <mapping class="Entidad.Congresos"/>
     <mapping class="Entidad.EstadoFormacion"/>
     <mapping class="Entidad.Idioma"/>
     <mapping class="Entidad.AreaDeEstudio"/>
     <mapping class="Entidad.TipoEmpresa"/>
+    <mapping class="Entidad.Logs"/>
   </session-factory>
 </hibernate-configuration>

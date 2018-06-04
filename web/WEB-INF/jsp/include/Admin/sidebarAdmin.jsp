@@ -4,12 +4,12 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
                   <li>
-                      <a class="active" href="index.html">
+                      <a class="active" href="index.htm">
                           <i class="icon-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
-
+              </ul><!--
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="icon-laptop"></i>
@@ -134,7 +134,7 @@
                       </a>
                   </li>
 
-                  <!--multi level menu start-->
+                  <!--multi level menu start
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="icon-sitemap"></i>
@@ -157,10 +157,11 @@
                           </li>
                       </ul>
                   </li>
-                  <!--multi level menu end-->
+                  <!--multi level menu end
 
               </ul>
               <!-- sidebar menu end-->
+              
           </div>
       </aside>
       <!--sidebar end-->

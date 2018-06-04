@@ -1,5 +1,5 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -25,9 +25,9 @@ public class ExperienciaLaboral  implements java.io.Serializable {
 
 
      private BigDecimal idExperiencia;
+     private GiroEmpresa giroEmpresa;
      private AreaEmpresa areaEmpresa;
      private Candidato candidato;
-     private GiroEmpresa giroEmpresa;
      private String organizacion;
      private String cargoCandidato;
      private String funciones;
@@ -41,11 +41,11 @@ public class ExperienciaLaboral  implements java.io.Serializable {
     public ExperienciaLaboral(BigDecimal idExperiencia) {
         this.idExperiencia = idExperiencia;
     }
-    public ExperienciaLaboral(BigDecimal idExperiencia, AreaEmpresa areaEmpresa, Candidato candidato, GiroEmpresa giroEmpresa, String organizacion, String cargoCandidato, String funciones, Date fechaInicio, Date fechaFin) {
+    public ExperienciaLaboral(BigDecimal idExperiencia, GiroEmpresa giroEmpresa, AreaEmpresa areaEmpresa, Candidato candidato, String organizacion, String cargoCandidato, String funciones, Date fechaInicio, Date fechaFin) {
        this.idExperiencia = idExperiencia;
+       this.giroEmpresa = giroEmpresa;
        this.areaEmpresa = areaEmpresa;
        this.candidato = candidato;
-       this.giroEmpresa = giroEmpresa;
        this.organizacion = organizacion;
        this.cargoCandidato = cargoCandidato;
        this.funciones = funciones;
@@ -66,6 +66,16 @@ public class ExperienciaLaboral  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_GIRO")
+    public GiroEmpresa getGiroEmpresa() {
+        return this.giroEmpresa;
+    }
+    
+    public void setGiroEmpresa(GiroEmpresa giroEmpresa) {
+        this.giroEmpresa = giroEmpresa;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="ID_AREA")
     public AreaEmpresa getAreaEmpresa() {
         return this.areaEmpresa;
@@ -83,16 +93,6 @@ public class ExperienciaLaboral  implements java.io.Serializable {
     
     public void setCandidato(Candidato candidato) {
         this.candidato = candidato;
-    }
-
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_GIRO")
-    public GiroEmpresa getGiroEmpresa() {
-        return this.giroEmpresa;
-    }
-    
-    public void setGiroEmpresa(GiroEmpresa giroEmpresa) {
-        this.giroEmpresa = giroEmpresa;
     }
 
     
