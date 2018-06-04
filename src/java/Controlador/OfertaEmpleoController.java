@@ -24,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Juan Murcia
  */
 public class OfertaEmpleoController {
+    
     private JdbcTemplate jdbcTemplate;
     
     public OfertaEmpleoController(){
@@ -32,14 +33,12 @@ public class OfertaEmpleoController {
         
     }
     
-    
     @RequestMapping(value="OfertaEmpleo.htm", method=RequestMethod.GET)
     public ModelAndView ofertaHome()
     {  
        return new ModelAndView("Oferta","comand",new Oferta());
     }
-    
-    
+        
     @RequestMapping(value="Oferta.htm",method=RequestMethod.POST)
     public ModelAndView ofertaHomeProcedure(
             @ModelAttribute("oferta") Oferta o,

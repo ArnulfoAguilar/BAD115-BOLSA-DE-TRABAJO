@@ -4,6 +4,7 @@
     Created on : 05-31-2018, 12:33:35 PM
     Author     : Juan Murcia
 --%>
+<%@include file="/WEB-INF/jsp/include/Principal/taglib.jsp" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -32,11 +33,17 @@
             <form:input path="descripcion" cssClass="form-control"/>
         </p>
         <%--<p>
+        <form:label path="lugar">Lugar</form:label>
+            <form:input path="lugar" cssClass="form-control"/>
+        
+        <form:label path="vacante">Vacantes</form:label>
+            <form:input path="vacante" cssClass="form-control"/>
+        
             <form:label path="tipoContrato">Tipo de Contrato</form:label>
             <form:input path="tipoContrato" cssClass="form-control"/>
         </p>
         <p>
-            <for    m:label path="salario">Salario</form:label>
+            <form:label path="salario">Salario</form:label>
             <form:input path="salario" cssClass="form-control" />
         </p>
         <hr>--%>
