@@ -12,10 +12,10 @@
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Reclutadores</a></li>
-                        <li><a href="about.html">Candidatos</a></li>                                     
+                        <li class="active"><a href="index.html">Inicio</a></li>
+                        <li><a href="#">Empleos</a></li>                                     
                         <li><a href="login.htm">LogIn</a></li>
-                        <li><a href="signup.htm">SignUp</a></li>
+                        <li><a href="signup.htm">Registrate</a></li>
                         
                     </ul>
                 </div>
