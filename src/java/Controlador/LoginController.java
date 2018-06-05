@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
 import Entidad.Empresa;
 import Entidad.Reclutador;
-import Entidad.TipoEmpresa;
-import Entidad.Usuarios;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,12 +12,9 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -157,7 +148,7 @@ public class LoginController {
             @RequestParam("nombresReclutador") String NOMBRES,
             @RequestParam("apellidosReclutador") String APELLIDOS,
             @RequestParam("telefonoReclutador") String TELEFONO
-        ) {
+        ) throws SQLException {
             int resultado=0;
             Connection cn = null;
         try {
@@ -195,7 +186,7 @@ public class LoginController {
             try {
                 cn.close();
             } catch (SQLException ex) {
-                
+                cn.close();
             }
         }
         if (resultado == 1) {
