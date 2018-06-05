@@ -6,7 +6,7 @@
                   <li>
                       <a class="active" href="index.htm">
                           <i class="icon-dashboard"></i>
-                          <span>Dashboard</span>
+                          <span>Inicio</span>
                       </a>
                   </li>
               </ul><!--
