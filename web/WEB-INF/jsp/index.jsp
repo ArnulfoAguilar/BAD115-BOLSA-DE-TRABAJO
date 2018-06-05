@@ -220,27 +220,27 @@
                 <section>
                     <div class="f-box">
                         <i class=" icon-desktop"></i>
-                        <h2>responsive design</h2>
+                        <h2>registro gratuito</h2>
                     </div>
-                    <p class="f-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.</p>
+                    <p class="f-text">No necesitas ninguna inversion para empezar a aplicar a puestos de trabajo o a publicar tu vacante si eres dueño de empresa.</p>
                 </section>
             </div>
             <div class="col-lg-4 col-sm-4">
                 <section>
                     <div class="f-box active">
                         <i class=" icon-code"></i>
-                        <h2>User-Friendly</h2>
+                        <h2>Nuevos empleos diariamente</h2>
                     </div>
-                    <p class="f-text">Navega por nuestros menu completamente adaptables a cualquier dispositivo.</p>
+                    <p class="f-text">Todos los dias las empresas publican sus vacantes en la plataforma.</p>
                 </section>
             </div>
             <div class="col-lg-4 col-sm-4">
                 <section>
                     <div class="f-box">
                         <i class="icon-gears"></i>
-                        <h2>fully customizable</h2>
+                        <h2>Completa tu perfil profesional</h2>
                     </div>
-                    <p class="f-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.</p>
+                    <p class="f-text">Debes tener tu informacion actualizada para que las empresas vean lo bueno que eres!.</p>
                 </section>
             </div>
             <!--feature end-->
