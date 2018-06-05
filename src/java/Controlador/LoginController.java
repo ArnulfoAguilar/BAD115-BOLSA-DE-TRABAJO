@@ -9,6 +9,10 @@ import Entidad.Empresa;
 import Entidad.Reclutador;
 import Entidad.TipoEmpresa;
 import Entidad.Usuarios;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,7 +85,9 @@ public class LoginController {
                );
          return new ModelAndView("redirect:/index.htm");
        
-    } */
+    } 
+
+
     @RequestMapping(value="signup.htm",method=RequestMethod.POST)
     public ModelAndView basicForm
         (
@@ -128,6 +134,75 @@ public class LoginController {
            
         
             return new ModelAndView("redirect:/index.htm"); 
-    }
+    }*/
+    
 
+    
+    @RequestMapping(value="signup.htm",method=RequestMethod.POST)
+    public ModelAndView basicForm
+        (
+            @RequestParam("nitEmpresa") String NIT,
+            @RequestParam("tipoEmpresa") int ID_TIPO_EMP,
+            @RequestParam("giroEmpresa") int ID_GIRO,
+            @RequestParam("duiReclutador") String DUI,
+            @RequestParam("emailUsuario") String EMAIL_USUARIO,
+            @RequestParam("passwUsuario") String PASSWORD,
+            @RequestParam("municipioEmpresa") int ID_MUNI,
+            @RequestParam("departamentoEmpresa") int ID_DEPTO,
+            @RequestParam("razonSocial") String RAZON_SOCIAL,
+            @RequestParam("nombreEmpresa") String NOMBRE_COMERCIAL,
+            @RequestParam("direccionEmpresa") String UBICACION,
+            @RequestParam("descripcionEmpresa") String DESCRIPCION,
+            @RequestParam("paginaWeb") String PAGINA_WEB,
+            @RequestParam("nombresReclutador") String NOMBRES,
+            @RequestParam("apellidosReclutador") String APELLIDOS,
+            @RequestParam("telefonoReclutador") String TELEFONO
+        ) {
+            int resultado=0;
+            Connection cn = null;
+        try {
+            // Carga el driver de oracle
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            // Conecta con la base de datos XE con el usuario system y la contraseña password
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "bolsa_trabajo");
+// Llamada al procedimiento almacenado
+            CallableStatement cst = cn.prepareCall("{call INSERTAR_EMPRESA(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            // Parametro 1 del procedimiento almacenado
+            cst.setString(1,NIT );
+            cst.setInt(2,ID_TIPO_EMP);
+            cst.setInt(3,ID_GIRO );
+            cst.setString(4,DUI );
+            cst.setString(5,EMAIL_USUARIO);
+            cst.setString(6,PASSWORD );
+            cst.setInt(7, ID_MUNI);
+            cst.setInt(8, ID_DEPTO);
+            cst.setString(9,RAZON_SOCIAL );
+            cst.setString(10, NOMBRE_COMERCIAL);
+            cst.setString(11, UBICACION);
+            cst.setString(12,DESCRIPCION );
+            cst.setString(13,PAGINA_WEB );
+            cst.setString(14,EMAIL_USUARIO );
+            cst.setString(15, NOMBRES);
+            cst.setString(16, APELLIDOS);
+            cst.setString(17, TELEFONO);
+            // Ejecuta el procedimiento almacenado
+            cst.execute();
+            resultado=1;
+
+        } catch (SQLException ex) {
+            resultado=0;
+        } finally {
+            try {
+                cn.close();
+            } catch (SQLException ex) {
+                
+            }
+        }
+        if (resultado == 1) {
+            return new ModelAndView("redirect:/index.htm");
+        } else {
+            return new ModelAndView("ERROR");
+}
+            
+    }
 }
