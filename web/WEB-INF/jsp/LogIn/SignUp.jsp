@@ -42,7 +42,7 @@
                  
                   <div class="col-lg-12">
                       <section class="panel">
-                          <header class="panel-heading alert alert-info">DATOS DE ACCESO
+                          <header class="panel-heading alert alert-warning">DATOS DE ACCESO
                           </header>
                           <div class="panel-body">
                           <form class="form-horizontal tasi-form" method="post">
@@ -59,7 +59,7 @@
                                       </div>
                                   </div>
                               
-                              <header class="panel-heading alert alert-info">DATOS DE LA EMPRESA
+                              <header class="panel-heading alert alert-warning">DATOS DE LA EMPRESA
                           </header>
                               <br>
                               <div class="form-group">
@@ -107,7 +107,7 @@
                               
                               
                               
-                              <header class="panel-heading alert alert-info">TIPO DE EMPRESA
+                              <header class="panel-heading alert alert-warning">TIPO DE EMPRESA
                               </header><br>
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Tipo de empresa</label>
@@ -128,7 +128,7 @@
                                       </div>
                                   </div>
                               
-                              <header class="panel-heading alert alert-info">DATOS DE PERSONA DE CONTACTO
+                              <header class="panel-heading alert alert-warning">DATOS DE PERSONA DE CONTACTO
                               </header><br>
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">DUI</label>
