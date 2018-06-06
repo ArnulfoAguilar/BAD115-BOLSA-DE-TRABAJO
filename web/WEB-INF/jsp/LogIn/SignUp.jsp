@@ -48,22 +48,21 @@
                           <form class="form-horizontal tasi-form" method="post">
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Usuario</label>
-                                      <div class="col-sm-10">
+                                      <div class="col-sm-4">
                                           <input type="text" name="emailUsuario" class="form-control">
                                       </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Contraseña</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" name="passwUsuario" class="form-control">
+                                       <label class="col-sm-2 col-sm-2 control-label">Contraseña</label>
+                                      <div class="col-sm-4">
+                                          <input type="password" name="passwUsuario" class="form-control">
                                       </div>
                                   </div>
+                
                               
                               <header class="panel-heading alert alert-warning">DATOS DE LA EMPRESA
                           </header>
                               <br>
                               <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
+                                      <label class="col-sm-2 col-sm-2 control-label">Nombre Comercial</label>
                                       <div class="col-sm-10">
                                           <input type="text" name="nombreEmpresa" class="form-control">
                                       </div>
@@ -81,17 +80,26 @@
                                       </div>
                                   </div>
                               <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Departamento</label>
-                                      <div class="col-sm-10">
-                                          <input type="number" name="departamentoEmpresa" class="form-control">
+                                      <label class="col-sm-2 control-label">Departamento</label>
+                                      <div class="col-sm-4">
+                                          <select class="form-control m-bot15" name="departamentoEmpresa" id="departamentoEmpresa">
+                                              <c:forEach var="Departamento" items="${Departamento}">
+                                                 <option value="${Departamento.ID_DEPTO}">${Departamento.NOMBRE_DEPTO}</option>
+                                              </c:forEach>
+                                          </select>
                                       </div>
-                                  </div>
-                              <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Municipio</label>
-                                      <div class="col-sm-10">
-                                          <input type="number" name="municipioEmpresa" class="form-control">
+                                      
+                                      <label class="col-sm-2 control-label">Municipio</label>
+                                      <div class="col-sm-4">
+                                          <select class="form-control m-bot15" name="municipioEmpresa" id="municipioEmpresa">
+                                              <c:forEach var="Municipio" items="${Municipio}">
+                                                 <option value="${Municipio.ID_MUNI}">${Municipio.NOMBRE_MUNI}</option>
+                                              
+                                              </c:forEach>
+                                          </select>
                                       </div>
-                                  </div>
+                              </div>
+                              
                                <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Giro de la empresa</label>
                                       <div class="col-sm-10">
@@ -112,7 +120,12 @@
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Tipo de empresa</label>
                                       <div class="col-sm-10">
-                                          <input type="number" name="tipoEmpresa" class="form-control">
+                                          <select class="form-control m-bot15" name="tipoEmpresa" id="tipoEmpresa">
+                                              <c:forEach var="tipo_Empresa" items="${tipo_Empresa}">
+                                                 <option value="${tipo_Empresa.ID_TIPO_EMP}">${tipo_Empresa.NOMBRE_TIPO_EMP}</option>
+                                              
+                                              </c:forEach>
+                                          </select>
                                       </div>
                                   </div>
                               <div class="form-group">

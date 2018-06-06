@@ -23,7 +23,7 @@
                  <prop key="index.htm">indexController</prop>
                 <prop key="Empresa.htm">EmpresaController</prop>
                  <prop key="login.htm">LoginController</prop>
-                 <prop key="signup.htm">LoginController</prop>
+                 <prop key="signup.htm">SignupEmpresaController</prop>
                 <prop key="index.htm">indexController</prop>
                 <prop key="Empresa.htm">EmpresaController</prop>                          
                 
@@ -45,14 +45,19 @@
           p:viewName="index" />
     
     <bean name="EmpresaController"
-
           class="Controlador.EmpresaController"
     />
     <bean name="LoginController"
           class="Controlador.LoginController"
     />
-
     
+    
+    <!--Controller para EMPRESA-->
+    <bean name="SignupEmpresaController"
+          class="Controlador.SignupEmpresaController"
+    />
+
+    <!--/Controller para EMPRESA-->
     
 
 </beans>

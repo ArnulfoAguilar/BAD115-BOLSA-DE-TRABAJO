@@ -9,6 +9,35 @@
                           <span>Inicio</span>
                       </a>
                   </li>
+                  
+                  
+                  <li>
+                      <a class="" href="index.htm">
+                          <i class="icon-edit"></i>
+                          <span>Editar Perfil</span>
+                      </a>
+                  </li>
+                  
+                  <li>
+                      <a class="" href="index.htm">
+                          <i class="icon-laptop"></i>
+                          <span>Mis Ofertas</span>
+                      </a>
+                  </li>
+                  
+                  <li>
+                      <a class="" href="index.htm">
+                          <i class="icon-tasks"></i>
+                          <span>Lista de Candidatos</span>
+                      </a>
+                  </li>
+                  
+                  <li>
+                      <a class="" href="index.htm">
+                          <i class="icon-beer"></i>
+                          <span>no se que mas</span>
+                      </a>
+                  </li>
               </ul><!--
                   <li class="sub-menu">
                       <a href="javascript:;" >
