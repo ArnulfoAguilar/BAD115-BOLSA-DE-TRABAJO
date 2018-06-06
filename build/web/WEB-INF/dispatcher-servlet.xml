@@ -26,8 +26,7 @@
                  <prop key="signup.htm">LoginController</prop>
                 <prop key="index.htm">indexController</prop>
                 <prop key="Empresa.htm">EmpresaController</prop>                          
-                <prop key="PerfilCandidato.htm">CandidatoController</prop>
-                <prop key="RegistroCandidato.htm">CandidatoController</prop>
+                
 
             </props>
         </property>
@@ -54,7 +53,6 @@
     />
 
     
-    <bean name="CandidatoController"
-            class="Controlador.CandidatoController"/>
+    
 
 </beans>
