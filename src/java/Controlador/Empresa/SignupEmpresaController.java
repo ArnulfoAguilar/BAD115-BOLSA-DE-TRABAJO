@@ -1,5 +1,5 @@
 
-package Controlador;
+package Controlador.Empresa;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import Controlador.Conectar;
 import Controlador.Conectar;
 
 @Controller
@@ -45,6 +46,10 @@ public class SignupEmpresaController {
         List Departamento=this.jdbcTemplate.queryForList(Departamentosql);
         mav.addObject("Departamento",Departamento);
         
+        //LISTA DE GIRO EMPRESA
+        String giro_Empresasql="select ID_GIRO, NOMBRE_GIRO from GIRO_EMPRESA order by 1";
+        List giro_Empresa=this.jdbcTemplate.queryForList(giro_Empresasql);
+        mav.addObject("giro_Empresa",giro_Empresa);
         mav.setViewName("LogIn/SignUp");
         return mav;
 

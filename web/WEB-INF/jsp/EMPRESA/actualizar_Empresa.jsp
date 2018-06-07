@@ -1,4 +1,5 @@
 
+
 <%@include file="/WEB-INF/jsp/include/Principal/taglib.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Registrar Empresa</title>
+    <title>Actualizar Informacion Empresa</title>
 
     <%@include file="/WEB-INF/jsp/include/Admin/cssAdmin.jsp" %>
     <!-- Custom styles for this template -->
@@ -49,11 +50,11 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Usuario</label>
                                       <div class="col-sm-4">
-                                          <input type="text" name="emailUsuario" class="form-control">
+                                          <input type="text" disabled="yes" name="emailUsuario" class="form-control">
                                       </div>
                                        <label class="col-sm-2 col-sm-2 control-label">Contraseña</label>
                                       <div class="col-sm-4">
-                                          <input type="password" name="passwUsuario" class="form-control">
+                                          <input type="password" disabled="yes" name="passwUsuario" class="form-control">
                                       </div>
                                   </div>
                 
@@ -76,7 +77,7 @@
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">NIT</label>
                                       <div class="col-sm-4">
-                                          <input type="text" name="nitEmpresa" class="form-control">
+                                          <input type="text" disabled="yes" disabled="yes" name="nitEmpresa" class="form-control">
                                       </div>
                                       <label class="col-sm-2 col-sm-2 control-label">Giro de la empresa</label>
                                       

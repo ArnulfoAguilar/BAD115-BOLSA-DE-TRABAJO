@@ -4,15 +4,13 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
                   <li>
-                      <a class="active" href="index.htm">
+                      <a class="active" href="/index.htm">
                           <i class="icon-dashboard"></i>
                           <span>Inicio</span>
                       </a>
                   </li>
-                  
-                  
                   <li>
-                      <a class="" href="index.htm">
+                      <a class="" href="EMPRESA/actualizar_Empresa.htm">
                           <i class="icon-edit"></i>
                           <span>Editar Perfil</span>
                       </a>

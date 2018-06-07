@@ -5,8 +5,6 @@
         <group>
             <file>file:/C:/Users/TSE/Documents/GitHub/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/dispatcher-servlet.xml</file>
             <file>file:/C:/Users/TSE/Documents/GitHub/BAD115-BOLSA-DE-TRABAJO/src/java/Controlador/LoginController.java</file>
-            <file>file:/C:/Users/TSE/Documents/GitHub/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/spring-security.xml</file>
-            <file>file:/C:/Users/TSE/Documents/GitHub/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/TSE/Documents/GitHub/BAD115-BOLSA-DE-TRABAJO/src/java/Controlador/SignupEmpresaController.java</file>
             <file>file:/C:/Users/TSE/Documents/GitHub/BAD115-BOLSA-DE-TRABAJO/web/WEB-INF/jsp/LogIn/SignUp.jsp</file>
         </group>

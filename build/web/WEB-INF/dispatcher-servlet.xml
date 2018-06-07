@@ -20,12 +20,14 @@
         <property name="mappings">
             <props>
 
-                 <prop key="index.htm">indexController</prop>
-                <prop key="Empresa.htm">EmpresaController</prop>
+                 
                  <prop key="login.htm">LoginController</prop>
-                 <prop key="signup.htm">SignupEmpresaController</prop>
-                <prop key="index.htm">indexController</prop>
-                <prop key="Empresa.htm">EmpresaController</prop>                          
+                <prop key="index.htm">indexController</prop> 
+                                
+              <!--URL de EMPRESA-->
+                <prop key="EMPRESA/actualizar_Empresa.htm">ActualizarEmpresaController</prop>
+                <prop key="signup.htm">SignupEmpresaController</prop>
+                <!--Fin URL EMPRESA-->                         
                 
 
             </props>
@@ -35,7 +37,8 @@
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
-          p:suffix=".jsp" />
+          p:suffix=".jsp"         
+    />
 
     <!--
     The index controller.
@@ -54,9 +57,11 @@
     
     <!--Controller para EMPRESA-->
     <bean name="SignupEmpresaController"
-          class="Controlador.SignupEmpresaController"
+          class="Controlador.Empresa.SignupEmpresaController"
     />
-
+    <bean name="ActualizarEmpresaController"
+          class="Controlador.Empresa.ActualizarEmpresaController"
+    />
     <!--/Controller para EMPRESA-->
     
 
