@@ -27,7 +27,7 @@ public class Conectar {
          
          ods.setURL("jdbc:oracle:thin:@//localhost:1521/XE");
          ods.setUser("BOLSA_TRABAJO");
-         ods.setPassword("bolsa_trabajo");
+         ods.setPassword("BOLSA_TRABAJO");
          //Connection cn= ods.getConnection();
         return ods;
          

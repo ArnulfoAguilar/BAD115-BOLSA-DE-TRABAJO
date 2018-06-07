@@ -62,9 +62,9 @@
                                             <tbody>
                                                 <c:forEach items="${CANDIDATOS}" var="CANDIDATO">
                                                     <tr>
-                                                        <th><c:out value="${CANDIDATO.ID_POST_DOC}"/></th>
-                                                        <th><c:out value="${CANDIDATO.PRIMER_NOMBRE}"/></th>
-                                                        <th><c:out value="${CANDIDATO.PRIMER_APELLIDO}"/></th>
+                                                        <th>${CANDIDATO.ID_POST_DOC}</th>
+                                                        <th>${CANDIDATO.PRIMER_NOMBRE}</th>
+                                                        <th>${CANDIDATO.PRIMER_APELLIDO}</th>
                                                         <th></th>
                                                         <th>
                                                             <a href="<c:url value="/PerfilCandidato.htm?id=${CANDIDATO.ID_POST_DOC}"/>" class="btn btn-info">Ver</a>
@@ -84,7 +84,9 @@
                                             </tfoot>
                                         </table>
                                         Errores:
-                                        <c:out value="${ERRORES}"/>  
+                                        <c:out value="${ERRORES}"/> 
+                                        PRUEBAS:
+                                        ${PRUEBA}
                                     </div>
                                 </div>
                             </section>
