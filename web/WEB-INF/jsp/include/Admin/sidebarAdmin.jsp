@@ -4,34 +4,34 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
                   <li>
-                      <a class="active" href="/index.htm">
+                      <a class="active" href="${pageContext.request.contextPath}">
                           <i class="icon-dashboard"></i>
                           <span>Inicio</span>
                       </a>
                   </li>
                   <li>
-                      <a class="" href="EMPRESA/actualizar_Empresa.htm">
+                      <a class="" href="${pageContext.request.contextPath}/EMPRESA/actualizar_Empresa.htm">
                           <i class="icon-edit"></i>
                           <span>Editar Perfil</span>
                       </a>
                   </li>
                   
                   <li>
-                      <a class="" href="index.htm">
+                      <a class="" href="${pageContext.request.contextPath}/index.htm">
                           <i class="icon-laptop"></i>
                           <span>Mis Ofertas</span>
                       </a>
                   </li>
                   
                   <li>
-                      <a class="" href="index.htm">
+                      <a class="" href="${pageContext.request.contextPath}/index.htm">
                           <i class="icon-tasks"></i>
                           <span>Lista de Candidatos</span>
                       </a>
                   </li>
                   
                   <li>
-                      <a class="" href="index.htm">
+                      <a class="" href="${pageContext.request.contextPath}/index.htm">
                           <i class="icon-beer"></i>
                           <span>no se que mas</span>
                       </a>
