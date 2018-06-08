@@ -2,6 +2,7 @@
 
 <%@include file="/WEB-INF/jsp/include/Principal/taglib.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
