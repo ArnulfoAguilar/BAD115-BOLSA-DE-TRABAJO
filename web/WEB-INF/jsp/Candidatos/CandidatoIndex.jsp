@@ -45,7 +45,7 @@
                             <section class="panel">
                                 <header class="panel-heading">
                                     Tabla con Candidatos
-                                    <a href="<c:url value="/CandidatoAdd.htm"/>" class="btn btn-info">Añadir nuevo candidato</a>
+                                    <a href="CandidatoAdd.htm" class="btn btn-info">Añadir nuevo candidato</a>
                                 </header>
                                 <div class="panel-body">
                                     <div class="adv-table">
@@ -84,9 +84,9 @@
                                             </tfoot>
                                         </table>
                                         Errores:
-                                        <c:out value="${ERRORES}"/> 
-                                        PRUEBAS:
-                                        ${PRUEBA}
+                                        <c:forEach items="${ERRORES}" var="error">
+                                        <c:out value="${error}"/> 
+                                        </c:forEach>
                                     </div>
                                 </div>
                             </section>

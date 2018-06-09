@@ -31,6 +31,8 @@
                 <prop key="RegistroCandidato.htm">CandidatoController</prop>
                 <prop key="CandidatoAdd.htm">CandidatoController</prop>
                 <prop key="CandidatoIndex.htm">CandidatoController</prop>
+                
+                <prop key="LogrosAdd.htm">LogrosController</prop>
 
             </props>
         </property>
@@ -57,7 +59,7 @@
     />
 
     
-    <bean name="CandidatoController"
-            class="Controlador.CandidatoController"/>
+    <bean name="CandidatoController" class="Controlador.CandidatoController"/>
+    <bean name="LogrosController" class="Controlador.LogrosController"/>
 
 </beans>

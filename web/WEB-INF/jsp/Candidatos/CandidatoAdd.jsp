@@ -43,6 +43,7 @@
                       <section class="panel">
                           <header class="panel-heading">
                               Registrar Candidato
+                              Error:${Error}
                           </header>
                           <div class="panel-body">
                               <div class="stepy-tab">
@@ -67,26 +68,26 @@
                                       </li>
                                   </ul>
                               </div>
-                              <form class="form-horizontal" id="default">
+                              <form:form method="POST" commandName="candidato" class="form-horizontal" id="default" >
                                   <fieldset title="Paso 1" class="step" id="default-step-0">
                                       <legend> </legend>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Primer Nombre</label>
                                           <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Primer Nombre">
+                                              <form:input class="form-control" path="primerNombre" placeholder="Primer Nombre" />
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Segundo Nombre</label>
                                           <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Segundo Nombre">
-                                          </div>
+                                              <form:input class="form-control" path="segundoNombre" placeholder="Segundo Nombre"/>
+                                        </div>
                                       </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Tercer Nombre</label>
                                           <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Tercer Nombre">
-                                          </div>
+                                              <form:input class="form-control" path="tercerNombre" placeholder="Tercer Nombre"/>
+                                        </div>
                                       </div>
                                   </fieldset>
                                   <fieldset title="Paso 2" class="step" id="default-step-1" >
@@ -94,23 +95,22 @@
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Primer Apellido</label>
                                           <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Primer Apellido">
-                                          </div>
+                                              <form:input class="form-control" path="primerApellido" placeholder="Primer Apellido"/>
+                                        </div>
                                       </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Segundo Apellido</label>
                                           <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Segundo Apellido">
-                                          </div>
+                                              <form:input class="form-control" path="segundoApellido" placeholder="Segundo Apellido"/>
+                                        </div>
                                       </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Tercer Apellido</label>
                                           <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Tercer Apellido">
-                                          </div>
+                                              <form:input class="form-control" path="casadaApellido" placeholder="Apellido de casada"/>
+                                        </div>
                                       </div>
                                   </fieldset>
-                                  
                                   </fieldset>
                                   <fieldset title="Paso 3" class="step" id="default-step-1" >
                                       <legend> </legend>
@@ -121,15 +121,21 @@
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Address</label>
+                                          <label class="col-lg-2 control-label">Direccion</label>
                                           <div class="col-lg-10">
-                                              <textarea class="form-control" cols="60" rows="5"></textarea>
+                                              <form:input class="form-control" path="direccion" placeholder="Direccion"/>
+                                        </div>
+                                      </div>
+                                        <div class="form-group">
+                                          <label class="col-lg-2 control-label">Documento de identidad</label>
+                                          <div class="col-lg-10">
+                                              <form:input class="form-control" path="idPostDoc" placeholder="Documento de identidad" />
                                           </div>
                                       </div>
 
                                   </fieldset>
-                                  <input type="submit" class="finish btn btn-danger" value="Finish"/>
-                              </form>
+                                  <form:button class="finish btn btn-danger">Registrarse</form:button>
+                          </form:form>
                           </div>
                       </section>
                   </div>

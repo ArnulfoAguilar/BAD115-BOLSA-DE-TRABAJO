@@ -46,6 +46,7 @@
                             </header>
                             <div class="panel-body"> 
                                 <a href="#myModal" data-toggle="modal" class="btn btn-shadow btn-success btn-block">Formación Académica</a>
+                                <a href="LogrosAdd.htm" class="btn btn-shadow btn-success btn-block">Logros</a>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Experiencia Laboral</button>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Experiencia Académica</button>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Nuevo Idioma</button>
