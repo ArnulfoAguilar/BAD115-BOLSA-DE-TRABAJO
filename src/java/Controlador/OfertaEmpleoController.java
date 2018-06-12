@@ -32,42 +32,15 @@ public class OfertaEmpleoController {
          this.jdbcTemplate=new JdbcTemplate(con.conectar());
         
     }
+
+    @RequestMapping(value="ofertaempleo.htm",method=RequestMethod.GET)
+    public ModelAndView ofertaempleo(){
+        //ModelAndView of = new ModelAndView();
+        //of.setViewName("OfertaEmpleo");
+        //return of;
+        return new ModelAndView("OfertaEmpleo");
+    }
+         
+             
     
-    @RequestMapping(value="OfertaEmpleo.htm", method=RequestMethod.GET)
-    public ModelAndView ofertaHome()
-    {  
-       return new ModelAndView("Oferta","comand",new Oferta());
-    }
-        
-    @RequestMapping(value="Oferta.htm",method=RequestMethod.POST)
-    public ModelAndView ofertaHomeProcedure(
-            @ModelAttribute("oferta") Oferta o,
-                BindingResult result,
-                SessionStatus status
-    ){
-          Connection cn = null;
-        try {
-            // Carga el driver de oracle
-            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            // Conecta con la base de datos XE con el usuario system y la contraseña password
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "gm13021", "gm13021");
-            // Llamada al procedimiento almacenado
-            CallableStatement cst = cn.prepareCall("{call insertar_oferta (?,'','','','','','','','','')}");
-                // Parametro 1 del procedimiento almacenado
-                cst.setString(1,o.toString());
-                 
-                //cst.setInt(1, 3);
-                // Definimos los tipos de los parametros de salida del procedimiento almacenado
-                //cst.registerOutParameter(2, java.sql.Types.VARCHAR);
-                //cst.registerOutParameter(3, java.sql.Types.DATE);
-                // Ejecuta el procedimiento almacenado
-                cst.execute();
-                // Se obtienen la salida del procedimineto almacenado
-                
-        } catch (SQLException ex) {
-              String error = ex.toString();
-          
-        }
-        return null;
-    }
 }

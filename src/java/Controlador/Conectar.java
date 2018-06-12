@@ -38,23 +38,4 @@ public class Conectar {
      
      
  }
-    
-    
-    
-    /* 
- public void conectar()
- {
-     try {
-         OracleDataSource ods = new OracleDataSource();
-         
-         ods.setURL("jdbc:oracle:thin:@//localhost:1521/XE");
-         ods.setUser("BOLSA_TRABAJO");
-         ods.setPassword("bolsa_trabajo");
-         Connection cn= ods.getConnection();
-        
-         
-     } catch (SQLException ex) {
-         Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
-     }
- }*/
 }
