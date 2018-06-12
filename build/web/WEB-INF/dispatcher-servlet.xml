@@ -25,18 +25,11 @@
                 <prop key="login.htm">LoginController</prop>
                 <prop key="signup.htm">LoginController</prop>
                 <prop key="index.htm">indexController</prop>
-                <prop key="Empresa.htm">EmpresaController</prop> 
-                                         
+                <prop key="Empresa.htm">EmpresaController</prop>                          
                 <prop key="PerfilCandidato.htm">CandidatoController</prop>
                 <prop key="RegistroCandidato.htm">CandidatoController</prop>
-<<<<<<< HEAD
                 <prop key="ofertaempleo.htm">OfertaEmpleoController</prop>
                 <!--<prop key="ListaOferta.htm">ListaOfertaController</prop>-->
-=======
-                <prop key="CandidatoAdd.htm">CandidatoController</prop>
-                <prop key="CandidatoIndex.htm">CandidatoController</prop>
-
->>>>>>> master
             </props>
         </property>
     </bean>

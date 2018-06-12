@@ -5,7 +5,7 @@
                 <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
-            <a href="index.htm" class="logo">Work<span>Zone</span></a>
+            <a href="index.html" class="logo">Work<span>Zone</span></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
