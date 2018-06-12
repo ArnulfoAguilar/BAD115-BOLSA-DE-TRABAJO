@@ -28,8 +28,8 @@
                 <prop key="Empresa.htm">EmpresaController</prop>                          
                 <prop key="PerfilCandidato.htm">CandidatoController</prop>
                 <prop key="RegistroCandidato.htm">CandidatoController</prop>
-                <prop key="ofertaempleo.htm">OfertaEmpleoController</prop>
-                <!--<prop key="ListaOferta.htm">ListaOfertaController</prop>-->
+                <prop key="ofertaEmpleo.htm">OfertaEmpleoController</prop>
+                <prop key="listaOferta.htm">OfertaEmpleoController</prop>
             </props>
         </property>
     </bean>
@@ -61,7 +61,5 @@
     <!--bean de la oferta empleo y lista Oferta-->
     <bean name="OfertaEmpleoController"
             class="Controlador.OfertaEmpleoController"/>
-   <!-- <bean name="ListaOfertaController"
-            class="Controlador.ListaOfertaController"/>-->
     
 </beans>

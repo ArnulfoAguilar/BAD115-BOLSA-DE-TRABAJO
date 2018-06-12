@@ -15,6 +15,7 @@
                         <li class="active"><a href="index.html">Reclutadores</a></li>
                         <li><a href="about.html">Candidatos</a></li>
                         <li><a href="OfertaEmpleo.htm">Oferta Empleo</a></li>  
+                        <li><a href="listaOferta.htm">Lista de ofertas</a></li>
                         <li><a href="login.htm">LogIn</a></li>
                         <li><a href="signup.htm">SignUp</a></li>
                         
