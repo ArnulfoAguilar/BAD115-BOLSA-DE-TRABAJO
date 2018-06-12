@@ -26,8 +26,13 @@ public class Conectar {
          OracleDataSource ods = new OracleDataSource();
          
          ods.setURL("jdbc:oracle:thin:@//localhost:1521/XE");
+<<<<<<< HEAD
          ods.setUser("gm13021");
          ods.setPassword("gm13021");
+=======
+         ods.setUser("BOLSA_TRABAJO");
+         ods.setPassword("BOLSA_TRABAJO");
+>>>>>>> master
          //Connection cn= ods.getConnection();
         return ods;
          
