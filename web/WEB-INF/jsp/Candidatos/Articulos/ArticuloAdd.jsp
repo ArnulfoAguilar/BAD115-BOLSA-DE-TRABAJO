@@ -11,18 +11,20 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Form Wizard</title>
+    <title>Añadir Articulo</title>
 
     <%@include file="/WEB-INF/jsp/include/Admin/cssAdmin.jsp" %>
     <!-- Custom styles for this template -->
     <link href="<c:url value="/public/Admin/css/style.css"/>" rel="stylesheet">
     <link href="<c:url value="/public/Admin/css/style-responsive.css"/>" rel="stylesheet" />
-
+    
+    <link href="<c:url value="public/Admin/assets/bootstrap-datepicker/css/datepicker.css"/>" rel="stylesheet" type="text/css"/>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+    
   </head>
 
   <body>
@@ -67,21 +69,22 @@
                                           <div>Paso 6</div>
                                       </li>
                                   </ul>
-                              </div>
-                              <form:form method="POST" commandName="logro" class="form-horizontal" id="default" >
+                              </div>${identificador}
+                              <form:form method="POST" commandName="articulo" class="form-horizontal" id="default" >
                                   <fieldset title="Paso 1" class="step" id="default-step-0">
                                       <legend> </legend>
+                                      
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Lugar</label>
+                                          <label class="col-lg-2 control-label">Nombre Articulo</label>
                                           <div class="col-lg-10">
-                                              <form:input class="form-control" path="lugar" placeholder="Primer Nombre" />
+                                              <form:input class="form-control" path="nombreArticulo" placeholder="Nombre" />
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Fecha</label>
+                                          <label class="col-lg-2 control-label">Lugar de publicacion</label>
                                           <div class="col-lg-10">
-                                              <form:input class="form-control" path="fecha" placeholder="Segundo Nombre"/>
-                                        </div>
+                                               <form:input class="form-control" path="lugarPublicado" placeholder="Lugar" />
+                                          </div>
                                       </div>
                                   </fieldset>
                                  <form:button class="finish btn btn-danger">Registrar logro</form:button>
@@ -126,7 +129,12 @@
           });
       });
   </script>
-
+    <script type="text/javascript" src="<c:url value="/public/Admin/assets/bootstrap-datepicker/js/bootstrap-datepicker.js"/>"></script>
+    <script>
+        $( document ).ready(function() {
+            $('#fecha').datepicker();
+        });
+    </script>
 
   </body>
 </html>

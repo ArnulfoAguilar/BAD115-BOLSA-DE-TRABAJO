@@ -29,7 +29,7 @@
                                 </a>
                                 <h1>Juan Pérez</h1>
                                 <p>juan.perez@ejemplo.com</p>
-                                resultado:
+                                ${Error}
                                 <p><c:out value="${Vacio}"/></p>
                             </div>
 
@@ -46,7 +46,8 @@
                             </header>
                             <div class="panel-body"> 
                                 <a href="#myModal" data-toggle="modal" class="btn btn-shadow btn-success btn-block">Formación Académica</a>
-                                <a href="LogrosAdd.htm" class="btn btn-shadow btn-success btn-block">Logros</a>
+                                <a href="LogrosIndex.htm?id=${candidato.idPostDoc}" class="btn btn-shadow btn-success btn-block">Logros</a>
+                                <a href="ArticuloIndex.htm?id=${candidato.idPostDoc}" class="btn btn-shadow btn-success btn-block">Articulos</a>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Experiencia Laboral</button>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Experiencia Académica</button>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Nuevo Idioma</button>
@@ -147,12 +148,13 @@
                                                     <form:input class="form-control" path="email" placeholder="Email"/>
                                                 </div>
                                             </div>
+                                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                        <form:button class="finish btn btn-danger">Finalizar Edicion</form:button>
+                                    </div>
                                         </form:form>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                        <button type="button" class="btn btn-warning" data-dismiss="modal">Finalizar</button>
-                                    </div>
+                                    
                                 </div>
 
                             </div>
@@ -174,6 +176,24 @@
                                 </div>
                             </div>
                         </section>
+                        <section>
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Logros</div>
+                                <div class="panel-body">
+                                    <c:forEach items="${Logros}" var="logro">
+                                        <div class="col-md-3">
+                                            <h5><b>Realizado en:</b>
+                                                <br>${logro.lugar}</h5>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h4>${logro.fecha}
+                                                <br><small>Fecha de realizacion</small></h4>
+                                        </div>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </section>
+                        
                         <section>
                             <div class="panel panel-info">
                                 <div class="panel-heading">Experiencia Laboral</div>

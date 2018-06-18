@@ -32,7 +32,17 @@
                 <prop key="CandidatoAdd.htm">CandidatoController</prop>
                 <prop key="CandidatoIndex.htm">CandidatoController</prop>
                 
+                <prop key="LogrosIndex.htm">LogrosController</prop>
                 <prop key="LogrosAdd.htm">LogrosController</prop>
+                <prop key="LogrosEdit.htm">LogrosController</prop>
+                <prop key="LogrosDelete.htm">LogrosController</prop>
+                
+                <prop key="ArticuloIndex.htm">ArticuloController</prop>
+                <prop key="ArticuloAdd.htm">ArticuloController</prop>
+                <prop key="ArticuloEdit.htm">ArticuloController</prop>
+                <prop key="ArticuloDelete.htm">ArticuloController</prop>
+                
+                <prop key="Error.htm">PagesController</prop>
 
             </props>
         </property>
@@ -61,5 +71,7 @@
     
     <bean name="CandidatoController" class="Controlador.CandidatoController"/>
     <bean name="LogrosController" class="Controlador.LogrosController"/>
+    <bean name="PagesController" class="Controlador.PagesController"/>
+    <bean name="ArticuloController" class="Controlador.ArticuloController"/>
 
 </beans>

@@ -111,15 +111,13 @@ public class CandidatoController {
     }
 
     @RequestMapping(value = "PerfilCandidato.htm", method = RequestMethod.GET)
-    public ModelAndView Perfil(HttpServletRequest request, ModelMap model) {
+    public ModelAndView Perfil(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("PerfilCandidato");
         String id = request.getParameter("id");
 
         Integer resultado = 0;
         String estadoConexion = null;
-        String p = "Esto es una prueba fuera del TRY";
-        model.addAttribute("Prueba", p);
         
         Connection cn = null;
         try {
@@ -144,6 +142,7 @@ public class CandidatoController {
             resultado = 1;
             // Se obtienen la salida del procedimineto almacenado
             Candidato cand = new Candidato();
+            cand.setIdPostDoc(id);
             cand.setPrimerNombre(cst.getString(2));
             cand.setSegundoNombre(cst.getString(3));
             cand.setTercerNombre(cst.getString(4));
@@ -152,29 +151,69 @@ public class CandidatoController {
             cand.setCasadaApellido(cst.getString(7));
             cand.setDireccion(cst.getString(8));
 
-            model.addAttribute("candidato", cand);
-            //mav.addObject("candidato", cand);
+            mav.addObject("candidato", cand);
+            String sql = "select * from LOGROS where ID_POST_DOC = "+id;
+            List Logros = null;
+        
+            Logros = this.jdbcTemplate.queryForList(sql);
+        
+            mav.addObject("Logros", Logros);
 
         } catch (SQLException ex) {
-            model.addAttribute("Error", "Error al ejecutar "+ex.toString());
-            model.addAttribute("Resultado", resultado);
+            mav.addObject("Error", "Error al ejecutar "+ex.toString());
+            mav.addObject("Resultado", resultado);
         } finally {
             try {
                 estadoConexion = "Conexion cerrada";
-                model.addAttribute("EstadoConexion", estadoConexion);
+                mav.addObject("EstadoConexion", estadoConexion);
                 cn.close();
             } catch (SQLException ex) {
                 estadoConexion = ex.toString();
                 estadoConexion += " No se pudo cerrar la conexion";
-                model.addAttribute("EstadoConexion", estadoConexion);
+                mav.addObject("EstadoConexion", estadoConexion);
             }
         }
         if (resultado == 1) {
             return mav;
         } else {
-
-            return new ModelAndView("redirect:/Home.htm");
+            return mav;
+            //return new ModelAndView("redirect:/Home.htm");
         }
+    }
+    @RequestMapping(value = "PerfilCandidato.htm", method = RequestMethod.POST)
+    public ModelAndView Perfil(
+            HttpServletRequest request,
+            @ModelAttribute("candidato") Candidato cand,
+            BindingResult result,
+            SessionStatus status
+    ) {
+        
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("PerfilCandidato");
+        
+        Connection cn = null;
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call ActualizarCandidato(?,?,?,?,?,?,?,?)}");
+            String id = request.getParameter("id");
+            cst.setString(1, id);
+            cst.setString(2, cand.getPrimerNombre());
+            cst.setString(3, cand.getSegundoNombre());
+            cst.setString(4, cand.getTercerNombre());
+            cst.setString(5, cand.getPrimerApellido());
+            cst.setString(6, cand.getSegundoApellido());
+            cst.setString(7, cand.getCasadaApellido());
+            cst.setString(8, cand.getDireccion());
+            cst.execute();
+            cn.close();
+            //resultado = 1;
+            return new ModelAndView("redirect:" + "PerfilCandidato.htm?id="+id);
+        } catch (SQLException ex) {
+            mav.addObject("Error", "Error al cerrar conexion o ejecutar "+ex.toString());
+            return mav;
+        }
+        //return mav;
     }
 
 }
