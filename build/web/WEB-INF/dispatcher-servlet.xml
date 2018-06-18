@@ -31,6 +31,10 @@
                 <prop key="RegistroCandidato.htm">CandidatoController</prop>
                 <prop key="CandidatoAdd.htm">CandidatoController</prop>
                 <prop key="CandidatoIndex.htm">CandidatoController</prop>
+                
+                <prop key="ofertaEmpleo.htm">OfertaEmpleoController</prop>
+                <prop key="listaOferta.htm">OfertaEmpleoController</prop>
+                <prop key="editarOferta.htm">OfertaEmpleoController</prop>
 
             </props>
         </property>
@@ -59,5 +63,9 @@
     
     <bean name="CandidatoController"
             class="Controlador.CandidatoController"/>
+    
+    <!--bean de la oferta empleo y lista Oferta-->
+    <bean name="OfertaEmpleoController"
+            class="Controlador.OfertaEmpleoController"/>
 
 </beans>

@@ -13,9 +13,12 @@
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Reclutadores</a></li>
-                        <li><a href="CandidatoIndex.htm">Candidatos</a></li>                                     
+                        <li><a href="CandidatoIndex.htm">Candidatos</a></li>
+                        <li><a href="ofertaEmpleo.htm">Oferta Empleo</a></li>
+                        <li><a href="listaOferta.htm">Lista de ofertas</a></li>
                         <li><a href="login.htm">LogIn</a></li>
                         <li><a href="signup.htm">SignUp</a></li>
+                        
                         
                     </ul>
                 </div>
