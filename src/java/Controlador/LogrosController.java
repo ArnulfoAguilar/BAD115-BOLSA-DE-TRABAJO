@@ -66,7 +66,7 @@ public class LogrosController {
             cst.execute();
             cn.close();
             //resultado = 1;
-            return new ModelAndView("redirect:/CandidatoIndex.htm");
+            return new ModelAndView("redirect:" + "LogrosIndex.htm?id="+id);
         } catch (SQLException ex) {
             model.addAttribute("Errores", "Error al cerrar conexion o ejecutar "+ex.toString());
         }

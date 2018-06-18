@@ -158,6 +158,11 @@ public class CandidatoController {
             Logros = this.jdbcTemplate.queryForList(sql);
         
             mav.addObject("Logros", Logros);
+            List Articulos = null;
+        
+            Articulos = this.jdbcTemplate.queryForList("select * from ARTICULO where ID_POST_DOC = "+id);
+        
+            mav.addObject("Articulos", Articulos);
 
         } catch (SQLException ex) {
             mav.addObject("Error", "Error al ejecutar "+ex.toString());

@@ -193,6 +193,27 @@
                                 </div>
                             </div>
                         </section>
+                        <section>
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Articulos elaborados</div>
+                                <div class="panel-body">
+                                    <c:forEach items="${Articulos}" var="articulo">
+                                        <div class="col-md-3">
+                                            <h5><b>Nombre:</b>
+                                                <br>${articulo.NOMBRE_ARTICULO}</h5>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h4>${articulo.LUGAR_PUBLICADO}
+                                                <br><small>Lugar de publicacion:</small></h4>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h4>${articulo.NUM_EDICION}
+                                                <br><small>Numero de edición:</small></h4>
+                                        </div>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </section>
                         
                         <section>
                             <div class="panel panel-info">

@@ -11,7 +11,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Añadir Articulo</title>
+    <title>Editar Articulo</title>
 
     <%@include file="/WEB-INF/jsp/include/Admin/cssAdmin.jsp" %>
     <!-- Custom styles for this template -->

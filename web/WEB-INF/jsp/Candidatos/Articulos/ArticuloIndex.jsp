@@ -68,8 +68,8 @@
                                                         <th>${articulo.LUGAR_PUBLICADO}</th>
                                                         <th>${articulo.NUM_EDICION}</th>
                                                         <th>
-                                                            <a class="btn btn-warning" href="ArticuloEdit.htm?id=${logro.ID_Logros}&id2=${logro.ID_POST_DOC}" role="button">Editar mi Logro</a>
-                                                            <a class="btn btn-danger" href="ArticuloDelete.htm?id=${logro.ID_Logros}&id2=${logro.ID_POST_DOC}" role="button">Eliminar mi logro</a>
+                                                            <a class="btn btn-warning" href="ArticuloEdit.htm?id=${articulo.ID_ARTICULO}&id2=${articulo.ID_POST_DOC}" role="button">Editar mi Articulo</a>
+                                                            <a class="btn btn-danger" href="ArticuloDelete.htm?id=${articulo.ID_ARTICULO}&id2=${articulo.ID_POST_DOC}" role="button">Eliminar mi Articulo</a>
                                                         </th>
                                                             
                                                     </tr>
