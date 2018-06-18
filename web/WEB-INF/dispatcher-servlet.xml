@@ -21,12 +21,15 @@
             <props>
 
                  
-                 <prop key="login.htm">LoginController</prop>
-                <prop key="index.htm">indexController</prop> 
+                <prop key="login.htm">LoginController</prop>
+                <prop key="index.htm">indexController</prop>
+                <prop key="validarLogin.htm">LoginController</prop> 
                                 
               <!--URL de EMPRESA-->
                 <prop key="EMPRESA/actualizar_Empresa.htm">ActualizarEmpresaController</prop>
+                <prop key="EMPRESA/HomeEmpresa.htm">HomeEmpresaController</prop>
                 <prop key="signup.htm">SignupEmpresaController</prop>
+                
                 <!--Fin URL EMPRESA-->                         
                 
 
@@ -58,6 +61,9 @@
     <!--Controller para EMPRESA-->
     <bean name="SignupEmpresaController"
           class="Controlador.Empresa.SignupEmpresaController"
+    />
+     <bean name="HomeEmpresaController"
+          class="Controlador.Empresa.HomeEmpresaController"
     />
     <bean name="ActualizarEmpresaController"
           class="Controlador.Empresa.ActualizarEmpresaController"

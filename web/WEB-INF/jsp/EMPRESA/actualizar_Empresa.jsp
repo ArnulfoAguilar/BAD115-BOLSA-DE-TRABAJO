@@ -2,7 +2,7 @@
 
 <%@include file="/WEB-INF/jsp/include/Principal/taglib.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page session="" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,78 +44,61 @@
                  
                   <div class="col-lg-12">
                       <section class="panel">
-                          <header class="panel-heading alert alert-warning">DATOS DE ACCESO
-                          </header>
+                          
+                          
                           <div class="panel-body">
-                          <form class="form-horizontal tasi-form" method="post">
-                                  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Usuario</label>
-                                      <div class="col-sm-4">
-                                          <input type="text" disabled="yes" name="emailUsuario" class="form-control">
-                                      </div>
-                                       <label class="col-sm-2 col-sm-2 control-label">Contraseña</label>
-                                      <div class="col-sm-4">
-                                          <input type="password" disabled="yes" name="passwUsuario" class="form-control">
-                                      </div>
-                                  </div>
-                
-                              
+                          <form class="form-horizontal tasi-form" method="post">            
+                              <c:forEach var="SELECT_EMPRESA" items="${SELECT_EMPRESA}">
                               <header class="panel-heading alert alert-warning">DATOS DE LA EMPRESA
                           </header>
                               <br>
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Nombre Comercial</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="nombreEmpresa" class="form-control">
+                                          <input type="text" name="nombreEmpresa" class="form-control" VALUE="${SELECT_EMPRESA.NOMBRE_COMERCIAL}">
                                       </div>
                                   </div>
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Razon Social</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="razonSocial" class="form-control">
+                                          <input type="text" name="razonSocial" VALUE="${SELECT_EMPRESA.RAZON_SOCIAL}" class="form-control">
                                       </div>
                                   </div>
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">NIT</label>
                                       <div class="col-sm-4">
-                                          <input type="text" disabled="yes" disabled="yes" name="nitEmpresa" class="form-control">
+                                          <input type="text" disabled="yes" disabled="yes" placeholder="${SELECT_EMPRESA.NIT}" name="nitEmpresa" class="form-control">
                                       </div>
-                                      <label class="col-sm-2 col-sm-2 control-label">Giro de la empresa</label>
+                                      <!--label class="col-sm-2 col-sm-2 control-label">Giro de la empresa</label>
                                       
                                           <div class="col-sm-4">
                                           <select class="form-control m-bot15" name="giro_Empresa" id="giro_Empresa">
-                                              <c:forEach var="giro_Empresa" items="${giro_Empresa}">
-                                                 <option value="${giro_Empresa.ID_GIRO}">${giro_Empresa.NOMBRE_GIRO}</option>
-                                              </c:forEach>
+                                                 <!--option value="${giro_Empresa.ID_GIRO}">${giro_Empresa.NOMBRE_GIRO}</optioN>
                                           </select>
-                                      </div>
+                                      </div-->
                                   </div>
-                              <div class="form-group">
+                              <!--div class="form-group">
                                       <label class="col-sm-2 control-label">Departamento</label>
                                       <div class="col-sm-4">
-                                          <select class="form-control m-bot15" name="departamentoEmpresa" id="departamentoEmpresa">
-                                              <c:forEach var="Departamento" items="${Departamento}">
-                                                 <option value="${Departamento.ID_DEPTO}">${Departamento.NOMBRE_DEPTO}</option>
-                                              </c:forEach>
+                                          <select class="form-control m-bot15" name="departamentoEmpresa" id="departamentoEmpresa">                                   
+                                                 <!--option value="${Departamento.ID_DEPTO}">${Departamento.NOMBRE_DEPTO}</option>
                                           </select>
                                       </div>
                                       
                                       <label class="col-sm-2 control-label">Municipio</label>
                                       <div class="col-sm-4">
                                           <select class="form-control m-bot15" name="municipioEmpresa" id="municipioEmpresa">
-                                              <c:forEach var="Municipio" items="${Municipio}">
-                                                 <option value="${Municipio.ID_MUNI}">${Municipio.NOMBRE_MUNI}</option>
+                                                 <!--option value="${Municipio.ID_MUNI}">${Municipio.NOMBRE_MUNI}</option>
                                               
-                                              </c:forEach>
                                           </select>
                                       </div>
-                              </div>
+                              </div-->
                               
                              
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Direccion</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="direccionEmpresa" class="form-control">
+                                          <input type="text" name="direccionEmpresa" VALUE="${SELECT_EMPRESA.UBICACION}"class="form-control">
                                       </div>
                                   </div>
                               
@@ -123,27 +106,25 @@
                               
                               <header class="panel-heading alert alert-warning">TIPO DE EMPRESA
                               </header><br>
-                              <div class="form-group">
+                              <!--div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Tipo de empresa</label>
                                       <div class="col-sm-10">
                                           <select class="form-control m-bot15" name="tipoEmpresa" id="tipoEmpresa">
-                                              <c:forEach var="tipo_Empresa" items="${tipo_Empresa}">
-                                                 <option value="${tipo_Empresa.ID_TIPO_EMP}">${tipo_Empresa.NOMBRE_TIPO_EMP}</option>
-                                              
-                                              </c:forEach>
+                                                 <!--option value="${tipo_Empresa.ID_TIPO_EMP}">${tipo_Empresa.NOMBRE_TIPO_EMP}</option>
+
                                           </select>
                                       </div>
-                                  </div>
+                                  </div-->
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Descripcion</label>
                                       <div class="col-sm-10">
-                                          <textarea type="text" name="descripcionEmpresa" class="form-control"></textarea>
+                                          <textarea type="text" name="descripcionEmpresa" class="form-control">${SELECT_EMPRESA.DESCRIPCION}</textarea>
                                       </div>
                                   </div>
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Pagina Web</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="paginaWeb" class="form-control">
+                                          <input type="text" name="paginaWeb" VALUE="${SELECT_EMPRESA.PAGINA_WEB}" class="form-control">
                                       </div>
                                   </div>
                               
@@ -152,30 +133,31 @@
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">DUI</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="duiReclutador" class="form-control">
+                                          <input type="text" name="duiReclutador" VALUE="${SELECT_EMPRESA.DUI}" class="form-control">
                                       </div>
                                   </div>
                                <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Nombres</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="nombresReclutador" class="form-control">
+                                          <input type="text" name="nombresReclutador" VALUE="${SELECT_EMPRESA.NOMBRES}" class="form-control">
                                       </div>
                                   </div>
                                <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Apellidos</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="apellidosReclutador" class="form-control">
+                                          <input type="text" name="apellidosReclutador" VALUE="${SELECT_EMPRESA.APELLIDOS}" class="form-control">
                                       </div>
                                   </div>
                                <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Telefono</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="telefonoReclutador" class="form-control">
+                                          <input type="text" name="telefonoReclutador" VALUE="${SELECT_EMPRESA.TELEFONO}" class="form-control">
                                       </div>
                                   </div>
                               
-                              <button type="submit" class="col-sm-2 col-sm-offset-9 col-lg-2 col-lg-offset-9 btn btn-success" value="signup.htm" >Aceptar</button>
-                              </form>    
+                              <button type="submit" class="col-sm-2 col-sm-offset-9 col-lg-2 col-lg-offset-9 btn btn-success" value="${pageContext.request.contextPath}/EMPRESA/actualizar_Empresa.htm" >ACTUALIZAR</button>
+                          </c:forEach>    
+                          </form>    
                           </div>
                       </section>
                  </div>

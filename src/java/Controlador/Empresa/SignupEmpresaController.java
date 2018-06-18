@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import Controlador.Conectar;
-import Controlador.Conectar;
 
 @Controller
 public class SignupEmpresaController {
@@ -81,7 +80,7 @@ public class SignupEmpresaController {
             // Carga el driver de oracle
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             // Conecta con la base de datos XE con el usuario system y la contraseña password
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "bolsa_trabajo");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:ORCL", "BOLSA_TRABAJO", "bolsa_trabajo");
             // Llamada al procedimiento almacenado
             CallableStatement cst = cn.prepareCall("{call INSERTAR_EMPRESA(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             // Parametro 1 del procedimiento almacenado
