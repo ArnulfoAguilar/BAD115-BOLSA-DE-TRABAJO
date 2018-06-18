@@ -5,7 +5,7 @@
     <script src="<c:url value="/public/Principal/js/bootstrap.min.js"/>"></script>
     <script type="<c:url value="/public/Principal/text/javascript"/>" src="js/hover-dropdown.js"></script>
     <script defer src="<c:url value="/public/Principal/js/jquery.flexslider.js"/>"></script>
-    <script type="text/javascript" src="<c:url value="/public/assets/bxslider/jquery.bxslider.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/public/Principal/assets/bxslider/jquery.bxslider.js"/>"></script>
 
     <script type="text/javascript" src="<c:url value="/public/Principal/js/jquery.parallax-1.1.3.js"/>"></script>
 

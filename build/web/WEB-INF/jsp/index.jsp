@@ -10,7 +10,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="/public/img/favicon.png">
 
-    <title>FlatLab Frontend | Home</title>
+    <title>WorkZone</title>
 
     <%@include file="/WEB-INF/jsp/include/Principal/cssPrincipal.jsp" %>
   </head>
@@ -30,7 +30,7 @@
                           data-speed="400"
                           data-start="1500"
                           data-easing="easeOutBack">
-                         <img src="<c:url value="/public/img/banner/ban2.png"/>" alt="Image 1">
+                         <img src="<c:url value="/public/Principal/img/banner/ban2.png"/>" alt="Image 1">
                      </div>
                      <div class="caption lfr slide_title"
                           data-x="670"
@@ -38,7 +38,7 @@
                           data-speed="400"
                           data-start="1000"
                           data-easing="easeOutExpo">
-                         Clean & Creative
+                         Rapido y Efectivo
                      </div>
 
                      <div class="caption lfr slide_subtitle dark-text"
@@ -47,7 +47,7 @@
                           data-speed="400"
                           data-start="2000"
                           data-easing="easeOutExpo">
-                         A Responsive Frontend Template
+                         Encuentra las mejores ofertas de empleos
                      </div>
                      <div class="caption lfr slide_desc"
                           data-x="670"
@@ -55,17 +55,17 @@
                           data-speed="400"
                           data-start="2500"
                           data-easing="easeOutExpo">
-                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem <br>
-                         accusantium doloremque laudantium, totam rem aperiam,<br>
-                         eaque ipsa quae ablic jiener.
+                         Ingresa tus datos y tu hoja de vida  <br>
+                         en la oferta que mas te interese,<br>
+                         nosotros nos encargamos de los demas.
                      </div>
-                     <a class="caption lfr btn yellow slide_btn" href="http://thevectorlab.net/flatlab" target="_blank"
+                     <a class="caption lfr btn yellow slide_btn" href="login.htm" target="_blank"
                         data-x="670"
                         data-y="400"
                         data-speed="400"
                         data-start="3500"
                         data-easing="easeOutExpo">
-                         Watch Dashboard
+                         Login
                      </a>
 
                  </li>
@@ -73,14 +73,14 @@
                  <!-- 2nd slide  -->
                  <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="">
                      <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
-                     <img src="<c:url value="/public/img/banner/banner_bg.jpg"/>" alt="">
+                     <img src="<c:url value="/public/Principal/img/banner/banner_bg.jpg"/>" alt="">
                      <div class="caption lft slide_title"
                           data-x="10"
                           data-y="125"
                           data-speed="400"
                           data-start="1500"
                           data-easing="easeOutExpo">
-                         YAHOOOOO. TWO IN ONE
+                         TRABAJO SOÑADO
                      </div>
                      <div class="caption lft slide_subtitle dark-text"
                           data-x="10"
@@ -88,7 +88,7 @@
                           data-speed="400"
                           data-start="2000"
                           data-easing="easeOutExpo">
-                         Admin & Fronend in a single bundle
+                         Encuentra tu trabajo soñado
                      </div>
                      <div class="caption lft slide_desc dark-text"
                           data-x="10"
@@ -96,9 +96,9 @@
                           data-speed="400"
                           data-start="2500"
                           data-easing="easeOutExpo">
-                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem <br>
-                         accusantium doloremque laudantium, totam rem aperiam,<br>
-                         eaque ipsa quae ablic jiener.
+                         Estas a solo un clic de conseguir el trabajo que siempre soñaste <br>
+                         no pierdas mas el tiempo y empieza a ganar dinero,<br>
+                         aplica a nuestra lista de puestos.
                      </div>
                      <a class="caption lft slide_btn btn red slide_item_left" href="#" target="_blank"
                         data-x="10"
@@ -106,7 +106,7 @@
                         data-speed="400"
                         data-start="3000"
                         data-easing="easeOutExpo">
-                         Purchase Now
+                         Aplicar YA
                      </a>
                      <div class="caption lft start"
                           data-x="640"
@@ -114,7 +114,7 @@
                           data-speed="400"
                           data-start="2000"
                           data-easing="easeOutBack"  >
-                         <img src="<c:url value="/public/img/banner/man.png"/>" alt="man">
+                         <img src="<c:url value="/public/Principal/img/banner/man.png"/>" alt="man">
                      </div>
                      <div class="caption lft slide_item_right"
                           data-x="330"
@@ -122,21 +122,21 @@
                           data-speed="500"
                           data-start="5000"
                           data-easing="easeOutBack">
-                         <img src="<c:url value="/public/img/banner/test_man.png"/>" id="rev-hint2" alt="txt img">
+                         <img src="<c:url value="/public/Principal/img/banner/test_man.png"/>" id="rev-hint2" alt="txt img">
                      </div>
 
                  </li>
 
                  <!-- 3rd slide  -->
                  <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="9400" data-thumb="">
-                     <img src="<c:url value="/public/img/banner/red-bg.jpg"/>" alt="">
+                     <img src="<c:url value="/public/Principal/img/banner/red-bg.jpg"/>" alt="">
                      <div class="caption lfl slide_item_right"
                           data-x="10"
                           data-y="105"
                           data-speed="1200"
                           data-start="1500"
                           data-easing="easeOutBack">
-                         <img src="<c:url value="/public/img/banner/imac.png"/>" alt="Image 1">
+                         <img src="<c:url value="/public/Principal/img/banner/imac.png"/>" alt="Image 1">
                      </div>
                      <div class="caption lfl slide_item_right"
                           data-x="25"
@@ -144,7 +144,7 @@
                           data-speed="1200"
                           data-start="2000"
                           data-easing="easeOutBack">
-                         <img src="<c:url value="/public/img/banner/tab.png"/>" alt="Image 1">
+                         <img src="<c:url value="/public/Principal/img/banner/tab.png"/>" alt="Image 1">
                      </div>
                      <div class="caption lfl slide_item_right"
                           data-x="200"
@@ -152,7 +152,7 @@
                           data-speed="1200"
                           data-start="2500"
                           data-easing="easeOutBack">
-                         <img src="<c:url value="/public/img/banner/mobile.png"/>" alt="Image 1">
+                         <img src="<c:url value="/public/Principal/img/banner/mobile.png"/>" alt="Image 1">
                      </div>
                      <div class="caption lfl slide_item_right"
                           data-x="250"
@@ -160,7 +160,7 @@
                           data-speed="1200"
                           data-start="3000"
                           data-easing="easeOutBack">
-                         <img src="<c:url value="/public/img/banner/laptop.png"/>" alt="Image 1">
+                         <img src="<c:url value="/public/Principal/img/banner/laptop.png"/>" alt="Image 1">
                      </div>
                      <div class="caption lfl slide_item_right"
                           data-x="165"
@@ -168,7 +168,7 @@
                           data-speed="500"
                           data-start="5000"
                           data-easing="easeOutBack">
-                         <img src="<c:url value="/public/img/banner/text_imac.png"/>" id="rev-hint1" alt="Image 1">
+                         <img src="<c:url value="/public/Principal/img/banner/text_imac.png"/>" id="rev-hint1" alt="Image 1">
                      </div>
 
                      <div class="caption lfr slide_title slide_item_left yellow-txt"
@@ -177,7 +177,7 @@
                           data-speed="400"
                           data-start="3500"
                           data-easing="easeOutExpo">
-                         Full Responsive
+                         Todo desde tu casa
                      </div>
                      <div class="caption lfr slide_subtitle slide_item_left"
                           data-x="670"
@@ -185,7 +185,7 @@
                           data-speed="400"
                           data-start="4000"
                           data-easing="easeOutExpo">
-                         And Awesome Flat Design
+                         Desde casa
                      </div>
                      <div class="caption lfr slide_desc slide_item_left"
                           data-x="670"
@@ -193,9 +193,10 @@
                           data-speed="400"
                           data-start="4500"
                           data-easing="easeOutExpo">
-                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem <br>
-                         accusantium doloremque laudantium, totam rem aperiam,<br>
-                         eaque ipsa quae ablic jiener.
+                         Puedes acceder a nuestras listas de empleo <br>
+                         sin necesidad de salir de tu casa <br>
+                         todo el proceso es online <br>
+            
                      </div>
 
 
@@ -212,34 +213,34 @@
         <div class="row">
             <!--feature start-->
             <div class="text-center feature-head">
-                <h1>welcome to flatlab</h1>
-                <p>Professional html Template Perfect for Admin Dashboard</p>
+                <h1>WorkZone</h1>
+                <p>El sitio ideal para desenvolverse profesionalmente</p>
             </div>
             <div class="col-lg-4 col-sm-4">
                 <section>
                     <div class="f-box">
                         <i class=" icon-desktop"></i>
-                        <h2>responsive design</h2>
+                        <h2>registro gratuito</h2>
                     </div>
-                    <p class="f-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.</p>
+                    <p class="f-text">No necesitas ninguna inversion para empezar a aplicar a puestos de trabajo o a publicar tu vacante si eres dueño de empresa.</p>
                 </section>
             </div>
             <div class="col-lg-4 col-sm-4">
                 <section>
                     <div class="f-box active">
                         <i class=" icon-code"></i>
-                        <h2>friendly code</h2>
+                        <h2>Nuevos empleos diariamente</h2>
                     </div>
-                    <p class="f-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.</p>
+                    <p class="f-text">Todos los dias las empresas publican sus vacantes en la plataforma.</p>
                 </section>
             </div>
             <div class="col-lg-4 col-sm-4">
                 <section>
                     <div class="f-box">
                         <i class="icon-gears"></i>
-                        <h2>fully customizable</h2>
+                        <h2>Completa tu perfil profesional</h2>
                     </div>
-                    <p class="f-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.</p>
+                    <p class="f-text">Debes tener tu informacion actualizada para que las empresas vean lo bueno que eres!.</p>
                 </section>
             </div>
             <!--feature end-->
@@ -249,181 +250,32 @@
             <div class="quote">
                 <div class="col-lg-9 col-sm-9">
                     <div class="quote-info">
-                        <h1>developer friendly code</h1>
-                        <p>Bundled with awesome features, UI resource unlimited colors, advanced theme options & much more!</p>
+                        <h1>User-Friendly</h1>
+                        <p>Navega por todas nuestras pantallas adaptables a todos los dispositivos!</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-3">
-                    <a href="#" class="btn btn-danger purchase-btn">Purchase now</a>
+                    <a href="#" class="btn btn-danger purchase-btn">Navega Ahora</a>
                 </div>
             </div>
             <!--quote end-->
         </div>
     </div>
-
-
-    <!--property start-->
-    <div class="property gray-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-sm-6 text-center">
-                    <img src="<c:url value="/public/img/property-img.png"/>" alt="">
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <h1>flat & modern trend design</h1>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error sit voluptatem accusantiu.</p>
-                    <a href="javascript:;" class="btn btn-purchase">Purchase now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--property end-->
-
      <div class="container">
-
-        <div class="row">
-            <div class="col-lg-6">
-                <!--tab start-->
-                <section class="panel tab">
-                    <header class="panel-heading tab-bg-dark-navy-blue">
-                        <ul class="nav nav-tabs nav-justified ">
-                            <li class="active">
-                                <a data-toggle="tab" href="#news">
-                                    News
-                                </a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#events">
-                                    Events
-                                </a>
-                            </li>
-                            <li class="">
-                                <a data-toggle="tab" href="#notice-board">
-                                    Notice board
-                                </a>
-                            </li>
-                        </ul>
-                    </header>
-                    <div class="panel-body">
-                        <div class="tab-content tasi-tab">
-                            <div id="news" class="tab-pane active">
-                                <article class="media">
-                                    <a class="pull-left thumb p-thumb">
-                                        <img src="<c:url value="/public/img/product1.jpg"/>" alt="">
-                                    </a>
-                                    <div class="media-body">
-                                        <a href="#" class=" p-head">News Tittle goes here</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-                                </article>
-                                <article class="media">
-                                    <a class="pull-left thumb p-thumb">
-                                        <img src="<c:url value="/public/img/product2.png"/>" alt="">
-                                    </a>
-                                    <div class="media-body">
-                                        <a href="#" class=" p-head">News Tittle goes here 2</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. simsut dorlor</p>
-                                    </div>
-                                </article>
-                                <article class="media">
-                                    <a class="pull-left thumb p-thumb">
-                                        <img src="<c:url value="/public/img/product1.jpg"/>" alt="">
-                                    </a>
-                                    <div class="media-body">
-                                        <a href="#" class=" p-head">News Tittle goes here 3</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. sumon ahmed</p>
-                                    </div>
-                                </article>
-                            </div>
-                            <div id="events" class="tab-pane">
-                                <article class="media">
-                                    <a class="pull-left thumb p-thumb">
-                                        <!--image goes here-->
-                                    </a>
-                                    <div class="media-body">
-                                        <a href="#" class="cmt-head">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                                        <p> <i class="icon-time"></i> 1 hours ago</p>
-                                    </div>
-                                </article>
-                                <article class="media">
-                                    <a class="pull-left thumb p-thumb">
-                                        <!--image goes here-->
-                                    </a>
-                                    <div class="media-body">
-                                        <a href="#" class="cmt-head">Nulla vel metus scelerisque ante sollicitudin commodo</a>
-                                        <p> <i class="icon-time"></i> 23 mins ago</p>
-                                    </div>
-                                </article>
-                                <article class="media">
-                                    <a class="pull-left thumb p-thumb">
-                                        <!--image goes here-->
-                                    </a>
-                                    <div class="media-body">
-                                        <a href="#" class="cmt-head">Donec lacinia congue felis in faucibus. </a>
-                                        <p> <i class="icon-time"></i> 15 mins ago</p>
-                                    </div>
-                                </article>
-                            </div>
-                            <div id="notice-board" class="tab-pane ">
-                                <p>Notice board goes here Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.</p>
-                                <p>Notice board goes here Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--tab end-->
-            </div>
-            <div class="col-lg-6">
-                <!--testimonial start-->
-                <div class="about-testimonial boxed-style about-flexslider ">
-                    <section class="slider">
-                        <div class="flexslider">
-                            <ul class="slides about-flex-slides">
-                                <li>
-                                    <div class="about-testimonial-image ">
-                                        <img alt="" src="<c:url value="/public/img/testimonial-img-1.jpg"/>">
-                                    </div>
-                                    <a class="about-testimonial-author" href="#">Ericson Reagan</a>
-                                    <span class="about-testimonial-company">ABC Realestate LLC</span>
-                                    <div class="about-testimonial-content">
-                                        <p class="about-testimonial-quote">
-                                            Pellentesque et pulvinar enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet, accumsan eu nulla. Nullam tempor lectus a ligula lobortis pretium. Donec ut purus sed tortor malesuada venenatis eget eget lorem.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="about-testimonial-image ">
-                                        <img alt="" src="<c:url value="/public/img/avatar2.jpg"/>">
-                                    </div>
-                                    <a class="about-testimonial-author" href="#">Jonathan Smith</a>
-                                    <span class="about-testimonial-company">DEF LLC</span>
-                                    <div class="about-testimonial-content">
-                                        <p class="about-testimonial-quote">
-                                            Pellentesque et pulvinar enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet, accumsan eu nulla. Nullam tempor lectus a ligula lobortis pretium. Donec ut purus sed tortor malesuada venenatis eget eget lorem.
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                </div>
-                <!--testimonial end-->
-            </div>
-        </div>
 
         <!--recent work start-->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="r-work">Recent Work</h2>
+                <h2 class="r-work">Ofertas de Empleo Recientes</h2>
                 <ul class="bxslider">
                     <li>
                         <div class="element item view view-tenth" data-zlname="reverse-effect">
-                            <img src="<c:url value="/public/img/works/img1.jpg"/>" alt="" />
+                            <img src="<c:url value="/public/Principal/img/works/img1.jpg"/>" alt="" />
                             <div class="mask">
                                 <a data-zl-popup="link" href="javascript:;">
                                     <i class="icon-link"></i>
                                 </a>
-                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/img/works/img1.jpg"/>">
+                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/Principal/img/works/img1.jpg"/>">
                                     <i class="icon-search"></i>
                                 </a>
                             </div>
@@ -431,12 +283,12 @@
                     </li>
                     <li>
                         <div class="element item view view-tenth" data-zlname="reverse-effect">
-                            <img src="<c:url value="/public/img/works/img2.jpg"/>" alt="" />
+                            <img src="<c:url value="/public/Principal/img/works/img2.jpg"/>" alt="" />
                             <div class="mask">
                                 <a data-zl-popup="link" href="javascript:;">
                                     <i class="icon-link"></i>
                                 </a>
-                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/img/works/img2.jpg"/>">
+                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/Principal/img/works/img2.jpg"/>">
                                     <i class="icon-search"></i>
                                 </a>
                             </div>
@@ -444,12 +296,12 @@
                     </li>
                     <li>
                         <div class="element item view view-tenth" data-zlname="reverse-effect">
-                            <img src="<c:url value="/public/img/works/img3.jpg"/>" alt="" />
+                            <img src="<c:url value="/public/Principal/img/works/img3.jpg"/>" alt="" />
                             <div class="mask">
                                 <a data-zl-popup="link" href="javascript:;">
                                     <i class="icon-link"></i>
                                 </a>
-                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/img/works/img3.jpg"/>">
+                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/Principal/img/works/img3.jpg"/>">
                                     <i class="icon-search"></i>
                                 </a>
                             </div>
@@ -457,12 +309,12 @@
                     </li>
                     <li>
                         <div class="element item view view-tenth" data-zlname="reverse-effect">
-                            <img src="<c:url value="/public/img/works/img4.jpg"/>" alt="" />
+                            <img src="<c:url value="/public/Principal/img/works/img4.jpg"/>" alt="" />
                             <div class="mask">
                                 <a data-zl-popup="link" href="javascript:;">
                                     <i class="icon-link"></i>
                                 </a>
-                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/img/works/img4.jpg"/>">
+                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/Principal/img/works/img4.jpg"/>">
                                     <i class="icon-search"></i>
                                 </a>
                             </div>
@@ -470,12 +322,12 @@
                     </li>
                     <li>
                         <div class="element item view view-tenth" data-zlname="reverse-effect">
-                            <img src="<c:url value="/public/img/works/img5.jpg"/>" alt="" />
+                            <img src="<c:url value="/public/Principal/img/works/img5.jpg"/>" alt="" />
                             <div class="mask">
                                 <a data-zl-popup="link" href="javascript:;">
                                     <i class="icon-link"></i>
                                 </a>
-                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/img/works/img5.jpg"/>">
+                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/Principal/img/works/img5.jpg"/>">
                                     <i class="icon-search"></i>
                                 </a>
                             </div>
@@ -483,12 +335,12 @@
                     </li>
                     <li>
                         <div class="element item view view-tenth" data-zlname="reverse-effect">
-                            <img src="<c:url value="/public/img/works/img6.jpg"/>" alt="" />
+                            <img src="<c:url value="/public/Principal/img/works/img6.jpg"/>" alt="" />
                             <div class="mask">
                                 <a data-zl-popup="link" href="javascript:;">
                                     <i class="icon-link"></i>
                                 </a>
-                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/img/works/img6.jpg"/>">
+                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/Principal/img/works/img6.jpg"/>">
                                     <i class="icon-search"></i>
                                 </a>
                             </div>
@@ -496,12 +348,12 @@
                     </li>
                     <li>
                         <div class="element item view view-tenth" data-zlname="reverse-effect">
-                            <img src="<c:url value="/public/img/works/img7.jpg"/>" alt="" />
+                            <img src="<c:url value="/public/Principal/img/works/img7.jpg"/>" alt="" />
                             <div class="mask">
                                 <a data-zl-popup="link" href="javascript:;">
                                     <i class="icon-link"></i>
                                 </a>
-                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/img/works/img7.jpg"/>">
+                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/Principal/img/works/img7.jpg"/>">
                                     <i class="icon-search"></i>
                                 </a>
                             </div>
@@ -509,12 +361,12 @@
                     </li>
                     <li>
                         <div class="element item view view-tenth" data-zlname="reverse-effect">
-                            <img src="<c:url value="/public/img/works/img1.jpg"/>" alt="" />
+                            <img src="<c:url value="/public/Principal/img/works/img1.jpg"/>" alt="" />
                             <div class="mask">
                                 <a data-zl-popup="link" href="javascript:;">
                                     <i class="icon-link"></i>
                                 </a>
-                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/img/works/img1.jpg"/>">
+                                <a data-zl-popup="link2" class="fancybox" rel="group" href="<c:url value="/public/Principal/img/works/img1.jpg"/>">
                                     <i class="icon-search"></i>
                                 </a>
                             </div>
@@ -531,32 +383,11 @@
      <section class="parallax1">
          <div class="container">
              <div class="row">
-                 <h1>“And here i am using my own lungs like a sucker. How is education supposed to make <br>
-                     me feel smarter?”</h1>
+                 <h1>“Aqui va una frase motivacional”</h1>
              </div>
          </div>
      </section>
      <!--parallax end-->
-
-     <div class="container">
-         <!--clients start-->
-         <div class="clients">
-             <div class="container">
-                 <div class="row">
-                     <div class="col-lg-12 text-center">
-                         <ul class="list-unstyled">
-                             <li><a href="#"><img src="<c:url value="/public/img/clients/logo1.png"/>" alt=""></a></li>
-                             <li><a href="#"><img src="<c:url value="/public/img/clients/logo2.png"/>" alt=""></a></li>
-                             <li><a href="#"><img src="<c:url value="/public/img/clients/logo3.png"/>" alt=""></a></li>
-                             <li><a href="#"><img src="<c:url value="/public/img/clients/logo4.png"/>" alt=""></a></li>
-                             <li><a href="#"><img src="<c:url value="/public/img/clients/logo5.png"/>" alt=""></a></li>
-                         </ul>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <!--clients end-->
-     </div>
 
      <!--container end-->
 

@@ -25,10 +25,15 @@ public class Conectar {
      try {
          OracleDataSource ods = new OracleDataSource();
          
-         ods.setURL("jdbc:oracle:thin:@//localhost:1521/XE");
+         //ods.setURL("jdbc:oracle:thin:@//localhost:1521/XE");
+         ods.setURL("jdbc:oracle:thin:@//localhost:1521/orcl");
          ods.setUser("BOLSA_TRABAJO");
+<<<<<<< HEAD
          ods.setPassword("BOLSA_TRABAJO");
          //Connection cn= ods.getConnection();
+=======
+         ods.setPassword("bolsa_trabajo");
+>>>>>>> Empresa_Arnulfo
         return ods;
          
      } catch (SQLException ex) {

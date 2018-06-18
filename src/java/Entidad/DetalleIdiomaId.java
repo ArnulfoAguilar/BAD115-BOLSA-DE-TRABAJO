@@ -1,5 +1,5 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -13,27 +13,17 @@ import javax.persistence.Embeddable;
 public class DetalleIdiomaId  implements java.io.Serializable {
 
 
-     private BigDecimal idIdioma;
      private String idPostDoc;
+     private BigDecimal idIdioma;
 
     public DetalleIdiomaId() {
     }
 
-    public DetalleIdiomaId(BigDecimal idIdioma, String idPostDoc) {
-       this.idIdioma = idIdioma;
+    public DetalleIdiomaId(String idPostDoc, BigDecimal idIdioma) {
        this.idPostDoc = idPostDoc;
+       this.idIdioma = idIdioma;
     }
    
-
-
-    @Column(name="ID_IDIOMA", nullable=false, precision=22, scale=0)
-    public BigDecimal getIdIdioma() {
-        return this.idIdioma;
-    }
-    
-    public void setIdIdioma(BigDecimal idIdioma) {
-        this.idIdioma = idIdioma;
-    }
 
 
     @Column(name="ID_POST_DOC", nullable=false, length=200)
@@ -46,21 +36,31 @@ public class DetalleIdiomaId  implements java.io.Serializable {
     }
 
 
+    @Column(name="ID_IDIOMA", nullable=false, precision=22, scale=0)
+    public BigDecimal getIdIdioma() {
+        return this.idIdioma;
+    }
+    
+    public void setIdIdioma(BigDecimal idIdioma) {
+        this.idIdioma = idIdioma;
+    }
+
+
    public boolean equals(Object other) {
          if ( (this == other ) ) return true;
 		 if ( (other == null ) ) return false;
 		 if ( !(other instanceof DetalleIdiomaId) ) return false;
 		 DetalleIdiomaId castOther = ( DetalleIdiomaId ) other; 
          
-		 return ( (this.getIdIdioma()==castOther.getIdIdioma()) || ( this.getIdIdioma()!=null && castOther.getIdIdioma()!=null && this.getIdIdioma().equals(castOther.getIdIdioma()) ) )
- && ( (this.getIdPostDoc()==castOther.getIdPostDoc()) || ( this.getIdPostDoc()!=null && castOther.getIdPostDoc()!=null && this.getIdPostDoc().equals(castOther.getIdPostDoc()) ) );
+		 return ( (this.getIdPostDoc()==castOther.getIdPostDoc()) || ( this.getIdPostDoc()!=null && castOther.getIdPostDoc()!=null && this.getIdPostDoc().equals(castOther.getIdPostDoc()) ) )
+ && ( (this.getIdIdioma()==castOther.getIdIdioma()) || ( this.getIdIdioma()!=null && castOther.getIdIdioma()!=null && this.getIdIdioma().equals(castOther.getIdIdioma()) ) );
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + ( getIdIdioma() == null ? 0 : this.getIdIdioma().hashCode() );
          result = 37 * result + ( getIdPostDoc() == null ? 0 : this.getIdPostDoc().hashCode() );
+         result = 37 * result + ( getIdIdioma() == null ? 0 : this.getIdIdioma().hashCode() );
          return result;
    }   
 

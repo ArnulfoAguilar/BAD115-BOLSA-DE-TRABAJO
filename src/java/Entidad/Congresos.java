@@ -1,5 +1,5 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -25,8 +25,8 @@ public class Congresos  implements java.io.Serializable {
 
 
      private BigDecimal idCongreso;
-     private Candidato candidato;
      private Participacion participacion;
+     private Candidato candidato;
      private String pais;
      private String lugar;
      private String anfitrion;
@@ -41,10 +41,10 @@ public class Congresos  implements java.io.Serializable {
     public Congresos(BigDecimal idCongreso) {
         this.idCongreso = idCongreso;
     }
-    public Congresos(BigDecimal idCongreso, Candidato candidato, Participacion participacion, String pais, String lugar, String anfitrion, Date fechaInicio, Date fechaFin, String tema) {
+    public Congresos(BigDecimal idCongreso, Participacion participacion, Candidato candidato, String pais, String lugar, String anfitrion, Date fechaInicio, Date fechaFin, String tema) {
        this.idCongreso = idCongreso;
-       this.candidato = candidato;
        this.participacion = participacion;
+       this.candidato = candidato;
        this.pais = pais;
        this.lugar = lugar;
        this.anfitrion = anfitrion;
@@ -66,16 +66,6 @@ public class Congresos  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_POST_DOC")
-    public Candidato getCandidato() {
-        return this.candidato;
-    }
-    
-    public void setCandidato(Candidato candidato) {
-        this.candidato = candidato;
-    }
-
-@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="ID_PARTICIPACION")
     public Participacion getParticipacion() {
         return this.participacion;
@@ -83,6 +73,16 @@ public class Congresos  implements java.io.Serializable {
     
     public void setParticipacion(Participacion participacion) {
         this.participacion = participacion;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_POST_DOC")
+    public Candidato getCandidato() {
+        return this.candidato;
+    }
+    
+    public void setCandidato(Candidato candidato) {
+        this.candidato = candidato;
     }
 
     

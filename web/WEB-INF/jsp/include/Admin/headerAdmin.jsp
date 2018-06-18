@@ -5,7 +5,11 @@
                 <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
+<<<<<<< HEAD
             <a href="index.htm" class="logo">Work<span>Zone</span></a>
+=======
+            <a href="${pageContext.request.contextPath}" class="logo">Work<span>Zone</span></a>
+>>>>>>> Empresa_Arnulfo
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -15,10 +19,10 @@
             <div class="top-nav ">
                 <!--search & user info start-->
                 <ul class="nav pull-right top-menu">
-                    <li>
+                    <!--<li>
                         <input type="text" class="form-control search" placeholder="Search">
-                    </li>
-                    <!-- user login dropdown start-->
+                    </li>-->
+                    <!-- user login dropdown start
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <img alt="" src="img/avatar1_small.jpg">

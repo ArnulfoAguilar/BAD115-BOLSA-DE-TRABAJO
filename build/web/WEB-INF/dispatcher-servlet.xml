@@ -20,11 +20,10 @@
         <property name="mappings">
             <props>
 
-                 <prop key="index.htm">indexController</prop>
-                <prop key="Empresa.htm">EmpresaController</prop>
-                 <prop key="login.htm">LoginController</prop>
-                 <prop key="signup.htm">LoginController</prop>
+                 
+                <prop key="login.htm">LoginController</prop>
                 <prop key="index.htm">indexController</prop>
+
                 <prop key="Empresa.htm">EmpresaController</prop> 
                                          
                 <prop key="PerfilCandidato.htm">CandidatoController</prop>
@@ -36,6 +35,16 @@
                 <prop key="listaOferta.htm">OfertaEmpleoController</prop>
                 <prop key="editarOferta.htm">OfertaEmpleoController</prop>
 
+                <prop key="validarLogin.htm">LoginController</prop> 
+                                
+              <!--URL de EMPRESA-->
+                <prop key="EMPRESA/actualizar_Empresa.htm">ActualizarEmpresaController</prop>
+                <prop key="EMPRESA/HomeEmpresa.htm">HomeEmpresaController</prop>
+                <prop key="signup.htm">SignupEmpresaController</prop>
+                
+                <!--Fin URL EMPRESA-->                         
+                
+
             </props>
         </property>
     </bean>
@@ -43,7 +52,8 @@
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
-          p:suffix=".jsp" />
+          p:suffix=".jsp"         
+    />
 
     <!--
     The index controller.
@@ -53,19 +63,33 @@
           p:viewName="index" />
     
     <bean name="EmpresaController"
-
           class="Controlador.EmpresaController"
     />
     <bean name="LoginController"
           class="Controlador.LoginController"
     />
-
     
+<<<<<<< HEAD
     <bean name="CandidatoController"
             class="Controlador.CandidatoController"/>
     
     <!--bean de la oferta empleo y lista Oferta-->
     <bean name="OfertaEmpleoController"
             class="Controlador.OfertaEmpleoController"/>
+=======
+    
+    <!--Controller para EMPRESA-->
+    <bean name="SignupEmpresaController"
+          class="Controlador.Empresa.SignupEmpresaController"
+    />
+     <bean name="HomeEmpresaController"
+          class="Controlador.Empresa.HomeEmpresaController"
+    />
+    <bean name="ActualizarEmpresaController"
+          class="Controlador.Empresa.ActualizarEmpresaController"
+    />
+    <!--/Controller para EMPRESA-->
+    
+>>>>>>> Empresa_Arnulfo
 
 </beans>

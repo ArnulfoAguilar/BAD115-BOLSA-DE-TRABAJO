@@ -27,20 +27,18 @@
   <body class="login-body">
 
     <div class="container">
-
-      <form class="form-signin" action="index.html">
+        <div class="btn btn-danger">
+            ${ERRORS}
+        </div>
+        <form class="form-signin" action="<c:url value='j_spring_security_check'/>"  method="POST">
         <h2 class="form-signin-heading">sign in now</h2>
         <div class="login-wrap">
-            <input type="text" class="form-control" placeholder="User ID" autofocus>
-            <input type="password" class="form-control" placeholder="Password">
-            <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right">
-                    <a data-toggle="modal" href="#myModal"> Forgot Password?</a>
-
-                </span>
-            </label>
-            <button class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
+            <input type="email" class="form-control" placeholder="E-mail" id="username" name="username" autofocus>
+            <input type="password" class="form-control" placeholder="password" id="password" name="password">
+        
+                
+            <button class="btn btn-lg btn-login btn-block" type="submit">Entra</button>
            
             <div class="registration">
                 Aun no tienes una cuenta?
@@ -52,7 +50,7 @@
         </div>
 
           <!-- Modal -->
-          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+          <!--div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
               <div class="modal-dialog">
                   <div class="modal-content">
                       <div class="modal-header">
@@ -84,4 +82,5 @@
 
 
   </body>
-</html>
+</html-->
+    
