@@ -25,6 +25,9 @@ public class Telefono  implements java.io.Serializable {
      private TelefonoId id;
      private Candidato candidato;
      private TipoTelefono tipoTelefono;
+     
+     private Integer tipo;
+     private Integer numero;
 
     public Telefono() {
     }
@@ -73,6 +76,28 @@ public class Telefono  implements java.io.Serializable {
         this.tipoTelefono = tipoTelefono;
     }
 
+    public Integer getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Integer tipo) {
+        this.tipo = tipo;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+   
+    
+    
+
+    
+    
 
 
 

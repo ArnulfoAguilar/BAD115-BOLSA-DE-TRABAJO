@@ -11,7 +11,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Añadir Numero</title>
+    <title>Añadir Oferta</title>
 
     <%@include file="/WEB-INF/jsp/include/Admin/cssAdmin.jsp" %>
     <!-- Custom styles for this template -->
@@ -71,30 +71,63 @@
                                       </li>
                                   </ul>
                               </div>${identificador}
-                              <form:form method="POST" commandName="telefono" class="form-horizontal" id="default" >
+                              <form:form method="POST" commandName="oferta" class="form-horizontal" id="default" >
                                   <fieldset title="Paso 1" class="step" id="default-step-0">
                                       <legend> </legend>
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Tipo de Numero Telefonico</label>
+                                          <label class="col-lg-2 control-label">Nivel de estudio</label>
                                           <div class="col-lg-10">
-                                              <form:select path="tipo">
-                                               <form:option value="0">Seleccione... </form:option>
-                                                    <c:forEach items="${Tipos}" var="tipo">
-                                                        <form:option value="${tipo.ID_TIPO}"><c:out value="${tipo.NOMBRE_TIPO}"/></form:option>
+                                              <form:select path="nivel">
+                                                    <c:forEach items="${Niveles}" var="nivel">
+                                                        <form:option value="${nivel.ID_NIVEL_ESTUDIO}"><c:out value="${nivel.NOMBRE_NIVEL_ESTUDIO}"/></form:option>
                                                     </c:forEach>   
                                               </form:select>
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Numero Telefonico</label>
+                                          <label class="col-lg-2 control-label">Area de estudio</label>
                                           <div class="col-lg-10">
-                                              <form:input pattern="[0-9]{8}" title="El numero no es correcto" maxlength="8" 
-                                                          class="form-control" path="numero" placeholder="Numero" required="true"/>
+                                              <form:select path="area">
+                                                    <c:forEach items="${Areas}" var="area">
+                                                        <form:option value="${area.ID_AREA_ESTUDIO}"><c:out value="${area.NOMBRE_AREA_ESTUDIO}"/></form:option>
+                                                    </c:forEach>   
+                                              </form:select>
                                           </div>
                                       </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Vacantes</label>
+                                          <div class="col-lg-10">
+                                              <form:input class="form-control" path="vacantes" placeholder="Vacantes" required="true"/>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Descripcion</label>
+                                          <div class="col-lg-10">
+                                              <form:input class="form-control" path="descripcion" placeholder="Descripcion" required="true"/>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Tipo de contrato</label>
+                                          <div class="col-lg-10">
+                                              <form:input class="form-control" path="tipoContrato" placeholder="Tipo de contrato" required="true"/>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Salario</label>
+                                          <div class="col-lg-10">
+                                              <form:input class="form-control" path="salario" placeholder="Salario" required="true"/>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">NIT</label>
+                                          <div class="col-lg-10">
+                                              <form:input class="form-control" path="nit" placeholder="NIT" required="true"/>
+                                          </div>
+                                      </div>
+                                          
                                       
                                   </fieldset>
-                                 <form:button class="finish btn btn-danger">Registrar Numero Telefonico</form:button>
+                                 <form:button class="finish btn btn-danger">Registrar Oferta</form:button>
                           </form:form>
                           </div>
                       </section>

@@ -6,7 +6,7 @@
 package Controlador;
 
 import Entidad.Articulo;
-import Entidad.Telefono;
+import Entidad.Oferta;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,55 +24,58 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class TelefonoController {
+public class OfertaController {
     private JdbcTemplate jdbcTemplate;
 
-    public TelefonoController() {
+    public OfertaController() {
         Conectar con = new Conectar();
         this.jdbcTemplate = new JdbcTemplate(con.conectar());
     }
-    @RequestMapping(value = "TelefonoIndex.htm", method = RequestMethod.GET)
-    public ModelAndView TelefonoIndex(
+    
+    @RequestMapping(value = "OfertaIndex.htm", method = RequestMethod.GET)
+    public ModelAndView OfertaIndex(
             HttpServletRequest request
     ) {
-        List telefonos = null;
+        List ofertas = null;
         List Errores = null;
         try {
-            telefonos = this.jdbcTemplate.queryForList("select * from TELEFONO where ID_POST_DOC = "+request.getParameter("id"));
+            ofertas = this.jdbcTemplate.queryForList("select * from OFERTA");
         } catch (Exception ex) {
             Errores.add("Error. No hay acceso a la BD" + ex.toString());
         }
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("Candidatos/Telefonos/TelefonoIndex");
-        mav.addObject("Telefonos", telefonos);
+        mav.setViewName("Ofertas/OfertaIndex");
+        mav.addObject("Ofertas", ofertas);
         mav.addObject("Errores", Errores);
         mav.addObject("id", request.getParameter("id"));
         return mav;
     }
     
-    @RequestMapping(value = "TelefonoAdd.htm", method = RequestMethod.GET)
-    public ModelAndView TelefonoAdd(HttpServletRequest request) {
+    @RequestMapping(value = "OfertaAdd.htm", method = RequestMethod.GET)
+    public ModelAndView ArticuloAdd(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("Candidatos/Telefonos/TelefonoAdd");
-        mav.addObject("telefono", new Telefono());
+        mav.setViewName("Ofertas/OfertaAdd");
+        mav.addObject("oferta", new Oferta());
         String id = request.getParameter("id");
-        List tipos = null;
+        mav.addObject("identificador", id);
+        List areas = null;
+        List niveles = null;
         List Errores = null;
         try {
-            tipos = this.jdbcTemplate.queryForList("select * from TIPO_TELEFONO");
+            areas = this.jdbcTemplate.queryForList("select * from AREA_DE_ESTUDIO");
+            niveles = this.jdbcTemplate.queryForList("select * from NIVEL_ESTUDIO");
         } catch (Exception ex) {
             Errores.add("Error. No hay acceso a la BD" + ex.toString());
         }
-        mav.addObject("Tipos", tipos);
-        mav.addObject("Errores", Errores);
-        mav.addObject("identificador", id);
+        mav.addObject("Areas",areas);
+        mav.addObject("Niveles",niveles);
         return mav;
     }
     
-    @RequestMapping(value = "TelefonoAdd.htm", method = RequestMethod.POST)
-    public ModelAndView TelefonoAddPost(
+    @RequestMapping(value = "OfertaAdd.htm", method = RequestMethod.POST)
+    public ModelAndView OfertaAddPost(
             HttpServletRequest request,
-            @ModelAttribute("telefono") Telefono t,
+            @ModelAttribute("oferta") Oferta o,
             BindingResult result,
             SessionStatus status,
             ModelMap model
@@ -84,17 +87,20 @@ public class TelefonoController {
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call PR_INSERT_TELEFONO(?,?,?)}");
-            cst.setInt(1, t.getTipo());
-            cst.setString(2, id);
-            cst.setInt(3, t.getNumero());
+            CallableStatement cst = cn.prepareCall("{call PR_INSERT_OFERTA(?,?,?,?,?,?,?)}");
+            cst.setInt(1, o.getArea());
+            cst.setInt(2, o.getNivel());
+            cst.setInt(3, o.getVacantes());
+            cst.setString(4, o.getDescripcion());
+            cst.setString(5, o.getTipoContrato());
+            cst.setDouble(6, o.getSalario());
+            cst.setInt(7, o.getNit());
             cst.execute();
             cn.close();
-            return new ModelAndView("redirect:" + "TelefonoIndex.htm?id="+id);
+            return new ModelAndView("redirect:" + "OfertaIndex.htm");
         } catch (SQLException ex) {
             model.addAttribute("Errores", "Error al cerrar conexion o ejecutar "+ex.toString());
-            return new ModelAndView("redirect:" + "TelefonoIndex.htm?id="+id).addObject("Errores", "Error al cerrar conexion o ejecutar "+ex.toString());
-            
+            return new ModelAndView("redirect:/Error.htm");
         }
         
     }

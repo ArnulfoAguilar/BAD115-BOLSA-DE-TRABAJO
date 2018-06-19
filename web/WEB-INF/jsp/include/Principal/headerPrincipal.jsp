@@ -14,6 +14,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Reclutadores</a></li>
                         <li><a href="CandidatoIndex.htm">Candidatos</a></li>                                     
+                        <li><a href="OfertaIndex.htm">Ofertas</a></li>                                     
                         <li><a href="login.htm">LogIn</a></li>
                         <li><a href="signup.htm">SignUp</a></li>
                         

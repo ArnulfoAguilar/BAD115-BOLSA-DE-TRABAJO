@@ -39,6 +39,12 @@ public class Oferta  implements java.io.Serializable {
      private BigDecimal tieneExamen;
      private Set<Aspirante> aspirantes = new HashSet<Aspirante>(0);
      private Set<Examen> examens = new HashSet<Examen>(0);
+     private Integer nivel;
+     private Integer area;
+     private Integer vacantes;
+     private String tipoContrato;
+     private Double salario;
+     private Integer nit;
 
     public Oferta() {
     }
@@ -162,6 +168,57 @@ public class Oferta  implements java.io.Serializable {
     public void setExamens(Set<Examen> examens) {
         this.examens = examens;
     }
+
+    public Integer getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Integer nivel) {
+        this.nivel = nivel;
+    }
+
+    public Integer getArea() {
+        return area;
+    }
+
+    public void setArea(Integer area) {
+        this.area = area;
+    }
+
+    public Integer getVacantes() {
+        return vacantes;
+    }
+
+    public void setVacantes(Integer vacantes) {
+        this.vacantes = vacantes;
+    }
+
+    public String getTipoContrato() {
+        return tipoContrato;
+    }
+
+    public void setTipoContrato(String tipoContrato) {
+        this.tipoContrato = tipoContrato;
+    }
+
+    public Double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(Double salario) {
+        this.salario = salario;
+    }
+
+    public Integer getNit() {
+        return nit;
+    }
+
+    public void setNit(Integer nit) {
+        this.nit = nit;
+    }
+    
+    
+    
 
 
 
