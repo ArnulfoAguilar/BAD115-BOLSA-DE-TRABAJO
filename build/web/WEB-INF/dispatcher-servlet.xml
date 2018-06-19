@@ -27,7 +27,7 @@
                                 
               <!--URL de EMPRESA-->
                 <prop key="EMPRESA/actualizar_Empresa.htm">ActualizarEmpresaController</prop>
-                <prop key="EMPRESA/HomeEmpresa.htm">HomeEmpresaController</prop>
+                <prop key="EMPRESA/homeEmpresa.htm">HomeEmpresaController</prop>
                 <prop key="signup.htm">SignupEmpresaController</prop>
                 
                 <!--Fin URL EMPRESA-->                         

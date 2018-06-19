@@ -4,7 +4,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
                   <li>
-                      <a class="active" href="${pageContext.request.contextPath}/EMPRESA/HomeEmpresa.htm">
+                      <a class="active" href="${pageContext.request.contextPath}/EMPRESA/homeEmpresa.htm">
                           <i class="icon-dashboard"></i>
                           <span>Inicio</span>
                       </a>

@@ -19,7 +19,7 @@ public class HomeEmpresaController {
         this.jdbcTemplate=new JdbcTemplate(con.conectar());
     }
     
-    @RequestMapping(value="EMPRESA/HomeEmpresa.htm", method=RequestMethod.GET)
+    @RequestMapping(value="EMPRESA/homeEmpresa.htm", method=RequestMethod.GET)
     public ModelAndView signup()
     {  
         ModelAndView mav=new ModelAndView();

@@ -59,12 +59,12 @@ public class LoginController {
         
         if (listaUser.size() > 0) {
             ModelAndView v = new ModelAndView();
-            v.setViewName("EMPRESA/HomeEmpresa");
+            v.setViewName("redirect:/EMPRESA/homeEmpresa.htm");
             v.addObject("lista_datos_usu", listaUser);
             return v;
         } else {
-            ModelAndView v = new ModelAndView("index");
-            v.addObject("mjs", "<div style='color: red;'>ERROR, usuario no existe.</div>");
+            ModelAndView v = new ModelAndView("redirect:/login.htm");
+            //v.addObject("mjs", "<div style='color: red;'>ERROR, usuario no existe.</div>");
             return v;
         }
 }
