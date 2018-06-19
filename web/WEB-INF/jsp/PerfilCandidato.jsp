@@ -48,6 +48,7 @@
                                 <a href="#myModal" data-toggle="modal" class="btn btn-shadow btn-success btn-block">Formación Académica</a>
                                 <a href="LogrosIndex.htm?id=${candidato.idPostDoc}" class="btn btn-shadow btn-success btn-block">Logros</a>
                                 <a href="ArticuloIndex.htm?id=${candidato.idPostDoc}" class="btn btn-shadow btn-success btn-block">Articulos</a>
+                                <a href="TelefonoIndex.htm?id=${candidato.idPostDoc}" class="btn btn-shadow btn-success btn-block">Numeros Telefonicos</a>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Experiencia Laboral</button>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Experiencia Académica</button>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Nuevo Idioma</button>

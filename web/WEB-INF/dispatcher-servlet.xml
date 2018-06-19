@@ -42,6 +42,11 @@
                 <prop key="ArticuloEdit.htm">ArticuloController</prop>
                 <prop key="ArticuloDelete.htm">ArticuloController</prop>
                 
+                <prop key="TelefonoIndex.htm">TelefonoController</prop>
+                <prop key="TelefonoAdd.htm">TelefonoController</prop>
+                <prop key="TelefonoEdit.htm">TelefonoController</prop>
+                <prop key="TelefonoDelete.htm">TelefonoController</prop>
+                
                 <prop key="Error.htm">PagesController</prop>
 
             </props>
@@ -73,5 +78,6 @@
     <bean name="LogrosController" class="Controlador.LogrosController"/>
     <bean name="PagesController" class="Controlador.PagesController"/>
     <bean name="ArticuloController" class="Controlador.ArticuloController"/>
+    <bean name="TelefonoController" class="Controlador.TelefonoController"/>
 
 </beans>
