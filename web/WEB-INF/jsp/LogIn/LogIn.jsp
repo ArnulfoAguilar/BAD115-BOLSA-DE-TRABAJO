@@ -38,7 +38,7 @@
             <input type="password" class="form-control" placeholder="password" id="password" name="password">
         
                 
-            <button class="btn btn-lg btn-login btn-block" type="submit" value="validarLogin.htm">Entra</button>
+            <button class="btn btn-lg btn-login btn-block" name="btn" type="submit" value="validarLogin.htm">Entra</button>
            
             <div class="registration">
                 Aun no tienes una cuenta?

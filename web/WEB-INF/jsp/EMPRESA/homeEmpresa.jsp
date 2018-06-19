@@ -39,7 +39,8 @@
           <section class="wrapper site-min-height">
               <!-- page start-->
        
-              <h1>HOME</h1>
+              <h1>${username}</h1>
+              <h2>${tiempo}</h2>
 
               <!-- page end-->
           </section>

@@ -7,6 +7,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,7 +48,8 @@ public class ActualizarEmpresaController {
     
     @RequestMapping(value="EMPRESA/actualizar_Empresa.htm", method=RequestMethod.POST)
     public ModelAndView actualizar(
-
+            HttpServletRequest hrequest, 
+            HttpServletResponse hresponse,
             //@RequestParam("duiReclutador") String DUI,
             @RequestParam("razonSocial") String RAZON_SOCIAL,
             @RequestParam("nombreEmpresa") String NOMBRE_COMERCIAL,
@@ -56,13 +60,37 @@ public class ActualizarEmpresaController {
             @RequestParam("apellidosReclutador") String APELLIDOS,
             @RequestParam("telefonoReclutador") String TELEFONO
     ) throws SQLException {
+        
+        HttpSession session=hrequest.getSession();
+        
+        ModelAndView mav=new ModelAndView();
+        if(hrequest.getSession(false)==null){
+            mav.setViewName("LogIn/LogIn");
+            return mav;
+        }else{
+        String alert =(String)session.getAttribute("User");
+         if((Long)session.getLastAccessedTime() < (Long)session.getAttribute("tiempo")+600000){
+                mav.setViewName("EMPRESA/homeEmpresa");
+                Long tiempo =(Long)session.getLastAccessedTime();
+                mav.addObject("username", alert);
+                mav.addObject("tiempo", tiempo);
+        }else{
+           session.invalidate();
+            ModelAndView v = new ModelAndView("redirect:/login.htm");  
+        }
+        }
+
+    
+        
+        
+        
             int resultado=0;
             Connection cn = null;
         try {
             // Carga el driver de oracle
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             // Conecta con la base de datos XE con el usuario system y la contraseña password
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "bolsa_trabajo");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             // Llamada al procedimiento almacenado
             CallableStatement cst = cn.prepareCall("{call ACTUALIZAR_EMPRESA(?,?,?,?,?,?,?,?)}");
             // Parametro 1 del procedimiento almacenado
@@ -74,6 +102,7 @@ public class ActualizarEmpresaController {
             cst.setString(6, NOMBRES);
             cst.setString(7, APELLIDOS);
             cst.setString(8, TELEFONO);
+            cst.setString(9, (String)session.getAttribute("User"));
             // Ejecuta el procedimiento almacenado
             cst.execute();
             resultado=1;
@@ -87,7 +116,7 @@ public class ActualizarEmpresaController {
             }
         }
         if (resultado == 1) {
-            return new ModelAndView("redirect:/index.htm");
+            return mav;
         } else {
             return new ModelAndView("ERROR");
 }
