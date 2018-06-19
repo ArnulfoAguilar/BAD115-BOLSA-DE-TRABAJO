@@ -35,10 +35,6 @@
                                users-by-username-query="select emai_usuario as username, contrasena as password from usuarios where emai_usuario=?;"
                                authorities-by-username-query="select US.EMAI_USUARIO as username, r.nombre_rol as rolename from usuarios us, roles r where US.EMAI_USUARIO=R.NOMBRE_USUARIO and us.emai_usuario=?;" 
             />
-            <!--user-service>
-             <user name="arnulfo@gmail.com" password="Ar13004" authorities="Admin" />   
-            </user-service-->
-             
         </authentication-provider>
     </authentication-manager>
     

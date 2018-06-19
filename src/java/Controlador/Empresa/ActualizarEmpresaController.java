@@ -62,7 +62,7 @@ public class ActualizarEmpresaController {
             // Carga el driver de oracle
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             // Conecta con la base de datos XE con el usuario system y la contraseña password
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:ORCL", "BOLSA_TRABAJO", "bolsa_trabajo");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "bolsa_trabajo");
             // Llamada al procedimiento almacenado
             CallableStatement cst = cn.prepareCall("{call ACTUALIZAR_EMPRESA(?,?,?,?,?,?,?,?)}");
             // Parametro 1 del procedimiento almacenado

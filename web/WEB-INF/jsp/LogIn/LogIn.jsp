@@ -30,7 +30,7 @@
         <div class="btn btn-danger">
             ${ERRORS}
         </div>
-        <form class="form-signin" action="<c:url value='j_spring_security_check'/>"  method="POST">
+        <form class="form-signin" action="<c:url value='validarLogin.htm'/>"  method="POST">
         <h2 class="form-signin-heading">sign in now</h2>
         <div class="login-wrap">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
@@ -38,7 +38,7 @@
             <input type="password" class="form-control" placeholder="password" id="password" name="password">
         
                 
-            <button class="btn btn-lg btn-login btn-block" type="submit">Entra</button>
+            <button class="btn btn-lg btn-login btn-block" type="submit" value="validarLogin.htm">Entra</button>
            
             <div class="registration">
                 Aun no tienes una cuenta?

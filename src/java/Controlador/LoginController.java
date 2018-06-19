@@ -1,8 +1,13 @@
 
 package Controlador;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 import javax.swing.JOptionPane;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,12 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import servicio.servicio;
 
 
 @Controller
 public class LoginController {
     
     
+    public servicio serv;
     private JdbcTemplate jdbcTemplate;
     
     public LoginController()
@@ -47,26 +54,18 @@ public class LoginController {
     )
              
     {
-        String usuario="Arnulfo@gmail.com";
-        String contra="pass";
-        ModelAndView mav=new ModelAndView();
-     
-    
-            
-        try {
-                if (usuario.equals(Username)) {
-                    mav.setViewName("index");            
-                }
-                else {
-                    mav.addObject("ERRORS","ERRORS");
-                    mav.setViewName("LogIn/LogIn");            
-                }
-            } catch (Exception ex) {
-                String error = ex.toString();
-            mav.addObject("ERRORS",error); 
-            
-            }
+        String loginSql="select emai_usuario, contrasena from Usuarios where emai_usuario=? and contrasena=?";
+        List listaUser = jdbcTemplate.queryForList(loginSql, Username, Password);
         
-    return mav;
+        if (listaUser.size() > 0) {
+            ModelAndView v = new ModelAndView();
+            v.setViewName("EMPRESA/HomeEmpresa");
+            v.addObject("lista_datos_usu", listaUser);
+            return v;
+        } else {
+            ModelAndView v = new ModelAndView("index");
+            v.addObject("mjs", "<div style='color: red;'>ERROR, usuario no existe.</div>");
+            return v;
+        }
 }
 }
