@@ -1,5 +1,5 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -24,7 +25,9 @@ public class Candidato  implements java.io.Serializable {
 
 
      private String idPostDoc;
-     private Logros logros;
+     private Municipio municipio;
+     private Usuarios usuarios;
+     private Genero genero;
      private String primerNombre;
      private String segundoNombre;
      private String tercerNombre;
@@ -36,6 +39,7 @@ public class Candidato  implements java.io.Serializable {
      private Set<Aspirante> aspirantes = new HashSet<Aspirante>(0);
      private Set<Articulo> articulos = new HashSet<Articulo>(0);
      private Set<Formacion> formacions = new HashSet<Formacion>(0);
+     private Set<Logros> logroses = new HashSet<Logros>(0);
      private Set<Congresos> congresoses = new HashSet<Congresos>(0);
      private Set<ExperienciaLaboral> experienciaLaborals = new HashSet<ExperienciaLaboral>(0);
      private Set<Ofimatica> ofimaticas = new HashSet<Ofimatica>(0);
@@ -50,9 +54,11 @@ public class Candidato  implements java.io.Serializable {
     public Candidato(String idPostDoc) {
         this.idPostDoc = idPostDoc;
     }
-    public Candidato(String idPostDoc, Logros logros, String primerNombre, String segundoNombre, String tercerNombre, String primerApellido, String segundoApellido, String casadaApellido, String direccion, String email, Set<Aspirante> aspirantes, Set<Articulo> articulos, Set<Formacion> formacions, Set<Congresos> congresoses, Set<ExperienciaLaboral> experienciaLaborals, Set<Ofimatica> ofimaticas, Set<DetalleIdioma> detalleIdiomas, Set<Recomendaciones> recomendacioneses, Set<Telefono> telefonos) {
+    public Candidato(String idPostDoc, Municipio municipio, Usuarios usuarios, Genero genero, String primerNombre, String segundoNombre, String tercerNombre, String primerApellido, String segundoApellido, String casadaApellido, String direccion, String email, Set<Aspirante> aspirantes, Set<Articulo> articulos, Set<Formacion> formacions, Set<Logros> logroses, Set<Congresos> congresoses, Set<ExperienciaLaboral> experienciaLaborals, Set<Ofimatica> ofimaticas, Set<DetalleIdioma> detalleIdiomas, Set<Recomendaciones> recomendacioneses, Set<Telefono> telefonos) {
        this.idPostDoc = idPostDoc;
-       this.logros = logros;
+       this.municipio = municipio;
+       this.usuarios = usuarios;
+       this.genero = genero;
        this.primerNombre = primerNombre;
        this.segundoNombre = segundoNombre;
        this.tercerNombre = tercerNombre;
@@ -64,6 +70,7 @@ public class Candidato  implements java.io.Serializable {
        this.aspirantes = aspirantes;
        this.articulos = articulos;
        this.formacions = formacions;
+       this.logroses = logroses;
        this.congresoses = congresoses;
        this.experienciaLaborals = experienciaLaborals;
        this.ofimaticas = ofimaticas;
@@ -85,13 +92,35 @@ public class Candidato  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_LOGROS")
-    public Logros getLogros() {
-        return this.logros;
+    @JoinColumns( { 
+        @JoinColumn(name="ID_MUNI", referencedColumnName="ID_MUNI"), 
+        @JoinColumn(name="ID_DEPTO", referencedColumnName="ID_DEPTO") } )
+    public Municipio getMunicipio() {
+        return this.municipio;
     }
     
-    public void setLogros(Logros logros) {
-        this.logros = logros;
+    public void setMunicipio(Municipio municipio) {
+        this.municipio = municipio;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_USUARIO")
+    public Usuarios getUsuarios() {
+        return this.usuarios;
+    }
+    
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_GENERO")
+    public Genero getGenero() {
+        return this.genero;
+    }
+    
+    public void setGenero(Genero genero) {
+        this.genero = genero;
     }
 
     
@@ -199,6 +228,15 @@ public class Candidato  implements java.io.Serializable {
     
     public void setFormacions(Set<Formacion> formacions) {
         this.formacions = formacions;
+    }
+
+@OneToMany(fetch=FetchType.LAZY, mappedBy="candidato")
+    public Set<Logros> getLogroses() {
+        return this.logroses;
+    }
+    
+    public void setLogroses(Set<Logros> logroses) {
+        this.logroses = logroses;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="candidato")

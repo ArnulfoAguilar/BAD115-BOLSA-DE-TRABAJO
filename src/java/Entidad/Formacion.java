@@ -1,5 +1,5 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -25,10 +25,10 @@ public class Formacion  implements java.io.Serializable {
 
 
      private BigDecimal idFormacion;
+     private NivelEstudio nivelEstudio;
      private AreaDeEstudio areaDeEstudio;
      private Candidato candidato;
      private EstadoFormacion estadoFormacion;
-     private NivelEstudio nivelEstudio;
      private String nombreCentro;
      private Date fechaInicio;
      private Date fechaFin;
@@ -40,12 +40,12 @@ public class Formacion  implements java.io.Serializable {
     public Formacion(BigDecimal idFormacion) {
         this.idFormacion = idFormacion;
     }
-    public Formacion(BigDecimal idFormacion, AreaDeEstudio areaDeEstudio, Candidato candidato, EstadoFormacion estadoFormacion, NivelEstudio nivelEstudio, String nombreCentro, Date fechaInicio, Date fechaFin) {
+    public Formacion(BigDecimal idFormacion, NivelEstudio nivelEstudio, AreaDeEstudio areaDeEstudio, Candidato candidato, EstadoFormacion estadoFormacion, String nombreCentro, Date fechaInicio, Date fechaFin) {
        this.idFormacion = idFormacion;
+       this.nivelEstudio = nivelEstudio;
        this.areaDeEstudio = areaDeEstudio;
        this.candidato = candidato;
        this.estadoFormacion = estadoFormacion;
-       this.nivelEstudio = nivelEstudio;
        this.nombreCentro = nombreCentro;
        this.fechaInicio = fechaInicio;
        this.fechaFin = fechaFin;
@@ -61,6 +61,16 @@ public class Formacion  implements java.io.Serializable {
     
     public void setIdFormacion(BigDecimal idFormacion) {
         this.idFormacion = idFormacion;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_NIVEL")
+    public NivelEstudio getNivelEstudio() {
+        return this.nivelEstudio;
+    }
+    
+    public void setNivelEstudio(NivelEstudio nivelEstudio) {
+        this.nivelEstudio = nivelEstudio;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
@@ -91,16 +101,6 @@ public class Formacion  implements java.io.Serializable {
     
     public void setEstadoFormacion(EstadoFormacion estadoFormacion) {
         this.estadoFormacion = estadoFormacion;
-    }
-
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_NIVEL")
-    public NivelEstudio getNivelEstudio() {
-        return this.nivelEstudio;
-    }
-    
-    public void setNivelEstudio(NivelEstudio nivelEstudio) {
-        this.nivelEstudio = nivelEstudio;
     }
 
     

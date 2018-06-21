@@ -4,12 +4,34 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
                   <li>
-                      <a class="active" href="index.html">
+                      <a class="active" href="${pageContext.request.contextPath}/EMPRESA/homeEmpresa.htm">
                           <i class="icon-dashboard"></i>
-                          <span>Dashboard</span>
+                          <span>Inicio</span>
                       </a>
                   </li>
-
+                  <li>
+                      <a class="" href="${pageContext.request.contextPath}/EMPRESA/actualizar_Empresa.htm">
+                          <i class="icon-edit"></i>
+                          <span>Editar Perfil</span>
+                      </a>
+                  </li>
+                  
+                  <li>
+                      <a class="" href="${pageContext.request.contextPath}/index.htm">
+                          <i class="icon-laptop"></i>
+                          <span>Mis Ofertas</span>
+                      </a>
+                  </li>
+                  
+                  <li>
+                      <a class="" href="${pageContext.request.contextPath}/index.htm">
+                          <i class="icon-tasks"></i>
+                          <span>Lista de Candidatos</span>
+                      </a>
+                  </li>
+                  
+                  
+              </ul><!--
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="icon-laptop"></i>
@@ -134,7 +156,7 @@
                       </a>
                   </li>
 
-                  <!--multi level menu start-->
+                  <!--multi level menu start
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="icon-sitemap"></i>
@@ -157,10 +179,11 @@
                           </li>
                       </ul>
                   </li>
-                  <!--multi level menu end-->
+                  <!--multi level menu end
 
               </ul>
               <!-- sidebar menu end-->
+              
           </div>
       </aside>
       <!--sidebar end-->

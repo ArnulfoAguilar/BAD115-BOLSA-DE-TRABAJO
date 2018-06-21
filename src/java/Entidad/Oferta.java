@@ -1,5 +1,5 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -30,12 +30,15 @@ public class Oferta  implements java.io.Serializable {
 
 
      private OfertaId id;
+     private NivelEstudio nivelEstudio;
      private AreaDeEstudio areaDeEstudio;
      private Empresa empresa;
-     private NivelEstudio nivelEstudio;
      private BigDecimal aniosExp;
+
      private Date fechaExpiracion;
      private String descripcion;
+
+
      private BigDecimal tieneExamen;
      private Set<Aspirante> aspirantes = new HashSet<Aspirante>(0);
      private Set<Examen> examens = new HashSet<Examen>(0);
@@ -54,14 +57,19 @@ public class Oferta  implements java.io.Serializable {
         this.id = id;
         this.empresa = empresa;
     }
-    public Oferta(OfertaId id, AreaDeEstudio areaDeEstudio, Empresa empresa, NivelEstudio nivelEstudio, BigDecimal aniosExp, Date fechaExpiracion, String descripcion, BigDecimal tieneExamen, Set<Aspirante> aspirantes, Set<Examen> examens) {
+    public Oferta(OfertaId id, NivelEstudio nivelEstudio, AreaDeEstudio areaDeEstudio, Empresa empresa, 
+            BigDecimal aniosExp, Integer vacantes, Date fechaExpiracion, String descripcion, 
+            String tipoContrato, Double salario, BigDecimal tieneExamen, Set<Aspirante> aspirantes, Set<Examen> examens) {
        this.id = id;
+       this.nivelEstudio = nivelEstudio;
        this.areaDeEstudio = areaDeEstudio;
        this.empresa = empresa;
-       this.nivelEstudio = nivelEstudio;
        this.aniosExp = aniosExp;
+       this.vacantes = vacantes;
        this.fechaExpiracion = fechaExpiracion;
        this.descripcion = descripcion;
+       this.tipoContrato = tipoContrato;
+       this.salario = salario;
        this.tieneExamen = tieneExamen;
        this.aspirantes = aspirantes;
        this.examens = examens;
@@ -79,6 +87,16 @@ public class Oferta  implements java.io.Serializable {
     
     public void setId(OfertaId id) {
         this.id = id;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_NIVEL_ESTUDIO")
+    public NivelEstudio getNivelEstudio() {
+        return this.nivelEstudio;
+    }
+    
+    public void setNivelEstudio(NivelEstudio nivelEstudio) {
+        this.nivelEstudio = nivelEstudio;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
@@ -101,16 +119,6 @@ public class Oferta  implements java.io.Serializable {
         this.empresa = empresa;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_NIVEL_ESTUDIO")
-    public NivelEstudio getNivelEstudio() {
-        return this.nivelEstudio;
-    }
-    
-    public void setNivelEstudio(NivelEstudio nivelEstudio) {
-        this.nivelEstudio = nivelEstudio;
-    }
-
     
     @Column(name="ANIOS_EXP", precision=22, scale=0)
     public BigDecimal getAniosExp() {
@@ -121,6 +129,8 @@ public class Oferta  implements java.io.Serializable {
         this.aniosExp = aniosExp;
     }
 
+    
+    
     @Temporal(TemporalType.DATE)
     @Column(name="FECHA_EXPIRACION", length=7)
     public Date getFechaExpiracion() {
@@ -140,6 +150,19 @@ public class Oferta  implements java.io.Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    
+    @Column(name="TIPO_CONTRATO", length=400)
+    public String getTipoContrato() {
+        return this.tipoContrato;
+    }
+    
+    public void setTipoContrato(String tipoContrato) {
+        this.tipoContrato = tipoContrato;
+    }
+
+    
+    
 
     
     @Column(name="TIENE_EXAMEN", precision=22, scale=0)
@@ -193,13 +216,7 @@ public class Oferta  implements java.io.Serializable {
         this.vacantes = vacantes;
     }
 
-    public String getTipoContrato() {
-        return tipoContrato;
-    }
-
-    public void setTipoContrato(String tipoContrato) {
-        this.tipoContrato = tipoContrato;
-    }
+   
 
     public Double getSalario() {
         return salario;

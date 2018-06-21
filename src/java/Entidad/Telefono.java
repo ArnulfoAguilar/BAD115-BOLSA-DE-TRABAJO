@@ -1,5 +1,5 @@
 package Entidad;
-// Generated 05-12-2018 07:16:50 PM by Hibernate Tools 4.3.1
+// Generated 06-02-2018 04:31:03 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.AttributeOverride;
@@ -23,7 +23,6 @@ public class Telefono  implements java.io.Serializable {
 
 
      private TelefonoId id;
-     private Candidato candidato;
      private TipoTelefono tipoTelefono;
      
      private Integer tipo;
@@ -36,10 +35,10 @@ public class Telefono  implements java.io.Serializable {
     public Telefono(TelefonoId id) {
         this.id = id;
     }
-    public Telefono(TelefonoId id, Candidato candidato, TipoTelefono tipoTelefono) {
+    public Telefono(TelefonoId id, TipoTelefono tipoTelefono, Candidato candidato) {
        this.id = id;
-       this.candidato = candidato;
        this.tipoTelefono = tipoTelefono;
+       
     }
    
      @EmbeddedId
@@ -54,16 +53,6 @@ public class Telefono  implements java.io.Serializable {
     
     public void setId(TelefonoId id) {
         this.id = id;
-    }
-
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_POST_DOC", insertable=false, updatable=false)
-    public Candidato getCandidato() {
-        return this.candidato;
-    }
-    
-    public void setCandidato(Candidato candidato) {
-        this.candidato = candidato;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
@@ -91,14 +80,6 @@ public class Telefono  implements java.io.Serializable {
     public void setNumero(Integer numero) {
         this.numero = numero;
     }
-
-   
-    
-    
-
-    
-    
-
 
 
 }

@@ -1,7 +1,7 @@
  <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2013 &copy; FlatLab by VectorLab.
+              BAD115 &copy; Bolsa de Trabajo.
               <a href="#" class="go-top">
                   <i class="icon-angle-up"></i>
               </a>
