@@ -42,12 +42,14 @@ public class Oferta  implements java.io.Serializable {
      private BigDecimal tieneExamen;
      private Set<Aspirante> aspirantes = new HashSet<Aspirante>(0);
      private Set<Examen> examens = new HashSet<Examen>(0);
+     //Añadido por propositos funcionales
      private Integer nivel;
      private Integer area;
      private Integer vacantes;
      private String tipoContrato;
      private Double salario;
      private Integer nit;
+     private Integer idOf;
 
     public Oferta() {
     }
@@ -232,6 +234,14 @@ public class Oferta  implements java.io.Serializable {
 
     public void setNit(Integer nit) {
         this.nit = nit;
+    }
+
+    public Integer getIdOf() {
+        return idOf;
+    }
+
+    public void setIdOf(Integer idOf) {
+        this.idOf = idOf;
     }
     
     

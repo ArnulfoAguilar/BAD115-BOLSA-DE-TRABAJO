@@ -74,8 +74,8 @@
                                                         <th>${oferta.TIPO_CONTRATO}</th>
                                                         <th>${oferta.SALARIO}</th>
                                                         <th>
-                                                            <a class="btn btn-warning" href="OfertaEdit.htm?id=${articulo.ID_ARTICULO}&id2=${articulo.ID_POST_DOC}" role="button">Editar mi Articulo</a>
-                                                            <a class="btn btn-danger" href="OfertaDelete.htm?id=${articulo.ID_ARTICULO}&id2=${articulo.ID_POST_DOC}" role="button">Eliminar mi Articulo</a>
+                                                            <a class="btn btn-warning" href="OfertaEdit.htm?id=${oferta.ID_OFERTA}" role="button">Editar mi Oferta</a>
+                                                            <a class="btn btn-danger" href="OfertaDelete.htm?id=${oferta.ID_OFERTA}" role="button">Eliminar mi Oferta</a>
                                                         </th>
                                                             
                                                     </tr>
