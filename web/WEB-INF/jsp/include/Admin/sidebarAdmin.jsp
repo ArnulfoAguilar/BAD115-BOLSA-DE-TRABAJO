@@ -1,4 +1,5 @@
- <!--sidebar start-->
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!--sidebar start-->
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
@@ -9,12 +10,16 @@
                           <span>Inicio</span>
                       </a>
                   </li>
+                  
+                  <c:if  test = "${NombreRol=='{NOMBRE_ROL=Empresa}'}">
+                 
                   <li>
                       <a class="" href="${pageContext.request.contextPath}/EMPRESA/actualizar_Empresa.htm">
                           <i class="icon-edit"></i>
                           <span>Editar Perfil</span>
                       </a>
                   </li>
+                  </c:if>
                   
                   <li>
                       <a class="" href="${pageContext.request.contextPath}/index.htm">

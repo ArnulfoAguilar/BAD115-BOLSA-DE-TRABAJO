@@ -2,6 +2,7 @@
 package Controlador.Empresa;
 
 import Controlador.Conectar;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +25,9 @@ public class HomeEmpresaController {
     }
     
     @RequestMapping(value="EMPRESA/homeEmpresa.htm", method=RequestMethod.GET)
-    public ModelAndView signup(HttpServletRequest hrequest, HttpServletResponse hresponse)
+    public ModelAndView signup(
+            HttpServletRequest hrequest, 
+            HttpServletResponse hresponse)
     {  
         ModelAndView mav=new ModelAndView();
        
@@ -34,12 +37,16 @@ public class HomeEmpresaController {
         }else{
             HttpSession session=hrequest.getSession();
         String DOCUMENTO =(String)session.getAttribute("DOC");
-         String USER =(String)session.getAttribute("USERNAME");  
+         String USER =(String)session.getAttribute("USERNAME");
+         String NombreRol =(String)session.getAttribute("nombre_rol");
+         
         mav.setViewName("EMPRESA/homeEmpresa");
-       Long tiempo =(Long)session.getLastAccessedTime();
         mav.addObject("DOC", DOCUMENTO);
         mav.addObject("USER", USER);
-
+        mav.addObject("NombreRol", NombreRol);
+        
+       
+ 
         //LISTA DE OFERTAS CREARAS
         String oferta="select id_oferta, vacantes, fecha_expiracion,o.descripcion, tipo_contrato,o.salario \n" +
                                 " from usuarios us join empresa em on US.EMAI_USUARIO=EM.EMAIL_USUARIO\n" +
@@ -55,9 +62,7 @@ public class HomeEmpresaController {
             System.out.println(ex.toString());
         }
         }
-        
         return mav;
         }
-        //return mav;
 
     }

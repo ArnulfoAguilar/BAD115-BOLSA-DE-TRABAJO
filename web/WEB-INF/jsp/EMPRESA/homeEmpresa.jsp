@@ -39,7 +39,7 @@
           <section class="wrapper site-min-height">
               <!-- page start-->
        
-              <h1>${USER}</h1>
+              <h1>${USER} ${NombreRol}</h1>
              
               <!--main content start-->
        <section id="main-content">
@@ -74,7 +74,7 @@
                                                     <tr>
                                                         <th>${oferta.ID_OFERTA}</th>
                                                         <th>${oferta.VACANTES}</th>
-                                                        <th></th>
+                                                        <th>${oferta.FECHA_EXPIRACION}</th>
                                                         <th>${oferta.DESCRIPCION}</th>
                                                         <th>${oferta.TIPO_CONTRATO}</th>
                                                         <th>${oferta.SALARIO}</th>
