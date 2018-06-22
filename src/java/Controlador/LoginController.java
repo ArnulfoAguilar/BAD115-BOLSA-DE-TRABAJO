@@ -41,14 +41,7 @@ public class LoginController {
     }
     
     
-     @RequestMapping(value = "/login.htm?error", method = RequestMethod.GET)
-    public String loginError(ModelMap model) {
-        JOptionPane.showMessageDialog(null, "llego al error");
-        model.addAttribute("ERRORS", "true");
-        return "login";
-
-    }
-
+ 
     
     @RequestMapping(value="validarLogin.htm", method=RequestMethod.POST)
     public ModelAndView Validarlogin(
@@ -64,15 +57,11 @@ public class LoginController {
         List listaUser = jdbcTemplate.queryForList(loginSql, Username, Password);
         ModelAndView v = new ModelAndView();
         if (listaUser.size() > 0) {
-            if(hrequest.getSession(false)!=null){
-                HttpSession session = hrequest.getSession();
-                session.setAttribute("User", Username);
             
-                Long tiempo =(Long)session.getLastAccessedTime();
-                session.setAttribute("tiempo", tiempo);
-                v.addObject("tiempo", tiempo);
+                HttpSession session = hrequest.getSession();
+                session.setAttribute("USERNAME", Username);
                 v.setViewName("redirect:/EMPRESA/homeEmpresa.htm");
-                v.addObject("lista_datos_usu", listaUser);
+               
                 //Lista para sacar el id_rol del usuario logeado
                 String idRolSql= "select id_rol from usuarios where emai_usuario=?";
                 List listaIdrol = jdbcTemplate.queryForList( idRolSql, Username);
@@ -82,10 +71,7 @@ public class LoginController {
                 String nombreRolSql = "select r.NOMBRE_ROL from roles r join USUARIOS u on R.ID_ROL=U.ID_ROL and emai_usuario=?";
                 List listaNombreRol = jdbcTemplate.queryForList(nombreRolSql, Username );
                 v.addObject("nombre_rol", listaNombreRol);
-                
-            }else{
-                 v.setViewName("LogIn/LogIn");     
-            }     
+                            
         } else {
             v.setViewName("LogIn/LogIn");   
         }  

@@ -33,18 +33,31 @@ public class HomeEmpresaController {
             return mav;
         }else{
             HttpSession session=hrequest.getSession();
-        String alert =(String)session.getAttribute("User");
-         if((Long)session.getLastAccessedTime() < (Long)session.getAttribute("tiempo")+600000){
+        String DOCUMENTO =(String)session.getAttribute("DOC");
+         String USER =(String)session.getAttribute("USERNAME");  
         mav.setViewName("EMPRESA/homeEmpresa");
        Long tiempo =(Long)session.getLastAccessedTime();
-        mav.addObject("username", alert);
-        mav.addObject("tiempo", tiempo);
-        }else{
-           session.invalidate();
-            ModelAndView v = new ModelAndView("redirect:/login.htm");  
+        mav.addObject("DOC", DOCUMENTO);
+        mav.addObject("USER", USER);
+
+        //LISTA DE OFERTAS CREARAS
+        String oferta="select id_oferta, vacantes, fecha_expiracion,o.descripcion, tipo_contrato,o.salario \n" +
+                                " from usuarios us join empresa em on US.EMAI_USUARIO=EM.EMAIL_USUARIO\n" +
+                                " join oferta o on EM.NIT=O.NIT\n" +
+                                " join NIVEL_ESTUDIO ni on O.ID_NIVEL_ESTUDIO=Ni.ID_NIVEL_ESTUDIO \n" +
+                                " join AREA_DE_ESTUDIO ar on AR.ID_AREA_ESTUDIO=O.ID_AREA_ESTUDIO\n" +
+                                " where US.EMAI_USUARIO=?";
+        try{
+        List OFERTAS_CREADAS=this.jdbcTemplate.queryForList(oferta,USER);
+        
+        mav.addObject("Oferta",OFERTAS_CREADAS);
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
         }
         }
+        
         return mav;
+        }
+        //return mav;
 
     }
-}

@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import Controlador.Conectar;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class SignupEmpresaController {
@@ -59,7 +62,7 @@ public class SignupEmpresaController {
         (
             @RequestParam("nitEmpresa") String NIT,
             @RequestParam("tipoEmpresa") String ID_TIPO_EMP,
-            @RequestParam("giroEmpresa") int ID_GIRO,
+            @RequestParam("giro_Empresa") int ID_GIRO,
             @RequestParam("duiReclutador") String DUI,
             @RequestParam("emailUsuario") String EMAIL_USUARIO,
             @RequestParam("passwUsuario") String PASSWORD,
@@ -72,7 +75,9 @@ public class SignupEmpresaController {
             @RequestParam("paginaWeb") String PAGINA_WEB,
             @RequestParam("nombresReclutador") String NOMBRES,
             @RequestParam("apellidosReclutador") String APELLIDOS,
-            @RequestParam("telefonoReclutador") String TELEFONO
+            @RequestParam("telefonoReclutador") String TELEFONO,
+            HttpServletRequest hrequest,
+            HttpServletResponse hresponse
         ) throws SQLException {
             int resultado=0;
             Connection cn = null;
@@ -107,18 +112,18 @@ public class SignupEmpresaController {
 
         } catch (SQLException ex) {
             resultado=0;
-        } finally {
-            try {
-                cn.close();
-            } catch (SQLException ex) {
-                cn.close();
-            }
-        }
-        if (resultado == 1) {
-            return new ModelAndView("redirect:/index.htm");
+            System.out.println(ex.toString());
+        } 
+         ModelAndView v = new ModelAndView();
+        if (resultado == 1) { 
+                HttpSession session = hrequest.getSession();
+                session.setAttribute("DOC", NIT);
+                session.setAttribute("USERNAME", EMAIL_USUARIO);
+                v.setViewName("redirect:/EMPRESA/homeEmpresa.htm");
         } else {
-            return new ModelAndView("ERROR");
-}
+            v.setViewName("LogIn/LogIn");
+        }
+        return v;
             
     }
 }
