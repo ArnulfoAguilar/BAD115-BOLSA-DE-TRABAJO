@@ -35,11 +35,11 @@ public class HomeEmpresaController {
             mav.setViewName("LogIn/LogIn");
             return mav;
         }else{
-            HttpSession session=hrequest.getSession();
+        HttpSession session=hrequest.getSession();
         String DOCUMENTO =(String)session.getAttribute("DOC");
-         String USER =(String)session.getAttribute("USERNAME");
-         String NombreRol =(String)session.getAttribute("nombre_rol");
-         
+        String USER =(String)session.getAttribute("USERNAME");
+        String NombreRol =(String)session.getAttribute("nombre_rol");
+        session.setAttribute("USERNAME", USER);
         mav.setViewName("EMPRESA/homeEmpresa");
         mav.addObject("DOC", DOCUMENTO);
         mav.addObject("USER", USER);

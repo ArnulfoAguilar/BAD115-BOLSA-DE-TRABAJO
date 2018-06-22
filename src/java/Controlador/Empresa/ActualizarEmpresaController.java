@@ -29,16 +29,20 @@ public class ActualizarEmpresaController {
     }
     
     @RequestMapping(value="EMPRESA/actualizar_Empresa.htm", method=RequestMethod.GET)
-    public ModelAndView traerdatos()
+    public ModelAndView traerdatos(
+            HttpServletRequest hrequest, 
+            HttpServletResponse hresponse)
     {  
         ModelAndView mav=new ModelAndView();
         
         //LISTA DE GIRO EMPRESA
-        String SELECT_Empresasql="select NIT,ID_TIPO_EMP,ID_GIRO,RE.DUI,ID_MUNI,EM.ID_DEPTO,\n" +
-            "RAZON_SOCIAL, NOMBRE_COMERCIAL,UBICACION,DESCRIPCION,\n" +
-            "PAGINA_WEB, EMAIL, NOMBRES,APELLIDOS,TELEFONO from EMPRESA em, RECLUTADOR re\n" +
-            "where EM.DUI=RE.DUI";
-        List SELECT_EMPRESA=this.jdbcTemplate.queryForList(SELECT_Empresasql);
+        String SELECT_Empresasql="select NIT,ID_TIPO_EMP,ID_GIRO,ID_MUNI,EM.ID_DEPTO,\n" +
+"            RAZON_SOCIAL, NOMBRE_COMERCIAL,UBICACION,DESCRIPCION\n" +
+"            PAGINA_WEB, EMAIL, email_usuario from EMPRESA em where email=?" ;
+        HttpSession session=hrequest.getSession();
+        String DOCUMENTO =(String)session.getAttribute("USERNAME");
+        mav.addObject("DOCUMENTO",DOCUMENTO);
+        List SELECT_EMPRESA=this.jdbcTemplate.queryForList(SELECT_Empresasql,DOCUMENTO);
         mav.addObject("SELECT_EMPRESA",SELECT_EMPRESA);
         mav.setViewName("EMPRESA/actualizar_Empresa");
         return mav;
@@ -50,7 +54,6 @@ public class ActualizarEmpresaController {
     public ModelAndView actualizar(
             HttpServletRequest hrequest, 
             HttpServletResponse hresponse,
-            //@RequestParam("duiReclutador") String DUI,
             @RequestParam("razonSocial") String RAZON_SOCIAL,
             @RequestParam("nombreEmpresa") String NOMBRE_COMERCIAL,
             @RequestParam("direccionEmpresa") String UBICACION,

@@ -45,7 +45,7 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           
-                          
+                          ${DOCUMENTO}
                           <div class="panel-body">
                           <form class="form-horizontal tasi-form" method="post">            
                               <c:forEach var="SELECT_EMPRESA" items="${SELECT_EMPRESA}">
@@ -128,7 +128,7 @@
                                       </div>
                                   </div>
                               
-                              <header class="panel-heading alert alert-warning">DATOS DE PERSONA DE CONTACTO
+                              <!--header class="panel-heading alert alert-warning">DATOS DE PERSONA DE CONTACTO
                               </header><br>
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">DUI</label>
@@ -153,7 +153,7 @@
                                       <div class="col-sm-10">
                                           <input type="text" name="telefonoReclutador" VALUE="${SELECT_EMPRESA.TELEFONO}" class="form-control">
                                       </div>
-                                  </div>
+                                  </div-->
                               
                               <button type="submit" class="col-sm-2 col-sm-offset-9 col-lg-2 col-lg-offset-9 btn btn-success" value="${pageContext.request.contextPath}/EMPRESA/actualizar_Empresa.htm" >ACTUALIZAR</button>
                           </c:forEach>    
