@@ -5,7 +5,7 @@
                 <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
-            <a href="${pageContext.request.contextPath}" class="logo"><span> ${username}</span></a>
+            <a href="${pageContext.request.contextPath}" class="logo"><span> ${USER}</span></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->

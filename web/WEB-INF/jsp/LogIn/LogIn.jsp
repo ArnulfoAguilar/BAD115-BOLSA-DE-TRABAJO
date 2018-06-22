@@ -28,7 +28,7 @@
 
     <div class="container">
         <div class="btn btn-danger">
-            ${ERRORS}
+            ${ERROR}
         </div>
         <form class="form-signin" action="<c:url value='validarLogin.htm'/>"  method="POST">
         <h2 class="form-signin-heading">sign in now</h2>

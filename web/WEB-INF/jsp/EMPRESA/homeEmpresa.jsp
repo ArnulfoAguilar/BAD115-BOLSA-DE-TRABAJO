@@ -38,9 +38,79 @@
        <section id="main-content">
           <section class="wrapper site-min-height">
               <!-- page start-->
-       
-              <h1>${username}</h1>
-              <h2>${tiempo}</h2>
+              <h1>${DOC}</h1>
+              <h1>${USER}</h1>
+                <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper site-min-height">
+              <!-- page start-->
+              <div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Seccion de Ofertas
+                              <a class="btn btn-success" href="OfertaAdd.htm" role="button">Añadir Oferta</a>
+                              ${Errores}
+                          </header>
+                          <div class="panel-body">
+                              
+                              <table  class="display table table-bordered table-striped" id="example">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Vacantes</th>
+                                                    <th>Fecha de expiracion</th>
+                                                    <th>Descripcion</th>
+                                                    <th>Tipo Contrato</th>
+                                                    <th>Salario</th>
+                                                    <th class="hidden-phone">Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                             
+                              
+                                                <c:forEach items="${Oferta}" var="oferta">
+                                                    <tr>
+                                                        <th>${oferta.ID_OFERTA}</th>
+                                                        <th>${oferta.VACANTES}</th>
+                                                        <th></th>
+                                                        <th>${oferta.DESCRIPCION}</th>
+                                                        <th>${oferta.TIPO_CONTRATO}</th>
+                                                        <th>${oferta.SALARIO}</th>
+                                                        <th>
+                                                            <a class="btn btn-warning" href="OfertaEdit.htm?id=${oferta.ID_OFERTA}" role="button">Editar mi Oferta</a>
+                                                            <a class="btn btn-danger" href="OfertaDelete.htm?id=${oferta.ID_OFERTA}" role="button">Eliminar mi Oferta</a>
+                                                        </th>
+                                                            
+                                                    </tr>
+                                                </c:forEach>
+                                            </tbody>
+                                            <tfoot hidden="true">
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Vacantes</th>
+                                                    <th>Fecha de expiracion</th>
+                                                    <th>Descripcion</th>
+                                                    <th>Tipo Contrato</th>
+                                                    <th>Salario</th>
+                                                    <th class="hidden-phone">Acciones</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                              
+                              
+                              <c:if test= "${Articulos == null}">
+                                  <p>Usted no posee ni un articulo<p>
+                              </c:if>
+                          </div>
+                      </section>
+                  </div>
+              </div>
+              <!-- page end-->
+          </section>
+      </section>
+<!--main content end-->
+              
 
               <!-- page end-->
           </section>

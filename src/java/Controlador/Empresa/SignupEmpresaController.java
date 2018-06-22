@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import Controlador.Conectar;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class SignupEmpresaController {
@@ -59,7 +62,7 @@ public class SignupEmpresaController {
         (
             @RequestParam("nitEmpresa") String NIT,
             @RequestParam("tipoEmpresa") String ID_TIPO_EMP,
-            @RequestParam("giroEmpresa") int ID_GIRO,
+            @RequestParam("giro_Empresa") String ID_GIRO,
             @RequestParam("duiReclutador") String DUI,
             @RequestParam("emailUsuario") String EMAIL_USUARIO,
             @RequestParam("passwUsuario") String PASSWORD,
@@ -72,7 +75,9 @@ public class SignupEmpresaController {
             @RequestParam("paginaWeb") String PAGINA_WEB,
             @RequestParam("nombresReclutador") String NOMBRES,
             @RequestParam("apellidosReclutador") String APELLIDOS,
-            @RequestParam("telefonoReclutador") String TELEFONO
+            @RequestParam("telefonoReclutador") String TELEFONO,
+            HttpServletRequest hrequest,
+            HttpServletResponse hresponse
         ) throws SQLException {
             int resultado=0;
             Connection cn = null;
@@ -80,13 +85,13 @@ public class SignupEmpresaController {
             // Carga el driver de oracle
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             // Conecta con la base de datos XE con el usuario system y la contraseña password
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             // Llamada al procedimiento almacenado
             CallableStatement cst = cn.prepareCall("{call INSERTAR_EMPRESA(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             // Parametro 1 del procedimiento almacenado
             cst.setString(1,NIT );
             cst.setInt(2,Integer.parseInt(ID_TIPO_EMP));
-            cst.setInt(3,ID_GIRO );
+            cst.setInt(3,Integer.parseInt(ID_GIRO) );
             cst.setString(4,DUI );
             cst.setString(5,EMAIL_USUARIO);
             cst.setString(6,PASSWORD );
@@ -106,19 +111,20 @@ public class SignupEmpresaController {
             resultado=1;
 
         } catch (SQLException ex) {
-            resultado=0;
-        } finally {
-            try {
-                cn.close();
-            } catch (SQLException ex) {
-                cn.close();
-            }
+            System.out.println(ex.toString());;
+        } finally {        
         }
-        if (resultado == 1) {
-            return new ModelAndView("redirect:/index.htm");
+        
+        ModelAndView v = new ModelAndView();
+        if (resultado == 1) { 
+            HttpSession session = hrequest.getSession();
+                session.setAttribute("DOC", NIT);
+                session.setAttribute("USERNAME", EMAIL_USUARIO);
+                v.setViewName("redirect:/EMPRESA/homeEmpresa.htm");
         } else {
-            return new ModelAndView("ERROR");
-}
+            v.setViewName("LogIn/LogIn");
+        }
+        return v;
             
     }
 }

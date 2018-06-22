@@ -40,14 +40,7 @@ public class LoginController {
        return new ModelAndView("LogIn/LogIn");
     }
     
-    
-     @RequestMapping(value = "/login.htm?error", method = RequestMethod.GET)
-    public String loginError(ModelMap model) {
-        JOptionPane.showMessageDialog(null, "llego al error");
-        model.addAttribute("ERRORS", "true");
-        return "login";
-
-    }
+   
 
     
     @RequestMapping(value="validarLogin.htm", method=RequestMethod.POST)
@@ -64,19 +57,18 @@ public class LoginController {
         List listaUser = jdbcTemplate.queryForList(loginSql, Username, Password);
         ModelAndView v = new ModelAndView();
         if (listaUser.size() > 0) {
-            if(hrequest.getSession(false)!=null){
+          
                 HttpSession session = hrequest.getSession();
-                session.setAttribute("User", Username);
-            
+                session.setAttribute("DOC", Username);
+                session.setAttribute("USERNAME", Username);
                 Long tiempo =(Long)session.getLastAccessedTime();
                 session.setAttribute("tiempo", tiempo);
                 v.addObject("tiempo", tiempo);
                 v.setViewName("redirect:/EMPRESA/homeEmpresa.htm");
-                v.addObject("lista_datos_usu", listaUser);
-            }else{
-                 v.setViewName("LogIn/LogIn");     
-            }     
+                v.addObject("lista_datos_usu", listaUser);  
+                 
         } else {
+            v.addObject("ERROR","BAD CREDENTIALS ");
             v.setViewName("LogIn/LogIn");   
         }  
          return v;
