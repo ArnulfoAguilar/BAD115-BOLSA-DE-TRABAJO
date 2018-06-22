@@ -34,12 +34,7 @@
       <!--sidebar start-->
       <%@include file="/WEB-INF/jsp/include/Admin/sidebarAdmin.jsp" %>
       <!--sidebar end-->
-      <!--main content start-->
-       <section id="main-content">
-          <section class="wrapper site-min-height">
-              <!-- page start-->
-       
-              <h1>${USER} ${NombreRol}</h1>
+      
              
               <!--main content start-->
        <section id="main-content">
@@ -47,6 +42,8 @@
       <section id="main-content">
           <section class="wrapper site-min-height">
               <!-- page start-->
+              <h1>${USER}</h1>
+      <h1>${NombreRol}</h1>
               <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
@@ -116,6 +113,7 @@
       <%@include file="/WEB-INF/jsp/include/Admin/footerAdmin.jsp" %>
       <!--footer end-->
   </section>
+              
 
    <%@include file="/WEB-INF/jsp/include/Admin/jsAdmin.jsp" %>
 
