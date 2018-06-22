@@ -41,9 +41,14 @@ public class ActualizarEmpresaController {
 "            PAGINA_WEB, EMAIL, email_usuario from EMPRESA em where email=?" ;
         HttpSession session=hrequest.getSession();
         String DOCUMENTO =(String)session.getAttribute("USERNAME");
-        mav.addObject("DOCUMENTO",DOCUMENTO);
+        String NombreRol =(String)session.getAttribute("NombreRol");
+        
+        
         List SELECT_EMPRESA=this.jdbcTemplate.queryForList(SELECT_Empresasql,DOCUMENTO);
         mav.addObject("SELECT_EMPRESA",SELECT_EMPRESA);
+        
+        mav.addObject("DOCUMENTO",DOCUMENTO);
+        mav.addObject("NombreRol", NombreRol);
         mav.setViewName("EMPRESA/actualizar_Empresa");
         return mav;
 

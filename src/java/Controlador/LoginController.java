@@ -69,7 +69,7 @@ public class LoginController {
                 
                 for(int i=0; i<listaNombreRol.size(); i++)
                 {
-                    System.out.println(listaNombreRol.get(i));
+                   
                     nombreRol=listaNombreRol.get(i).toString();
                     session.setAttribute("nombre_rol", nombreRol );
                 }

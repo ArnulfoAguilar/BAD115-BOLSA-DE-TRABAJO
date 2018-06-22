@@ -46,6 +46,7 @@
                       <section class="panel">
                           
                           ${DOCUMENTO}
+                          ${NombreRol}
                           <div class="panel-body">
                           <form class="form-horizontal tasi-form" method="post">            
                               <c:forEach var="SELECT_EMPRESA" items="${SELECT_EMPRESA}">

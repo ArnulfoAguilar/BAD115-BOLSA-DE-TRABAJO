@@ -39,7 +39,10 @@ public class HomeEmpresaController {
         String DOCUMENTO =(String)session.getAttribute("DOC");
         String USER =(String)session.getAttribute("USERNAME");
         String NombreRol =(String)session.getAttribute("nombre_rol");
+        
         session.setAttribute("USERNAME", USER);
+        session.setAttribute("NombreRol", NombreRol);
+        
         mav.setViewName("EMPRESA/homeEmpresa");
         mav.addObject("DOC", DOCUMENTO);
         mav.addObject("USER", USER);
