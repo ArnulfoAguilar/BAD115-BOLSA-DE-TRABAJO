@@ -60,7 +60,7 @@ public class LoginController {
              
     {
         
-        String loginSql="select emai_usuario, contrasena from Usuarios where emai_usuario=? and contrasena=?";
+        String loginSql="select emai_usuario, contrasena from usuari where emai_usuario=? and contrasena=?";
         List listaUser = jdbcTemplate.queryForList(loginSql, Username, Password);
         ModelAndView v = new ModelAndView();
         if (listaUser.size() > 0) {
@@ -73,6 +73,16 @@ public class LoginController {
                 v.addObject("tiempo", tiempo);
                 v.setViewName("redirect:/EMPRESA/homeEmpresa.htm");
                 v.addObject("lista_datos_usu", listaUser);
+                //Lista para sacar el id_rol del usuario logeado
+                String idRolSql= "select id_rol from usuarios where emai_usuario=?";
+                List listaIdrol = jdbcTemplate.queryForList( idRolSql, Username);
+                v.addObject("id_rol", listaIdrol);
+                
+                //Lista para sacar el nombre del rol
+                String nombreRolSql = "select r.NOMBRE_ROL from roles r join USUARIOS u on R.ID_ROL=U.ID_ROL and emai_usuario=?";
+                List listaNombreRol = jdbcTemplate.queryForList(nombreRolSql, Username );
+                v.addObject("nombre_rol", listaNombreRol);
+                
             }else{
                  v.setViewName("LogIn/LogIn");     
             }     

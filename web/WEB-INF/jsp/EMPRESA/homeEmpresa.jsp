@@ -41,6 +41,8 @@
        
               <h1>${username}</h1>
               <h2>${tiempo}</h2>
+              <h3>${listaIdrol}</h3>
+              <h4>${listaNombreRol}</h4>
 
               <!-- page end-->
           </section>
