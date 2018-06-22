@@ -49,7 +49,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Usuario</label>
                                       <div class="col-sm-4">
-                                          <input type="text" name="emailUsuario" class="form-control">
+                                          <input type="email" name="emailUsuario" class="form-control">
                                       </div>
                                        <label class="col-sm-2 col-sm-2 control-label">Contraseña</label>
                                       <div class="col-sm-4">

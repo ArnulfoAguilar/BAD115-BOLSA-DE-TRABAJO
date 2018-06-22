@@ -125,7 +125,7 @@
                               <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">Pagina Web</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="paginaWeb" VALUE="${SELECT_EMPRESA.PAGINA_WEB}" class="form-control">
+                                          <input type="text" name="paginaWeb" VALUE="${SELECT_EMPRESA.PAGINA_WEB}" class="form-control"/>
                                       </div>
                                   </div>
                               

@@ -119,6 +119,18 @@ public class SignupEmpresaController {
                 HttpSession session = hrequest.getSession();
                 session.setAttribute("DOC", NIT);
                 session.setAttribute("USERNAME", EMAIL_USUARIO);
+                
+                  //Lista para sacar el nombre del rol
+                String nombreRolSql = "select r.NOMBRE_ROL from roles r join USUARIOS u on R.ID_ROL=U.ID_ROL and emai_usuario=?";
+                List listaNombreRol = jdbcTemplate.queryForList(nombreRolSql, EMAIL_USUARIO );
+                String nombreRol;
+                
+                for(int i=0; i<listaNombreRol.size(); i++)
+                {
+                   
+                    nombreRol=listaNombreRol.get(i).toString();
+                    session.setAttribute("nombre_rol", nombreRol );
+                }
                 v.setViewName("redirect:/EMPRESA/homeEmpresa.htm");
         } else {
             v.setViewName("LogIn/LogIn");
