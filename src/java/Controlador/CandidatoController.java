@@ -77,8 +77,8 @@ public class CandidatoController {
         Connection cn = null;
                 try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call InsertCandidato(?,?,?,?,?,?,?,?,?,?)}");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_INSERT_CANDIDATO(?,?,?,?,?,?,?,?,?,?)}");
             cst.setString(1, c.getIdPostDoc());
             cst.setString(2, c.getPrimerNombre());
             cst.setString(3, c.getSegundoNombre());
@@ -91,10 +91,12 @@ public class CandidatoController {
             cst.setString(10, c.getEmail());
             cst.execute();
             resultado = 1;
+            return new ModelAndView("redirect:" + "PerfilCandidato.htm?id="+c.getIdPostDoc());
         } catch (SQLException ex) {
             model.addAttribute("Error", "Error al ejecutar "+ex.toString());
+            System.out.println(ex.toString());
         } finally {
-            try {
+            /*try {
                 cn.close();
                 String estadoConexion = "Conexion cerrada";
                 model.addAttribute("EstadoConexion", estadoConexion);
@@ -102,7 +104,7 @@ public class CandidatoController {
                 String estadoConexion = ex.toString();
                 estadoConexion += " No se pudo cerrar la conexion";
                 model.addAttribute("EstadoConexion", estadoConexion);
-            }
+            }*/
         }
         if (resultado == 1) {
             return new ModelAndView("redirect:" + "PerfilCandidato.htm?id="+c.getIdPostDoc());
@@ -154,9 +156,9 @@ public class CandidatoController {
             // Carga el driver de oracle
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             // Conecta con la base de datos XE con el usuario system y la contraseña password
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             // Llamada al procedimiento almacenado
-            CallableStatement cst = cn.prepareCall("{call ObtenerCandidato(?,?,?,?,?,?,?,?)}");
+            CallableStatement cst = cn.prepareCall("{call PR_OBTENER_CANDIDATO(?,?,?,?,?,?,?,?)}");
             // Parametro 1 del procedimiento almacenado
             cst.setString(1, id);
             // Definimos los tipos de los parametros de salida del procedimiento almacenado
@@ -197,17 +199,7 @@ public class CandidatoController {
         } catch (SQLException ex) {
             mav.addObject("Error", "Error al ejecutar "+ex.toString());
             mav.addObject("Resultado", resultado);
-        } finally {
-            try {
-                estadoConexion = "Conexion cerrada";
-                mav.addObject("EstadoConexion", estadoConexion);
-                cn.close();
-            } catch (SQLException ex) {
-                estadoConexion = ex.toString();
-                estadoConexion += " No se pudo cerrar la conexion";
-                mav.addObject("EstadoConexion", estadoConexion);
-            }
-        }
+        } 
         if (resultado == 1) {
             return mav;
         } else {
@@ -230,8 +222,8 @@ public class CandidatoController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call ActualizarCandidato(?,?,?,?,?,?,?,?)}");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:orcl", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_ACTUALIZAR_CANDIDATO(?,?,?,?,?,?,?,?)}");
             String id = request.getParameter("id");
             cst.setString(1, id);
             cst.setString(2, cand.getPrimerNombre());

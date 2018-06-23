@@ -83,8 +83,8 @@ public class ArticuloController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call InsertArticulo(?,?,?,?)}");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_INSERT_ARTICULO(?,?,?,?)}");
             cst.setString(1, id);
             cst.setString(2, a.getNombreArticulo());
             cst.setString(3, a.getLugarPublicado());
@@ -113,8 +113,8 @@ public class ArticuloController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call ObtenerArticulo(?,?,?,?)}");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_OBTENER_ARTICULO(?,?,?,?)}");
             cst.setBigDecimal(1, id);
             cst.registerOutParameter(2, java.sql.Types.VARCHAR);
             cst.registerOutParameter(3, java.sql.Types.VARCHAR);
@@ -151,8 +151,8 @@ public class ArticuloController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call ActualizarArticulo(?,?,?,?,?)}");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_ACTUALIZAR_ARTICULO(?,?,?,?,?)}");
             
             cst.setInt(1, Integer.valueOf(request.getParameter("id")));
             cst.setString(2, request.getParameter("id2"));
@@ -179,8 +179,8 @@ public class ArticuloController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call EliminarArticulo(?)}");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_ELIMINAR_ARTICULO(?)}");
             
             cst.setInt(1, Integer.valueOf(request.getParameter("id")));
             cst.execute();

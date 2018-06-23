@@ -11,6 +11,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,9 +39,9 @@ public class TelefonoController {
             HttpServletRequest request
     ) {
         List telefonos = null;
-        List Errores = null;
+        List Errores = new ArrayList();
         try {
-            telefonos = this.jdbcTemplate.queryForList("select * from TELEFONO where ID_POST_DOC = "+request.getParameter("id"));
+            telefonos = this.jdbcTemplate.queryForList("select * from TELEFONO where ID_POST_DOC = '"+request.getParameter("id")+"'");
         } catch (Exception ex) {
             Errores.add("Error. No hay acceso a la BD" + ex.toString());
         }
@@ -89,7 +90,7 @@ public class TelefonoController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             CallableStatement cst = cn.prepareCall("{call PR_INSERT_TELEFONO(?,?,?)}");
             cst.setInt(1, t.getTipo());
             cst.setString(2, id);
@@ -115,7 +116,7 @@ public class TelefonoController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             CallableStatement cst = cn.prepareCall("{call PR_OBTENER_TELEFONO(?,?,?)}");
             cst.setInt(1, id);
             cst.setString(2, id2);
@@ -148,7 +149,7 @@ public class TelefonoController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             CallableStatement cst = cn.prepareCall("{call PR_ACTUALIZAR_TELEFONO(?,?,?)}");
             cst.setInt(1, Integer.valueOf(request.getParameter("id")));
             cst.setString(2, request.getParameter("id2"));
@@ -175,7 +176,7 @@ public class TelefonoController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             CallableStatement cst = cn.prepareCall("{call PR_ELIMINAR_TELEFONO(?,?)}");
             
             cst.setInt(1, Integer.valueOf(request.getParameter("id")));

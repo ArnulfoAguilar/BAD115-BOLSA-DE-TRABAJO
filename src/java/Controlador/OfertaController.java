@@ -94,7 +94,7 @@ public class OfertaController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             CallableStatement cst = cn.prepareCall("{call PR_INSERT_OFERTA(?,?,?,?,?,?,?)}");
             cst.setInt(1, o.getArea());
             cst.setInt(2, o.getNivel());
@@ -139,7 +139,7 @@ public class OfertaController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             CallableStatement cst = cn.prepareCall("{call PR_OBTENER_OFERTA(?,?,?,?,?,?,?)}");
             cst.setInt(1, id);
             cst.registerOutParameter(2, java.sql.Types.NUMERIC);
@@ -183,7 +183,7 @@ public class OfertaController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             CallableStatement cst = cn.prepareCall("{call PR_ACTUALIZAR_OFERTA(?,?,?,?,?,?,?)}");
             
             cst.setInt(1, Integer.valueOf(request.getParameter("id")));
@@ -216,7 +216,7 @@ public class OfertaController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             CallableStatement cst = cn.prepareCall("{call PR_ELIMINAR_OFERTA(?)}");
             
             cst.setInt(1, Integer.valueOf(request.getParameter("id")));
@@ -247,7 +247,7 @@ public class OfertaController {
         Connection cn = null;
     try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
             CallableStatement cst = cn.prepareCall("{call PR_INSERT_ASPIRANTE(?,?,?,?)}");
             cst.setString(1, id);
             cst.setInt(2, idOferta_aspirante);

@@ -60,10 +60,9 @@ public class LogrosController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call InsertLogro(?,?)}");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_INSERT_LOGRO(?,?)}");
             cst.setString(1, l.getLugar());
-            
             cst.setString(2, id);
             //String c = l.getFecha().toString();
             //java.sql.Date sqlDate = java.sql.Date.valueOf(c);
@@ -119,8 +118,8 @@ public class LogrosController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call ObtenerLogro(?,?,?)}");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_OBTENER_LOGRO(?,?,?)}");
             cst.setBigDecimal(1, id);
             cst.registerOutParameter(2, java.sql.Types.VARCHAR);
             cst.registerOutParameter(3, java.sql.Types.DATE);
@@ -155,8 +154,8 @@ public class LogrosController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call ActualizarLogro(?,?)}");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_ACTUALIZAR_LOGRO(?,?)}");
             
             cst.setInt(1, Integer.valueOf(request.getParameter("id")));
             cst.setString(2, l.getLugar());
@@ -182,8 +181,8 @@ public class LogrosController {
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call EliminarLogro(?)}");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_ELIMINAR_LOGRO(?)}");
             
             cst.setInt(1, Integer.valueOf(request.getParameter("id")));
             cst.execute();

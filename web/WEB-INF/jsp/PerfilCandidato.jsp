@@ -6,14 +6,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Perfil Candidato</title>
-        <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="resources/css/bootstrap-reset.css" rel="stylesheet"/>
-        <link href="resources/css/style-responsive.css" rel="stylesheet"/>
-        <link href="resources/css/style.css" rel="stylesheet"/>
-        <link href="resources/css/font-awesome/css/font-awesome.css" rel="stylesheet"/>
-        <script src="resources/js/jquery.min.js"></script>
-        <script src="resources/js/bootstrap.min.js"></script>
-
+        <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/resources/css/bootstrap-reset.css" rel="stylesheet"/>
+        <link href="${pageContext.request.contextPath}/resources/css/style-responsive.css" rel="stylesheet"/>
+        <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet"/>
+        <link href="${pageContext.request.contextPath}/resources/css/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+        <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+    <link href="<c:url value="/public/Admin/css/style.css"/>" rel="stylesheet">
+    <link href="<c:url value="/public/Admin/css/style-responsive.css"/>" rel="stylesheet" />
+    
+    <%@include file="/WEB-INF/jsp/include/Admin/cssAdmin.jsp" %>
     </head>
     <body
         <!--main content start-->
