@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import Entidad.Articulo;
+import Entidad.Oferta;
 import Entidad.Telefono;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -98,5 +98,88 @@ public class TelefonoController {
         }
         
     }
+    @RequestMapping(value = "TelefonoEdit.htm", method = RequestMethod.GET)
+    public ModelAndView TelefonoEdit(HttpServletRequest request) {
+        
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("Candidatos/Telefonos/TelefonoEdit");
+        Integer id = Integer.valueOf(request.getParameter("id"));
+        String id2 = request.getParameter("id2");
+        Connection cn = null;
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_OBTENER_TELEFONO(?,?,?)}");
+            cst.setInt(1, id);
+            cst.setString(2, id2);
+            cst.registerOutParameter(3, java.sql.Types.NUMERIC);
+            cst.execute();
+            Telefono tel = new Telefono();
+            tel.setTipo(id);
+            tel.setNumero(cst.getInt(3));
+            cn.close();
+            mav.addObject("telefono", tel);
+            //resultado = 1;
+            return mav;
+        } catch (SQLException ex) {
+            mav.addObject("Error", "Error al cerrar conexion o ejecutar "+ex.toString());
+            return mav;
+        }
+        //return mav;
+    }
+    @RequestMapping(value = "TelefonoEdit.htm", method = RequestMethod.POST)
+    public ModelAndView TelefonoEditPost(
+            HttpServletRequest request,
+            @ModelAttribute("telefono") Telefono t,
+            BindingResult result,
+            SessionStatus status
+    ) {
+        
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("Candidatos/Telefonos/TelefonoEdit");
+        Connection cn = null;
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_ACTUALIZAR_TELEFONO(?,?,?)}");
+            cst.setInt(1, Integer.valueOf(request.getParameter("id")));
+            cst.setString(2, request.getParameter("id2"));
+            cst.setInt(3, t.getNumero());
+            cst.execute();
+            cn.close();
+            //resultado = 1;
+             return new ModelAndView("redirect:" + "TelefonoIndex.htm?id="+request.getParameter("id2"));
+        } catch (SQLException ex) {
+            mav.addObject("Error", "Error al cerrar conexion o ejecutar "+ex.toString());
+            return mav;
+        }
+        //return mav;
+    }
+    
+    @RequestMapping(value = "TelefonoDelete.htm", method = RequestMethod.GET)
+    public ModelAndView TelefonoDelete(HttpServletRequest request) {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("Candidatos/Telefonos/TelefonoIndex");
+        //String id = request.getParameter("id");
+        
+        Connection cn = null;
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_ELIMINAR_TELEFONO(?,?)}");
+            
+            cst.setInt(1, Integer.valueOf(request.getParameter("id")));
+            cst.setString(2, request.getParameter("id2"));
+            cst.execute();
+            cn.close();
+            //resultado = 1;
+            return new ModelAndView("redirect:" + "TelefonoIndex.htm?id="+request.getParameter("id2"));
+        } catch (SQLException ex) {
+            mav.addObject("Errores", "Error al cerrar conexion o ejecutar "+ex.toString());
+            return mav;
+        }
+        
+    }
+    
     
 }

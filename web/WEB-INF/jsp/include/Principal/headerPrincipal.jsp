@@ -21,7 +21,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Registrate<b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Empleado</a></li>
+                                <li><a href="CandidatoAdd.htm">Empleado</a></li>
                                 <li><a href="<c:url value="signup.htm"/>">Empresa</a></li>
                             </ul>
                         </li>

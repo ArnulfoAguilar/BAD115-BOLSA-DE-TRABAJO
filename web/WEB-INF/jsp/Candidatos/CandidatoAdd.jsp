@@ -111,15 +111,8 @@
                                         </div>
                                       </div>
                                   </fieldset>
-                                  </fieldset>
                                   <fieldset title="Paso 3" class="step" id="default-step-1" >
                                       <legend> </legend>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Email</label>
-                                          <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Email">
-                                          </div>
-                                      </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Direccion</label>
                                           <div class="col-lg-10">
@@ -132,7 +125,18 @@
                                               <form:input class="form-control" path="idPostDoc" placeholder="Documento de identidad" />
                                           </div>
                                       </div>
-
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Email</label>
+                                          <div class="col-lg-10">
+                                              <form:input type="text" path="email" class="form-control"/>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Contraseña</label>
+                                          <div class="col-lg-10">
+                                              <form:input type="text" path="contra" class="form-control"/>
+                                        </div>
+                                      </div>
                                   </fieldset>
                                   <form:button class="finish btn btn-danger">Registrarse</form:button>
                           </form:form>

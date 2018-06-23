@@ -66,8 +66,8 @@
                                                         <th>${telefono.NUMERO_TEL}</th>
                                                         <th>${telefono.ID_TIPO}</th>
                                                         <th>
-                                                            <a class="btn btn-warning" href="TelefonoEdit.htm?id=${telefono.ID_ARTICULO}&id2=${articulo.ID_POST_DOC}" role="button">Editar mi Numero</a>
-                                                            <a class="btn btn-danger" href="TelefonoDelete.htm?id=${telefono.ID_ARTICULO}&id2=${articulo.ID_POST_DOC}" role="button">Eliminar mi Numero</a>
+                                                            <a class="btn btn-warning" href="TelefonoEdit.htm?id=${telefono.ID_TIPO}&id2=${telefono.ID_POST_DOC}" role="button">Editar mi Numero</a>
+                                                            <a class="btn btn-danger" href="TelefonoDelete.htm?id=${telefono.ID_TIPO}&id2=${telefono.ID_POST_DOC}" role="button">Eliminar mi Numero</a>
                                                         </th>
                                                             
                                                     </tr>
@@ -89,6 +89,8 @@
                               </c:if>
                           </div>
                       </section>
+                          <a class="btn btn-info" href="PerfilCandidato.htm?id=${id}" role="button">Regresar</a>
+                      
                   </div>
               </div>
               <!-- page end-->

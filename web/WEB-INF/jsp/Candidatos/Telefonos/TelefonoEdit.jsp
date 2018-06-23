@@ -11,7 +11,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Form Wizard</title>
+    <title>Editar Numero</title>
 
     <%@include file="/WEB-INF/jsp/include/Admin/cssAdmin.jsp" %>
     <!-- Custom styles for this template -->
@@ -44,52 +44,50 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Seccion de Logros
-                              <a class="btn btn-success" href="LogrosAdd.htm?id=${id}" role="button">Añadir Logro</a>
-                              ${Errores}
+                              Editar Numero Telefonico
+                              Error:${Error}
+                              Errores: ${Errores}
                           </header>
                           <div class="panel-body">
-                              
-                              <table  class="display table table-bordered table-striped" id="example">
-                                            <thead>
-                                                <tr>
-                                                    <th>Lugar del logro</th>
-                                                    <th>Fecha de realizacion</th>
-                                                    <th class="hidden-phone">Acciones</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                             
-                              
-                                                <c:forEach items="${Logros}" var="logro">
-                                                    <tr>
-                                                        <th>${logro.lugar}</th>
-                                                        <th>${logro.fecha}</th>
-                                                        <th>
-                                                            <a class="btn btn-warning" href="LogrosEdit.htm?id=${logro.ID_Logros}&id2=${logro.ID_POST_DOC}" role="button">Editar mi Logro</a>
-                                                            <a class="btn btn-danger" href="LogrosDelete.htm?id=${logro.ID_Logros}&id2=${logro.ID_POST_DOC}" role="button">Eliminar mi logro</a>
-                                                        </th>
-                                                            
-                                                    </tr>
-                                                </c:forEach>
-                                            </tbody>
-                                            <tfoot hidden="true">
-                                                <tr>
-                                                    <th>Lugar del logro</th>
-                                                    <th>Fecha de realizacion</th>
-                                                    <th class="hidden-phone">Acciones</th>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                              
-                              
-                              <c:if test= "${Logros == null}">
-                                  <p>Usted no posee ni un logro<p>
-                              </c:if>
+                              <div class="stepy-tab">
+                                  <ul id="default-titles" class="stepy-titles clearfix">
+                                      <li id="default-title-0" class="current-step">
+                                          <div>Paso 1</div>
+                                      </li>
+                                      <li id="default-title-1" class="">
+                                          <div>Paso 2</div>
+                                      </li>
+                                      <li id="default-title-2" class="">
+                                          <div>Paso 3</div>
+                                      </li>
+                                      <li id="default-title-3" class="">
+                                          <div>Paso 4</div>
+                                      </li>
+                                      <li id="default-title-4" class="">
+                                          <div>Paso 5</div>
+                                      </li>
+                                      <li id="default-title-5" class="">
+                                          <div>Paso 6</div>
+                                      </li>
+                                  </ul>
+                              </div>${identificador}
+                              <form:form method="POST" commandName="telefono" class="form-horizontal" id="default" >
+                                  <fieldset title="Paso 1" class="step" id="default-step-0">
+                                      <legend> </legend>
+                                      
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Numero Telefonico</label>
+                                          <div class="col-lg-10">
+                                              <form:input pattern="[0-9]{8}" title="El numero no es correcto" maxlength="8" 
+                                                          class="form-control" path="numero" placeholder="Numero" required="true"/>
+                                          </div>
+                                      </div>
+                                      
+                                  </fieldset>
+                                 <form:button class="finish btn btn-danger">Terminar Edicion Numero Telefonico</form:button>
+                          </form:form>
                           </div>
                       </section>
-                      <a class="btn btn-info" href="PerfilCandidato.htm?id=${id}" role="button">Regresar</a>
-                                                                
                   </div>
               </div>
               <!-- page end-->

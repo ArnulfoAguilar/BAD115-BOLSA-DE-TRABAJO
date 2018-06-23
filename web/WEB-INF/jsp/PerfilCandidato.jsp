@@ -27,8 +27,8 @@
                                 <a href="#">
                                     <img src="resources/img/profile-avatar.jpg" alt=""/>
                                 </a>
-                                <h1>Juan Pérez</h1>
-                                <p>juan.perez@ejemplo.com</p>
+                                <h1>${candidato.primerNombre}</h1>
+                                <p>${candidato.email}</p>
                                 ${Error}
                                 <p><c:out value="${Vacio}"/></p>
                             </div>
@@ -45,10 +45,10 @@
                                 <h5>¿Qué deseas agregar a tu Perfil?</h5>
                             </header>
                             <div class="panel-body"> 
-                                <a href="#myModal" data-toggle="modal" class="btn btn-shadow btn-success btn-block">Formación Académica</a>
                                 <a href="LogrosIndex.htm?id=${candidato.idPostDoc}" class="btn btn-shadow btn-success btn-block">Logros</a>
                                 <a href="ArticuloIndex.htm?id=${candidato.idPostDoc}" class="btn btn-shadow btn-success btn-block">Articulos</a>
                                 <a href="TelefonoIndex.htm?id=${candidato.idPostDoc}" class="btn btn-shadow btn-success btn-block">Numeros Telefonicos</a>
+                                <a href="RecomendacionIndex.htm?id=${candidato.idPostDoc}" class="btn btn-shadow btn-success btn-block">Recomendaciones</a>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Experiencia Laboral</button>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Experiencia Académica</button>
                                 <button type="button" class="btn btn-shadow btn-success btn-block">Nuevo Idioma</button>
@@ -144,10 +144,7 @@
                                                     <p>Direccion:</p>
                                                     <form:input class="form-control" path="direccion" placeholder="Direccion"/>
                                                 </div>
-                                                <div class="bio-row">
-                                                    <p>Email:</p>
-                                                    <form:input class="form-control" path="email" placeholder="Email"/>
-                                                </div>
+                                                
                                             </div>
                                                 <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

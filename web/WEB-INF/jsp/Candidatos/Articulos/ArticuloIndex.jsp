@@ -91,6 +91,8 @@
                               </c:if>
                           </div>
                       </section>
+                          <a class="btn btn-info" href="PerfilCandidato.htm?id=${id}" role="button">Regresar</a>
+                      
                   </div>
               </div>
               <!-- page end-->

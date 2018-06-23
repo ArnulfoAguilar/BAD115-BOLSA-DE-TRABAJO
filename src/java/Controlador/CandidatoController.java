@@ -37,9 +37,21 @@ public class CandidatoController {
 
     @RequestMapping(value = "CandidatoAdd.htm", method = RequestMethod.GET)
     public ModelAndView CandidatoAdd(ModelMap model) {
+        List Municipios = null;
+        List Departamentos = null;
+        List Errores = null;
+        try {
+            Municipios = this.jdbcTemplate.queryForList("select * from MUNICIPIO");
+            Departamentos = this.jdbcTemplate.queryForList("select * from DEPARTAMENTO");
+        } catch (Exception ex) {
+            Errores.add("Error. No hay acceso a la BD" + ex.toString());
+        }
+        
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/CandidatoAdd");
         model.addAttribute("candidato", new Candidato());
+        mav.addObject("Municipios", Municipios);
+        mav.addObject("Departamentos", Departamentos);
         return mav;
     }
     
@@ -54,10 +66,10 @@ public class CandidatoController {
         mav.setViewName("Candidatos/CandidatoAdd");
         Integer resultado=0;
         Connection cn = null;
-        try {
+                try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call InsertCandidato(?,?,?,?,?,?,?,?)}");
+            CallableStatement cst = cn.prepareCall("{call InsertCandidato(?,?,?,?,?,?,?,?,?,?)}");
             cst.setString(1, c.getIdPostDoc());
             cst.setString(2, c.getPrimerNombre());
             cst.setString(3, c.getSegundoNombre());
@@ -66,6 +78,8 @@ public class CandidatoController {
             cst.setString(6, c.getSegundoApellido());
             cst.setString(7, c.getCasadaApellido());
             cst.setString(8, c.getDireccion());
+            cst.setString(9, c.getContra());
+            cst.setString(10, c.getEmail());
             cst.execute();
             resultado = 1;
         } catch (SQLException ex) {
@@ -82,7 +96,7 @@ public class CandidatoController {
             }
         }
         if (resultado == 1) {
-            return new ModelAndView("redirect:/CandidatoIndex.htm");
+            return new ModelAndView("redirect:" + "PerfilCandidato.htm?id="+c.getIdPostDoc());
             
         } else {
 
