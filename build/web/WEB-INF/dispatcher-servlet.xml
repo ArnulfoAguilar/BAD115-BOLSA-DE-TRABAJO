@@ -23,6 +23,35 @@
                  
                 <prop key="login.htm">LoginController</prop>
                 <prop key="index.htm">indexController</prop>
+                <prop key="Empresa.htm">EmpresaController</prop> 
+                                         
+                <prop key="PerfilCandidato.htm">CandidatoController</prop>
+                <prop key="RegistroCandidato.htm">CandidatoController</prop>
+                <prop key="CandidatoAdd.htm">CandidatoController</prop>
+                <prop key="CandidatoIndex.htm">CandidatoController</prop>
+                
+                <prop key="LogrosIndex.htm">LogrosController</prop>
+                <prop key="LogrosAdd.htm">LogrosController</prop>
+                <prop key="LogrosEdit.htm">LogrosController</prop>
+                <prop key="LogrosDelete.htm">LogrosController</prop>
+                
+                <prop key="ArticuloIndex.htm">ArticuloController</prop>
+                <prop key="ArticuloAdd.htm">ArticuloController</prop>
+                <prop key="ArticuloEdit.htm">ArticuloController</prop>
+                <prop key="ArticuloDelete.htm">ArticuloController</prop>
+                
+                <prop key="TelefonoIndex.htm">TelefonoController</prop>
+                <prop key="TelefonoAdd.htm">TelefonoController</prop>
+                <prop key="TelefonoEdit.htm">TelefonoController</prop>
+                <prop key="TelefonoDelete.htm">TelefonoController</prop>
+                
+                <prop key="OfertaIndex.htm">OfertaController</prop>
+                <prop key="OfertaAdd.htm">OfertaController</prop>
+                <prop key="OfertaEdit.htm">OfertaController</prop>
+                <prop key="OfertaDelete.htm">OfertaController</prop>
+                
+                <prop key="Error.htm">PagesController</prop>
+
                 <prop key="validarLogin.htm">LoginController</prop> 
                                 
               <!--URL de EMPRESA-->
@@ -57,6 +86,12 @@
           class="Controlador.LoginController"
     />
     
+    <bean name="CandidatoController" class="Controlador.CandidatoController"/>
+    <bean name="LogrosController" class="Controlador.LogrosController"/>
+    <bean name="PagesController" class="Controlador.PagesController"/>
+    <bean name="ArticuloController" class="Controlador.ArticuloController"/>
+    <bean name="TelefonoController" class="Controlador.TelefonoController"/>
+    <bean name="OfertaController" class="Controlador.OfertaController"/>
     
     <!--Controller para EMPRESA-->
     <bean name="SignupEmpresaController"

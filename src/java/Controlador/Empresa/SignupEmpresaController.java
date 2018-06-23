@@ -85,7 +85,11 @@ public class SignupEmpresaController {
             // Carga el driver de oracle
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             // Conecta con la base de datos XE con el usuario system y la contraseña password
+
             cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+
+            //cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+
             // Llamada al procedimiento almacenado
             CallableStatement cst = cn.prepareCall("{call INSERTAR_EMPRESA(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             // Parametro 1 del procedimiento almacenado

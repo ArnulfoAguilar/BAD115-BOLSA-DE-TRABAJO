@@ -46,6 +46,8 @@ public class Candidato  implements java.io.Serializable {
      private Set<DetalleIdioma> detalleIdiomas = new HashSet<DetalleIdioma>(0);
      private Set<Recomendaciones> recomendacioneses = new HashSet<Recomendaciones>(0);
      private Set<Telefono> telefonos = new HashSet<Telefono>(0);
+     //Añadido pòr propositos funcionales
+     private String contra;
 
     public Candidato() {
     }
@@ -293,6 +295,15 @@ public class Candidato  implements java.io.Serializable {
         this.telefonos = telefonos;
     }
 
+    public String getContra() {
+        return contra;
+    }
+
+    public void setContra(String contra) {
+        this.contra = contra;
+    }
+
+    
 
 
 

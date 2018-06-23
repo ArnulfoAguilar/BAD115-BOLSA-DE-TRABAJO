@@ -24,7 +24,9 @@ public class Telefono  implements java.io.Serializable {
 
      private TelefonoId id;
      private TipoTelefono tipoTelefono;
-     private Candidato candidato;
+     
+     private Integer tipo;
+     private Integer numero;
 
     public Telefono() {
     }
@@ -36,7 +38,7 @@ public class Telefono  implements java.io.Serializable {
     public Telefono(TelefonoId id, TipoTelefono tipoTelefono, Candidato candidato) {
        this.id = id;
        this.tipoTelefono = tipoTelefono;
-       this.candidato = candidato;
+       
     }
    
      @EmbeddedId
@@ -63,17 +65,21 @@ public class Telefono  implements java.io.Serializable {
         this.tipoTelefono = tipoTelefono;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_POST_DOC", insertable=false, updatable=false)
-    public Candidato getCandidato() {
-        return this.candidato;
-    }
-    
-    public void setCandidato(Candidato candidato) {
-        this.candidato = candidato;
+    public Integer getTipo() {
+        return tipo;
     }
 
+    public void setTipo(Integer tipo) {
+        this.tipo = tipo;
+    }
 
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
 
 
 }

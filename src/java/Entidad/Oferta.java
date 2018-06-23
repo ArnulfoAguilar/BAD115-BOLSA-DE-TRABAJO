@@ -34,14 +34,22 @@ public class Oferta  implements java.io.Serializable {
      private AreaDeEstudio areaDeEstudio;
      private Empresa empresa;
      private BigDecimal aniosExp;
-     private BigDecimal vacantes;
+
      private Date fechaExpiracion;
      private String descripcion;
-     private String tipoContrato;
-     private BigDecimal salario;
+
+
      private BigDecimal tieneExamen;
      private Set<Aspirante> aspirantes = new HashSet<Aspirante>(0);
      private Set<Examen> examens = new HashSet<Examen>(0);
+     //Añadido por propositos funcionales
+     private Integer nivel;
+     private Integer area;
+     private Integer vacantes;
+     private String tipoContrato;
+     private Double salario;
+     private Integer nit;
+     private Integer idOf;
 
     public Oferta() {
     }
@@ -51,7 +59,9 @@ public class Oferta  implements java.io.Serializable {
         this.id = id;
         this.empresa = empresa;
     }
-    public Oferta(OfertaId id, NivelEstudio nivelEstudio, AreaDeEstudio areaDeEstudio, Empresa empresa, BigDecimal aniosExp, BigDecimal vacantes, Date fechaExpiracion, String descripcion, String tipoContrato, BigDecimal salario, BigDecimal tieneExamen, Set<Aspirante> aspirantes, Set<Examen> examens) {
+    public Oferta(OfertaId id, NivelEstudio nivelEstudio, AreaDeEstudio areaDeEstudio, Empresa empresa, 
+            BigDecimal aniosExp, Integer vacantes, Date fechaExpiracion, String descripcion, 
+            String tipoContrato, Double salario, BigDecimal tieneExamen, Set<Aspirante> aspirantes, Set<Examen> examens) {
        this.id = id;
        this.nivelEstudio = nivelEstudio;
        this.areaDeEstudio = areaDeEstudio;
@@ -122,15 +132,7 @@ public class Oferta  implements java.io.Serializable {
     }
 
     
-    @Column(name="VACANTES", precision=22, scale=0)
-    public BigDecimal getVacantes() {
-        return this.vacantes;
-    }
     
-    public void setVacantes(BigDecimal vacantes) {
-        this.vacantes = vacantes;
-    }
-
     @Temporal(TemporalType.DATE)
     @Column(name="FECHA_EXPIRACION", length=7)
     public Date getFechaExpiracion() {
@@ -162,14 +164,7 @@ public class Oferta  implements java.io.Serializable {
     }
 
     
-    @Column(name="SALARIO", precision=8)
-    public BigDecimal getSalario() {
-        return this.salario;
-    }
     
-    public void setSalario(BigDecimal salario) {
-        this.salario = salario;
-    }
 
     
     @Column(name="TIENE_EXAMEN", precision=22, scale=0)
@@ -198,6 +193,59 @@ public class Oferta  implements java.io.Serializable {
     public void setExamens(Set<Examen> examens) {
         this.examens = examens;
     }
+
+    public Integer getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Integer nivel) {
+        this.nivel = nivel;
+    }
+
+    public Integer getArea() {
+        return area;
+    }
+
+    public void setArea(Integer area) {
+        this.area = area;
+    }
+
+    public Integer getVacantes() {
+        return vacantes;
+    }
+
+    public void setVacantes(Integer vacantes) {
+        this.vacantes = vacantes;
+    }
+
+   
+
+    public Double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(Double salario) {
+        this.salario = salario;
+    }
+
+    public Integer getNit() {
+        return nit;
+    }
+
+    public void setNit(Integer nit) {
+        this.nit = nit;
+    }
+
+    public Integer getIdOf() {
+        return idOf;
+    }
+
+    public void setIdOf(Integer idOf) {
+        this.idOf = idOf;
+    }
+    
+    
+    
 
 
 

@@ -35,12 +35,7 @@
                       </a>
                   </li>
                   
-                  <li>
-                      <a class="" href="${pageContext.request.contextPath}/index.htm">
-                          <i class="icon-beer"></i>
-                          <span>no se que mas</span>
-                      </a>
-                  </li>
+                  
               </ul><!--
                   <li class="sub-menu">
                       <a href="javascript:;" >
