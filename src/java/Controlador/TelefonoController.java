@@ -13,6 +13,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -33,6 +34,7 @@ public class TelefonoController {
     }
     @RequestMapping(value = "TelefonoIndex.htm", method = RequestMethod.GET)
     public ModelAndView TelefonoIndex(
+            HttpServletResponse hresponse,
             HttpServletRequest request
     ) {
         List telefonos = null;
@@ -51,7 +53,10 @@ public class TelefonoController {
     }
     
     @RequestMapping(value = "TelefonoAdd.htm", method = RequestMethod.GET)
-    public ModelAndView TelefonoAdd(HttpServletRequest request) {
+    public ModelAndView TelefonoAdd(
+            HttpServletResponse hresponse,
+            HttpServletRequest request 
+    ) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/Telefonos/TelefonoAdd");
         mav.addObject("telefono", new Telefono());
@@ -71,6 +76,7 @@ public class TelefonoController {
     
     @RequestMapping(value = "TelefonoAdd.htm", method = RequestMethod.POST)
     public ModelAndView TelefonoAddPost(
+            HttpServletResponse hresponse,
             HttpServletRequest request,
             @ModelAttribute("telefono") Telefono t,
             BindingResult result,
@@ -99,7 +105,8 @@ public class TelefonoController {
         
     }
     @RequestMapping(value = "TelefonoEdit.htm", method = RequestMethod.GET)
-    public ModelAndView TelefonoEdit(HttpServletRequest request) {
+    public ModelAndView TelefonoEdit(HttpServletResponse hresponse,
+            HttpServletRequest request) {
         
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/Telefonos/TelefonoEdit");
@@ -129,6 +136,7 @@ public class TelefonoController {
     }
     @RequestMapping(value = "TelefonoEdit.htm", method = RequestMethod.POST)
     public ModelAndView TelefonoEditPost(
+            HttpServletResponse hresponse,
             HttpServletRequest request,
             @ModelAttribute("telefono") Telefono t,
             BindingResult result,
@@ -157,7 +165,9 @@ public class TelefonoController {
     }
     
     @RequestMapping(value = "TelefonoDelete.htm", method = RequestMethod.GET)
-    public ModelAndView TelefonoDelete(HttpServletRequest request) {
+    public ModelAndView TelefonoDelete(
+            HttpServletResponse hresponse,
+            HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/Telefonos/TelefonoIndex");
         //String id = request.getParameter("id");

@@ -14,6 +14,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -21,6 +22,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -35,6 +37,7 @@ public class OfertaController {
     
     @RequestMapping(value = "OfertaIndex.htm", method = RequestMethod.GET)
     public ModelAndView OfertaIndex(
+            HttpServletResponse hresponse,
             HttpServletRequest request
     ) {
         List ofertas = null;
@@ -53,7 +56,10 @@ public class OfertaController {
     }
     
     @RequestMapping(value = "OfertaAdd.htm", method = RequestMethod.GET)
-    public ModelAndView ArticuloAdd(HttpServletRequest request) {
+    public ModelAndView ArticuloAdd(
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Ofertas/OfertaAdd");
         mav.addObject("oferta", new Oferta());
@@ -75,6 +81,7 @@ public class OfertaController {
     
     @RequestMapping(value = "OfertaAdd.htm", method = RequestMethod.POST)
     public ModelAndView OfertaAddPost(
+            HttpServletResponse hresponse,
             HttpServletRequest request,
             @ModelAttribute("oferta") Oferta o,
             BindingResult result,
@@ -106,7 +113,10 @@ public class OfertaController {
         
     }
     @RequestMapping(value = "OfertaEdit.htm", method = RequestMethod.GET)
-    public ModelAndView OfertaEdit(HttpServletRequest request) {
+    public ModelAndView OfertaEdit(
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Ofertas/OfertaEdit");
@@ -160,6 +170,7 @@ public class OfertaController {
     
     @RequestMapping(value = "OfertaEdit.htm", method = RequestMethod.POST)
     public ModelAndView OfertaEditPost(
+            HttpServletResponse hresponse,
             HttpServletRequest request,
             @ModelAttribute("oferta") Oferta o,
             BindingResult result,
@@ -194,7 +205,10 @@ public class OfertaController {
     }
     
     @RequestMapping(value = "OfertaDelete.htm", method = RequestMethod.GET)
-    public ModelAndView OfertaDelete(HttpServletRequest request) {
+    public ModelAndView OfertaDelete(
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Ofertas/OfertaIndex");
         //String id = request.getParameter("id");
@@ -217,7 +231,7 @@ public class OfertaController {
         
     }
     
-    @RequestMapping(value = "OfertaAdd.htm", method = RequestMethod.POST)
+    @RequestMapping(value = "Aplicar.htm", method = RequestMethod.GET)
     public ModelAndView AplicarAddPost(
         HttpServletRequest request,
             @RequestParam("idOferta") Integer idOferta_aspirante,
@@ -227,7 +241,7 @@ public class OfertaController {
             SessionStatus status,
             ModelMap model
     )
-    {
+    {   ModelAndView mav = new ModelAndView();
         String id = request.getParameter("id");
         mav.addObject("identificador", id);
         Connection cn = null;
@@ -239,9 +253,9 @@ public class OfertaController {
             cst.setInt(2, idOferta_aspirante);
             cst.setInt(3, nit_aspirante);
             cst.setBigDecimal(4, a.getPorcentaje());
-            cst.execute
-            cn.close()
-            return new ModelAndView("redirect:/LaMismaPaginaSoloParaQueReacargue.htm");
+            cst.execute();
+            cn.close();
+            return new ModelAndView("redirect:/OfertaIndex.htm");
         }catch (SQLException ex) {
             model.addAttribute("Errores", "Error al cerrar conexion o ejecutar "+ex.toString());
             return new ModelAndView("redirect:/Error.htm");

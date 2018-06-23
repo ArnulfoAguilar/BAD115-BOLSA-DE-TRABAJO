@@ -74,12 +74,11 @@
                                                         <th>${oferta.TIPO_CONTRATO}</th>
                                                         <th>${oferta.SALARIO}</th>
                                                         <th>
-                                                            <a class="btn btn-warning" href="OfertaEdit.htm?id=${oferta.ID_OFERTA}" role="button">Editar mi Oferta</a>
-                                                            <a class="btn btn-danger" href="OfertaDelete.htm?id=${oferta.ID_OFERTA}" role="button">Eliminar mi Oferta</a>
+                                                            <a class="btn btn-warning" href="OfertaEdit.htm?id=${oferta.ID_OFERTA}" role="button">Ver mi Oferta</a>
                                                             <form class="form-horizontal tasi-form" method="post">
                                                                 <input style="visibility:hidden" type="text" name="idOferta" class="form-control" value ="${oferta.ID_OFERTA}">
                                                                 <input style="visibility:hidden" type="text" name="nit" class="form-control" value ="${oferta.NIT}">
-                                                                 <button type="submit" class="btn btn-success" value ="OfertaIndex.html" >Aplicar a oferta</button>
+                                                                 <button type="submit" class="btn btn-success" value ="Aplicar.html" >Aplicar a oferta</button>
                                                             </form>
                                                         </th>
                                                             

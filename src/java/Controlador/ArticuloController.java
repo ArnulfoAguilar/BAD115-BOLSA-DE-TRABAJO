@@ -6,7 +6,6 @@
 package Controlador;
 
 import Entidad.Articulo;
-import Entidad.Logros;
 import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -14,6 +13,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -36,6 +36,8 @@ public class ArticuloController {
     
     @RequestMapping(value = "ArticuloIndex.htm", method = RequestMethod.GET)
     public ModelAndView ArticuloIndex(
+       
+            HttpServletResponse hresponse,
             HttpServletRequest request
     ) {
         List articulos = null;
@@ -54,7 +56,10 @@ public class ArticuloController {
     }
     
     @RequestMapping(value = "ArticuloAdd.htm", method = RequestMethod.GET)
-    public ModelAndView ArticuloAdd(HttpServletRequest request) {
+    public ModelAndView ArticuloAdd(
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/Articulos/ArticuloAdd");
         mav.addObject("articulo", new Articulo());
@@ -65,6 +70,7 @@ public class ArticuloController {
     
     @RequestMapping(value = "ArticuloAdd.htm", method = RequestMethod.POST)
     public ModelAndView ArticuloAddPost(
+            HttpServletResponse hresponse,
             HttpServletRequest request,
             @ModelAttribute("articulo") Articulo a,
             BindingResult result,
@@ -94,7 +100,10 @@ public class ArticuloController {
     }
     
     @RequestMapping(value = "ArticuloEdit.htm", method = RequestMethod.GET)
-    public ModelAndView ArticuloEdit(HttpServletRequest request) {
+    public ModelAndView ArticuloEdit(
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/Articulos/ArticuloEdit");
@@ -129,6 +138,7 @@ public class ArticuloController {
     
     @RequestMapping(value = "ArticuloEdit.htm", method = RequestMethod.POST)
     public ModelAndView ArticuloEditPost(
+            HttpServletResponse hresponse,
             HttpServletRequest request,
             @ModelAttribute("articulo") Articulo a,
             BindingResult result,
@@ -160,7 +170,8 @@ public class ArticuloController {
         //return mav;
     }
     @RequestMapping(value = "ArticuloDelete.htm", method = RequestMethod.GET)
-    public ModelAndView ArticuloDelete(HttpServletRequest request) {
+    public ModelAndView ArticuloDelete(HttpServletResponse hresponse,
+            HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/Articulos/ArticuloIndex");
         String id = request.getParameter("id");

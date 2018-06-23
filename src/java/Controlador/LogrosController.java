@@ -16,6 +16,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 
@@ -30,7 +31,10 @@ public class LogrosController {
     }
     
     @RequestMapping(value = "LogrosAdd.htm", method = RequestMethod.GET)
-    public ModelAndView LogrosAdd(HttpServletRequest request) {
+    public ModelAndView LogrosAdd(
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/Logros/LogrosAdd");
         mav.addObject("logro", new Logros());
@@ -41,6 +45,7 @@ public class LogrosController {
     
     @RequestMapping(value = "LogrosAdd.htm", method = RequestMethod.POST)
     public ModelAndView LogrosAddPost(
+            HttpServletResponse hresponse,
             HttpServletRequest request,
             @ModelAttribute("logro") Logros l,
             BindingResult result,
@@ -82,6 +87,7 @@ public class LogrosController {
     
     @RequestMapping(value = "LogrosIndex.htm", method = RequestMethod.GET)
     public ModelAndView LogrosIndex(
+            HttpServletResponse hresponse,
             HttpServletRequest request
     ) {
         List logros = null;
@@ -100,7 +106,10 @@ public class LogrosController {
     }
     
     @RequestMapping(value = "LogrosEdit.htm", method = RequestMethod.GET)
-    public ModelAndView LogrosEdit(HttpServletRequest request) {
+    public ModelAndView LogrosEdit(
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/Logros/LogrosEdit");
@@ -133,6 +142,7 @@ public class LogrosController {
     
     @RequestMapping(value = "LogrosEdit.htm", method = RequestMethod.POST)
     public ModelAndView LogrosEditPost(
+            HttpServletResponse hresponse,
             HttpServletRequest request,
             @ModelAttribute("logro") Logros l,
             BindingResult result,
@@ -161,7 +171,10 @@ public class LogrosController {
         //return mav;
     }
     @RequestMapping(value = "LogrosDelete.htm", method = RequestMethod.GET)
-    public ModelAndView LogrosDelete(HttpServletRequest request) {
+    public ModelAndView LogrosDelete(
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/Logros/LogrosIndex");
         String id = request.getParameter("id");

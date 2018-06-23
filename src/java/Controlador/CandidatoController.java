@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -29,14 +30,20 @@ public class CandidatoController {
     }
 
     @RequestMapping(value = "RegistroCandidato.htm")
-    public ModelAndView RegistroCandidatoHome() {
+    public ModelAndView RegistroCandidatoHome(
+            HttpServletResponse hresponse,
+            HttpServletRequest request) {
         ModelAndView MV = new ModelAndView();
         MV.setViewName("RegistroCandidato");
         return MV;
     }
 
     @RequestMapping(value = "CandidatoAdd.htm", method = RequestMethod.GET)
-    public ModelAndView CandidatoAdd(ModelMap model) {
+    public ModelAndView CandidatoAdd(
+            ModelMap model,
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         List Municipios = null;
         List Departamentos = null;
         List Errores = null;
@@ -60,7 +67,9 @@ public class CandidatoController {
             @ModelAttribute("candidato") Candidato c,
                              BindingResult result,
                              SessionStatus status,
-                             ModelMap model
+                             ModelMap model,
+                             HttpServletResponse hresponse,
+                                HttpServletRequest request
     ) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/CandidatoAdd");
@@ -108,7 +117,11 @@ public class CandidatoController {
     }
 
     @RequestMapping(value = "CandidatoIndex.htm", method = RequestMethod.GET)
-    public ModelAndView CandidatoIndex(ModelMap model) {
+    public ModelAndView CandidatoIndex(
+            ModelMap model,
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/CandidatoIndex");
         String sql = "SELECT * FROM CANDIDATO";
@@ -125,7 +138,10 @@ public class CandidatoController {
     }
 
     @RequestMapping(value = "PerfilCandidato.htm", method = RequestMethod.GET)
-    public ModelAndView Perfil(HttpServletRequest request) {
+    public ModelAndView Perfil(
+            HttpServletResponse hresponse,
+            HttpServletRequest request
+    ) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("PerfilCandidato");
         String id = request.getParameter("id");
@@ -201,6 +217,7 @@ public class CandidatoController {
     }
     @RequestMapping(value = "PerfilCandidato.htm", method = RequestMethod.POST)
     public ModelAndView Perfil(
+            HttpServletResponse hresponse,
             HttpServletRequest request,
             @ModelAttribute("candidato") Candidato cand,
             BindingResult result,
