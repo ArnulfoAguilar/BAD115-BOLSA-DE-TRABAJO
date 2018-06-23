@@ -6,6 +6,7 @@
 package Controlador;
 
 import Entidad.Articulo;
+import Entidad.Aspirante;
 import Entidad.Oferta;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -214,5 +215,37 @@ public class OfertaController {
             return mav;
         }
         
+    }
+    
+    @RequestMapping(value = "OfertaAdd.htm", method = RequestMethod.POST)
+    public ModelAndView AplicarAddPost(
+        HttpServletRequest request,
+            @RequestParam("idOferta") Integer idOferta_aspirante,
+            @RequestParam("nit") Integer nit_aspirante,
+            @ModelAttribute("aspirante") Aspirante a,
+            BindingResult result,
+            SessionStatus status,
+            ModelMap model
+    )
+    {
+        String id = request.getParameter("id");
+        mav.addObject("identificador", id);
+        Connection cn = null;
+    try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
+            CallableStatement cst = cn.prepareCall("{call PR_INSERT_ASPIRANTE(?,?,?,?)}");
+            cst.setString(1, id);
+            cst.setInt(2, idOferta_aspirante);
+            cst.setInt(3, nit_aspirante);
+            cst.setBigDecimal(4, a.getPorcentaje());
+            cst.execute
+            cn.close()
+            return new ModelAndView("redirect:/LaMismaPaginaSoloParaQueReacargue.htm");
+        }catch (SQLException ex) {
+            model.addAttribute("Errores", "Error al cerrar conexion o ejecutar "+ex.toString());
+            return new ModelAndView("redirect:/Error.htm");
+        }
+    
     }
 }
