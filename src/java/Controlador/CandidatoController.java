@@ -238,6 +238,13 @@ public class CandidatoController {
             mav.addObject("Aspiradas",cantidad_ofertas_asp);
         
             mav.addObject("Articulos", Articulos);
+            List Numeros = null;
+        
+            Numeros = this.jdbcTemplate.queryForList("select * from TELEFONO where ID_POST_DOC = "+id);
+        
+            mav.addObject("Numeros", Numeros);
+
+
 
         } catch (SQLException ex) {
             mav.addObject("Error", "Error al ejecutar "+ex.toString());

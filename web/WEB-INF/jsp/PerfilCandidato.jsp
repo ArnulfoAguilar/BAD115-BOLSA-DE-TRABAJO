@@ -222,7 +222,31 @@
                                 </div>
                             </div>
                         </section>
-                        
+                        <section>
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Numeros Telefonicos</div>
+                                <div class="panel-body">
+                                    <c:forEach items="${Numeros}" var="numero">
+                                        <div class="col-md-6">
+                                            <h4>${numero.NUMERO_TEL}
+                                                <br>
+                                            <c:if test= "${numero.ID_TIPO == 1}">
+                                                <small>Casa</small>
+                                            </c:if>
+                                            <c:if test= "${numero.ID_TIPO == 2}">
+                                                <small>Oficina</small>
+                                            </c:if>
+                                            <c:if test= "${numero.ID_TIPO == 3}">
+                                                <small>Celular</small>
+                                            </c:if>
+                                            </h4>
+                                        </div>
+                                        
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </section>
+
                         <section>
                             <div class="panel panel-info">
                                 <div class="panel-heading">Experiencia Laboral</div>
