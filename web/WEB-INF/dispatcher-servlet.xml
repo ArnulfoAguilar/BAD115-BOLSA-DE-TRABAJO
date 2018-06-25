@@ -54,6 +54,11 @@
                 
                 <prop key="misAspiraciones.htm">AspiranteController</prop>
                 
+                <prop key="ExperienciaIndex.htm">ExperienciaController</prop>
+                <prop key="ExperienciaAdd.htm">ExperienciaController</prop>
+                <prop key="ExperienciaEdit.htm">ExperienciaController</prop>
+                <prop key="ExperienciaDelete.htm">ExperienciaController</prop>
+                
                 <prop key="Error.htm">PagesController</prop>
 
                 <prop key="validarLogin.htm">LoginController</prop> 
@@ -100,6 +105,7 @@
     <bean name="ArticuloController" class="Controlador.ArticuloController"/>
     <bean name="TelefonoController" class="Controlador.TelefonoController"/>
     <bean name="OfertaController" class="Controlador.OfertaController"/>
+    <bean name="ExperienciaController" class="Controlador.ExperienciaController"/>
     
     <!--Controller para EMPRESA-->
     <bean name="SignupEmpresaController"
