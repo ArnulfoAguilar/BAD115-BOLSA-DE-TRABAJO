@@ -24,6 +24,7 @@
                 <prop key="login.htm">LoginController</prop>
                 <prop key="index.htm">indexController</prop>
                 <prop key="Empresa.htm">EmpresaController</prop> 
+                 
                                          
                 <prop key="PerfilCandidato.htm">CandidatoController</prop>
                 <prop key="RegistroCandidato.htm">CandidatoController</prop>
@@ -49,6 +50,9 @@
                 <prop key="OfertaAdd.htm">OfertaController</prop>
                 <prop key="OfertaEdit.htm">OfertaController</prop>
                 <prop key="OfertaDelete.htm">OfertaController</prop>
+                <prop key="Aplicar.htm">AspiranteController</prop>
+                
+                <prop key="misAspiraciones.htm">AspiranteController</prop>
                 
                 <prop key="Error.htm">PagesController</prop>
 
@@ -58,7 +62,7 @@
                 <prop key="EMPRESA/actualizar_Empresa.htm">ActualizarEmpresaController</prop>
                 <prop key="EMPRESA/homeEmpresa.htm">HomeEmpresaController</prop>
                 <prop key="signup.htm">SignupEmpresaController</prop>
-                
+                <prop key="EMPRESA/misAspirantes.htm">misAspirantes</prop>
                 <!--Fin URL EMPRESA-->                         
                 
 
@@ -82,6 +86,10 @@
     <bean name="EmpresaController"
           class="Controlador.EmpresaController"
     />
+    
+    <bean name="AspiranteController"
+          class="Controlador.AspiranteController"
+    />
     <bean name="LoginController"
           class="Controlador.LoginController"
     />
@@ -102,6 +110,9 @@
     />
     <bean name="ActualizarEmpresaController"
           class="Controlador.Empresa.ActualizarEmpresaController"
+    />
+    <bean name="misAspirantes"
+          class="Controlador.Empresa.misAspirantes"
     />
     <!--/Controller para EMPRESA-->
    

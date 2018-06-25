@@ -1,10 +1,12 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Controlador.Empresa;
 
 import Controlador.Conectar;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,56 +17,49 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HomeEmpresaController {
-     private JdbcTemplate jdbcTemplate;
+public class misAspirantes {
+    private JdbcTemplate jdbcTemplate;
     
-    public HomeEmpresaController()
+    public misAspirantes()
     {
         Conectar con=new Conectar();
         this.jdbcTemplate=new JdbcTemplate(con.conectar());
     }
     
-    @RequestMapping(value="EMPRESA/homeEmpresa.htm", method=RequestMethod.GET)
+     @RequestMapping(value="EMPRESA/misAspirantes.htm", method=RequestMethod.GET)
     public ModelAndView signup(
             HttpServletRequest hrequest, 
             HttpServletResponse hresponse)
     {  
-        ModelAndView mav=new ModelAndView();
-        
-        
+        ModelAndView mav=new ModelAndView(); 
         HttpSession session=hrequest.getSession();
-       
-       
+
         String DOC=(String)session.getAttribute("DOC");
         String USER =(String)session.getAttribute("USERNAME");
         String NombreRol =(String)session.getAttribute("nombre_rol");
         session.setAttribute("USERNAME", USER);
         session.setAttribute("NombreRol", NombreRol);
         session.setAttribute("DOC", DOC);
-        mav.setViewName("EMPRESA/homeEmpresa");
+        mav.setViewName("ASPIRANTE/misAspirantes");
         mav.addObject("DOC", DOC);
         mav.addObject("USER", USER);
        
         mav.addObject("NombreRol", NombreRol);
         
        
- 
         //LISTA DE OFERTAS CREARAS
-        String oferta="select id_oferta, vacantes, fecha_expiracion,o.descripcion, tipo_contrato,o.salario \n" +
-                                " from usuarios us join empresa em on US.EMAI_USUARIO=EM.EMAIL_USUARIO\n" +
-                                " join oferta o on EM.NIT=O.NIT\n" +
-                                " join NIVEL_ESTUDIO ni on O.ID_NIVEL_ESTUDIO=Ni.ID_NIVEL_ESTUDIO \n" +
-                                " join AREA_DE_ESTUDIO ar on AR.ID_AREA_ESTUDIO=O.ID_AREA_ESTUDIO\n" +
-                                " where US.EMAI_USUARIO=?";
+        String Aspirante=" select us.ID_POST_DOC,PRIMER_NOMBRE,SEGUNDO_NOMBRE,TERCER_NOMBRE,\n" +
+"                       PRIMER_APELLIDO,SEGUNDO_APELLIDO,PORCENTAJE, DIRECCION\n" +
+"                       from aspirante a join candidato us on A.ID_POST_DOC=US.ID_POST_DOC\n" +
+"                       join empresa em on A.NIT=EM.NIT where em.NIT=?";
         try{
-        List OFERTAS_CREADAS=this.jdbcTemplate.queryForList(oferta,USER);
+        List Aspirantes=this.jdbcTemplate.queryForList(Aspirante,DOC);
         
-        mav.addObject("Oferta",OFERTAS_CREADAS);
+        mav.addObject("Aspirantes",Aspirantes);
         } catch (Exception ex) {
             System.out.println(ex.toString());
         }
         
         return mav;
         }
-
-    }
+}

@@ -20,7 +20,14 @@
     </head>
     <body
         <!--main content start-->
+        <%@include file="/WEB-INF/jsp/include/Admin/headerAdmin.jsp" %>
+      <!--header end-->
+      <!--sidebar start-->
+      <%@include file="/WEB-INF/jsp/include/Admin/sidebarAdmin.jsp" %>
+      <!--sidebar end-->
         <section id="main-content">
+            <!--header start-->
+      
             <section class="wrapper">
                 <!-- page start-->
                 <div class="row">
@@ -32,13 +39,13 @@
                                 </a>
                                 <h1>${candidato.primerNombre}</h1>
                                 <p>${candidato.email}</p>
-                                ${Error}
+                                <!--${Error}-->
                                 <p><c:out value="${Vacio}"/></p>
                             </div>
 
                             <ul class="nav nav-pills nav-stacked">
                                 <li class="active"><a href="#"> <i class="icon-user"></i> Perfil</a></li>
-                                <li><a href="#"> <i class="icon-star"></i> Mis Aplicaciones <span class="label label-danger pull-right r-activity">10</span></a></li>
+                                <li><a href="#"> <i class="icon-star"></i> Mis Aplicaciones <span class="label label-danger pull-right r-activity">${Aspiradas}</span></a></li>
                                 <li><a href="#"> <i class="icon-edit"></i> Editar Perfil</a></li>
                             </ul>
 

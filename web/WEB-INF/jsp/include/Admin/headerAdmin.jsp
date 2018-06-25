@@ -6,6 +6,7 @@
             </div>
             <!--logo start-->
             <a href="${pageContext.request.contextPath}" class="logo"><span> ${USER}</span></a>
+             
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->

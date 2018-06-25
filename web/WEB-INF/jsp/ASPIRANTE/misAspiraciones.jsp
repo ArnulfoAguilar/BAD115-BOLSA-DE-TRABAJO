@@ -11,7 +11,7 @@
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>HOME</title>
+    <title>Mis Aspiraciones</title>
 
     <%@include file="/WEB-INF/jsp/include/Admin/cssAdmin.jsp" %>
     <!-- Custom styles for this template -->
@@ -42,13 +42,12 @@
       <section id="main-content">
           <section class="wrapper site-min-height">
               <!-- page start-->
-              ${DOC}
               <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Seccion de Ofertas
-                              <a class="btn btn-success" href="${pageContext.request.contextPath}/OfertaAdd.htm" role="button">Añadir Oferta</a>
+                              Seccion de Mis Aspirantes
+                              <!--a class="btn btn-success" href="${pageContext.request.contextPath}/OfertaAdd.htm" role="button">Añadir Oferta</a-->
                               ${Errores}
                           </header>
                           <div class="panel-body">
@@ -56,24 +55,24 @@
                               <table  class="display table table-bordered table-striped" id="example">
                                             <thead>
                                                 <tr>
-                                                    <th>ID</th>
-                                                    <th>Vacantes</th>
-                                                    <th>Fecha de expiracion</th>
-                                                    <th>Descripcion</th>
-                                                    <th>Tipo Contrato</th>
-                                                    <th>Salario</th>
+                                                    <th>NOMBRE COMERCIAL</th>
+                                                    <th>DESCRIPCION</th>
+                                                    <th>TIPO CONTRATO</th>
+                                                    <th>SALARIO</th>
+                                                    <th>FECHA EXPIRACION</th>
+                                                    <th>VACANTES</th>                                                   
                                                     <th class="hidden-phone">Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody>                             
-                                                <c:forEach items="${Oferta}" var="oferta">
+                                                <c:forEach items="${Aspiraciones}" var="Aspirante">
                                                     <tr>
-                                                        <th>${oferta.ID_OFERTA}</th>
-                                                        <th>${oferta.VACANTES}</th>
-                                                        <th>${oferta.FECHA_EXPIRACION}</th>
-                                                        <th>${oferta.DESCRIPCION}</th>
-                                                        <th>${oferta.TIPO_CONTRATO}</th>
-                                                        <th>${oferta.SALARIO}</th>
+                                                        <th>${Aspirante.NOMBRE_COMERCIAL}</th>
+                                                        <th>${Aspirante.DESCRIPCION}</th>
+                                                        <th>${Aspirante.TIPO_CONTRATO}</th>
+                                                        <th>${Aspirante.SALARIO}</th>
+                                                        <th>${Aspirante.FECHA_EXPIRACION}</th>
+                                                        <th>${Aspirante.VACANTES}</th>                                                      
                                                         <th>
                                                             <a class="btn btn-warning" href="${pageContext.request.contextPath}/OfertaEdit.htm?id=${oferta.ID_OFERTA}" role="button">Editar mi Oferta</a>
                                                             <a class="btn btn-danger" href="${pageContext.request.contextPath}/OfertaDelete.htm?id=${oferta.ID_OFERTA}" role="button">Eliminar mi Oferta</a>

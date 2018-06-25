@@ -11,7 +11,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Form Wizard</title>
+    <title>Registrate como candidato</title>
 
     <%@include file="/WEB-INF/jsp/include/Admin/cssAdmin.jsp" %>
     <!-- Custom styles for this template -->
@@ -43,7 +43,7 @@
                       <section class="panel">
                           <header class="panel-heading">
                               Registrar Candidato
-                              Error:${Error}
+                              <!--Error:${Error}-->
                           </header>
                           <div class="panel-body">
                               <div class="stepy-tab">
@@ -134,7 +134,7 @@
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Contraseña</label>
                                           <div class="col-lg-10">
-                                              <form:input type="text" path="contra" class="form-control"/>
+                                              <form:input type="password" path="contra" class="form-control"/>
                                         </div>
                                       </div>
                                   </fieldset>

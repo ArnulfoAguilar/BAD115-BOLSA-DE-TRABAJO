@@ -45,7 +45,7 @@
                             <section class="panel">
                                 <header class="panel-heading">
                                     Tabla con Candidatos
-                                    <a href="CandidatoAdd.htm" class="btn btn-info">Añadir nuevo candidato</a>
+                                    <a href="${pageContext.request.contextPath}/CandidatoAdd.htm" class="btn btn-info">Añadir nuevo candidato</a>
                                 </header>
                                 <div class="panel-body">
                                     <div class="adv-table">

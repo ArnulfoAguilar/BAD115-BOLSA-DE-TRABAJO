@@ -19,7 +19,7 @@
                           <span>Editar Perfil</span>
                       </a>
                   </li>
-                  </c:if>
+                 
                   
                   <li>
                       <a class="" href="${pageContext.request.contextPath}/index.htm">
@@ -35,7 +35,27 @@
                       </a>
                   </li>
                   
+                   </c:if>
                   
+                  <c:if  test = "${NombreRol=='{NOMBRE_ROL=Candidato}'}">
+                 
+                  <li>
+                      <a class="" href="${pageContext.request.contextPath}/OfertaIndex.htm">
+                          <i class="icon-edit"></i>
+                          <span>OFERTAS</span>
+                      </a>
+                  </li>
+                 
+                  
+                  <li>
+                      <a class="" href="${pageContext.request.contextPath}/index.htm">
+                          <i class="icon-laptop"></i>
+                          <span>Mis Aspiraciones</span>
+                      </a>
+                  </li>
+                  
+                  
+                   </c:if>
               </ul><!--
                   <li class="sub-menu">
                       <a href="javascript:;" >

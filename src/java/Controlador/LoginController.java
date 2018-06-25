@@ -30,9 +30,15 @@ public class LoginController {
     }
     
      @RequestMapping(value="login.htm", method=RequestMethod.GET)
-    public ModelAndView login()
+    public ModelAndView login(
+            HttpServletRequest hrequest,
+            HttpServletResponse hresponse
+    )
     {  
-       return new ModelAndView("LogIn/LogIn");
+    
+       
+            return new ModelAndView("LogIn/LogIn");
+        
     }
     
     
@@ -54,8 +60,9 @@ public class LoginController {
         if (listaUser.size() > 0) {
             
                 HttpSession session = hrequest.getSession();
+                 
+                
                 session.setAttribute("USERNAME", Username);
-               
                
                 //Lista para sacar el id_rol del usuario logeado
                 String idRolSql= "select id_rol from usuarios where emai_usuario=?";
@@ -72,9 +79,42 @@ public class LoginController {
                    
                     nombreRol=listaNombreRol.get(i).toString();
                     session.setAttribute("nombre_rol", nombreRol );
-                }
+                    System.out.println(nombreRol);
+                    
+                    if(nombreRol.equals("{NOMBRE_ROL=Empresa}")){
+                 //Lista para sacar el Dcumento a la empresa
+                String nombreDoc = "select nit from empresa e join usuarios u on E.EMAIL_USUARIO=U.EMAI_USUARIO where U.EMAI_USUARIO=?";
+                List listadoc = jdbcTemplate.queryForList(nombreDoc, Username );
+                String DOC;
                 
-                 v.setViewName("redirect:/EMPRESA/homeEmpresa.htm");
+                for(int j=0; j<listadoc.size(); j++)
+                {
+                   
+                    DOC=listadoc.get(i).toString();
+                    String DOCA=DOC.substring(5, 22);
+                    System.out.println(DOCA);
+                    session.setAttribute("DOC", DOCA);
+                    v.setViewName("redirect:/EMPRESA/homeEmpresa.htm");
+                }
+                }else{
+                    //Lista para sacar el Dcumento a al candidato
+                String nombreDoc = "select id_post_doc, email_usuario from candidato e join usuarios u on E.EMAIL_USUARIO=U.EMAI_USUARIO where U.EMAI_USUARIO=?";
+                List listadoc = jdbcTemplate.queryForList(nombreDoc, Username );
+                String DOC;
+                
+                for(int j=0; j<listadoc.size(); j++)
+                {
+                   
+                    DOC=listadoc.get(i).toString();
+                    
+                    String DOCA=DOC.substring(12, 21);
+                    session.setAttribute("DOC", DOCA );
+                    System.out.println(DOCA);
+                }
+                v.setViewName("redirect:OfertaIndex.htm");
+                    }
+                }
+
                             
         } else {
             v.setViewName("LogIn/LogIn");   

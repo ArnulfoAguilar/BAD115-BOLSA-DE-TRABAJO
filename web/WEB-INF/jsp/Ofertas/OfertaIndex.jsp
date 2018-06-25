@@ -45,7 +45,7 @@
                       <section class="panel">
                           <header class="panel-heading">
                               Seccion de Ofertas
-                              <a class="btn btn-success" href="OfertaAdd.htm" role="button">Añadir Oferta</a>
+                              <!--a class="btn btn-success" href="OfertaAdd.htm" role="button">Añadir Oferta</a-->
                               ${Errores}
                           </header>
                           <div class="panel-body">
@@ -67,18 +67,21 @@
                               
                                                 <c:forEach items="${Ofertas}" var="oferta">
                                                     <tr>
-                                                        <th>${oferta.ID_OFERTA}</th>
+                                                        <th name="idOferta">${oferta.ID_OFERTA}</th>
                                                         <th>${oferta.VACANTES}</th>
-                                                        <th></th>
+                                                        <th>${oferta.FECHA_EXPIRACION}</th>
                                                         <th>${oferta.DESCRIPCION}</th>
                                                         <th>${oferta.TIPO_CONTRATO}</th>
                                                         <th>${oferta.SALARIO}</th>
                                                         <th>
-                                                            <a class="btn btn-warning" href="OfertaEdit.htm?id=${oferta.ID_OFERTA}" role="button">Ver mi Oferta</a>
-                                                            <form class="form-horizontal tasi-form" method="post">
-                                                                <input style="visibility:hidden" type="text" name="idOferta" class="form-control" value ="${oferta.ID_OFERTA}">
-                                                                <input style="visibility:hidden" type="text" name="nit" class="form-control" value ="${oferta.NIT}">
-                                                                 <button type="submit" class="btn btn-success" value ="Aplicar.html" >Aplicar a oferta</button>
+                                                            
+                                                            <!--a class="btn btn-warning" href="${pageContext.request.contextPath}/Aplicar.htm" role="button">Aplicar a Oferta</a>
+                                                            <input style="visibility:hidden" type="hidden" name="idOferta" class="form-control" value ="${oferta.ID_OFERTA}"/>
+                                                            <input style="visibility:hidden" type="hidden" name="nit" class="form-control" value ="${oferta.NIT}"/-->
+                                                            <form class="" method="post">
+                                                                <input style="visibility:hidden" type="hidden" name="idOferta" class="form-control" value ="${oferta.ID_OFERTA}">
+                                                                <input style="visibility:hidden" type="hidden" name="nit" class="form-control" value ="${oferta.NIT}">
+                                                                 <button type="submit" class="btn btn-success" value ="${pageContext.request.contextPath}/Aplicar.html" >Aplicar a oferta</button>
                                                             </form>
                                                         </th>
                                                             
@@ -99,9 +102,7 @@
                                         </table>
                               
                               
-                              <c:if test= "${Articulos == null}">
-                                  <p>Usted no posee ni un articulo<p>
-                              </c:if>
+                            
                           </div>
                       </section>
                   </div>
@@ -113,7 +114,7 @@
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2013 &copy; FlatLab by VectorLab.
+              WORK ZONE.
               <a href="#" class="go-top">
                   <i class="icon-angle-up"></i>
               </a>
@@ -126,11 +127,7 @@
 
     <!--script for this page-->
     <script src="<c:url value="/public/Admin/js/jquery.stepy.js"/>"></script>
-
-
   <script>
-
-      //step wizard
 
       $(function() {
           $('#default').stepy({

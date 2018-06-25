@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -42,8 +43,16 @@ public class OfertaController {
     ) {
         List ofertas = null;
         List Errores = null;
+        HttpSession session=request.getSession();
+        String DOC=(String)session.getAttribute("DOC");
+        String USER =(String)session.getAttribute("USERNAME");
+        String NombreRol =(String)session.getAttribute("nombre_rol");
+        session.setAttribute("USERNAME", USER);
+        session.setAttribute("NombreRol", NombreRol);
+        session.setAttribute("DOC", DOC);
         try {
-            ofertas = this.jdbcTemplate.queryForList("select * from OFERTA");
+            String sql="select * from OFERTA";
+            ofertas = this.jdbcTemplate.queryForList(sql);
         } catch (Exception ex) {
             Errores.add("Error. No hay acceso a la BD" + ex.toString());
         }
@@ -61,6 +70,15 @@ public class OfertaController {
             HttpServletRequest request
     ) {
         ModelAndView mav = new ModelAndView();
+         HttpSession session=request.getSession();
+        String DOC=(String)session.getAttribute("DOC");
+        String USER =(String)session.getAttribute("USERNAME");
+        String NombreRol =(String)session.getAttribute("nombre_rol");
+        session.setAttribute("USERNAME", USER);
+        session.setAttribute("NombreRol", NombreRol);
+        session.setAttribute("DOC", DOC);
+        
+        mav.addObject("DOC", DOC);
         mav.setViewName("Ofertas/OfertaAdd");
         mav.addObject("oferta", new Oferta());
         String id = request.getParameter("id");
@@ -91,6 +109,13 @@ public class OfertaController {
     {
         String id = request.getParameter("id");
         ModelAndView mav = new ModelAndView("Errores/Error");
+        HttpSession session=request.getSession();
+        String DOC=(String)session.getAttribute("DOC");
+        String USER =(String)session.getAttribute("USERNAME");
+        String NombreRol =(String)session.getAttribute("nombre_rol");
+        session.setAttribute("USERNAME", USER);
+        session.setAttribute("NombreRol", NombreRol);
+        session.setAttribute("DOC", DOC);
         Connection cn = null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
@@ -231,7 +256,7 @@ public class OfertaController {
         
     }
     
-    @RequestMapping(value = "Aplicar.htm", method = RequestMethod.GET)
+   /* @RequestMapping(value = "Aplicar.htm", method = RequestMethod.POST)
     public ModelAndView AplicarAddPost(
         HttpServletRequest request,
             @RequestParam("idOferta") Integer idOferta_aspirante,
@@ -248,11 +273,10 @@ public class OfertaController {
     try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1523:ORCL", "BOLSA_TRABAJO", "BOLSA_TRABAJO");
-            CallableStatement cst = cn.prepareCall("{call PR_INSERT_ASPIRANTE(?,?,?,?)}");
+            CallableStatement cst = cn.prepareCall("{call PR_INSERT_ASPIRANTE(?,?,?)}");
             cst.setString(1, id);
             cst.setInt(2, idOferta_aspirante);
             cst.setInt(3, nit_aspirante);
-            cst.setBigDecimal(4, a.getPorcentaje());
             cst.execute();
             cn.close();
             return new ModelAndView("redirect:/OfertaIndex.htm");
@@ -261,5 +285,5 @@ public class OfertaController {
             return new ModelAndView("redirect:/Error.htm");
         }
     
-    }
+    }*/
 }

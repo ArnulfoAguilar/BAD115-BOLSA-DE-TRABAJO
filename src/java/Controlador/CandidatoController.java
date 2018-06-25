@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -69,10 +70,20 @@ public class CandidatoController {
                              SessionStatus status,
                              ModelMap model,
                              HttpServletResponse hresponse,
-                                HttpServletRequest request
+                             HttpServletRequest request
     ) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/CandidatoAdd");
+        
+         HttpSession session=request.getSession();
+       
+       
+        String DOC=c.getIdPostDoc();
+        String USER =c.getEmail();
+        String NombreRol ="{NOMBRE_ROL=Candidato}";
+        session.setAttribute("USERNAME", USER);
+        session.setAttribute("NombreRol", NombreRol);
+        session.setAttribute("DOC", DOC);
         Integer resultado=0;
         Connection cn = null;
                 try {
@@ -124,6 +135,17 @@ public class CandidatoController {
             HttpServletResponse hresponse,
             HttpServletRequest request
     ) {
+        
+         HttpSession session=request.getSession();
+       
+       
+        String DOC=(String)session.getAttribute("DOC");
+        String USER =(String)session.getAttribute("USERNAME");
+        String NombreRol =(String)session.getAttribute("nombre_rol");
+        session.setAttribute("USERNAME", USER);
+        session.setAttribute("NombreRol", NombreRol);
+        session.setAttribute("DOC", DOC);
+        
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Candidatos/CandidatoIndex");
         String sql = "SELECT * FROM CANDIDATO";
@@ -147,7 +169,20 @@ public class CandidatoController {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("PerfilCandidato");
         String id = request.getParameter("id");
-
+        
+        
+         HttpSession session=request.getSession();
+       
+       
+        String DOC=(String)session.getAttribute("DOC");
+        String USER =(String)session.getAttribute("USERNAME");
+        String NombreRol =(String)session.getAttribute("nombre_rol");
+        session.setAttribute("USERNAME", USER);
+        session.setAttribute("NombreRol", NombreRol);
+        session.setAttribute("DOC", DOC);
+        mav.addObject("USER", USER);
+        mav.addObject("NombreRol", NombreRol);
+        
         Integer resultado = 0;
         String estadoConexion = null;
         
@@ -193,6 +228,14 @@ public class CandidatoController {
             List Articulos = null;
         
             Articulos = this.jdbcTemplate.queryForList("select * from ARTICULO where ID_POST_DOC = "+id);
+            
+            String sqlAspiraciones="select count(*) from aspirante a join candidato ca "
+                    + " on A.ID_POST_DOC=CA.ID_POST_DOC \n" +
+"                      join usuarios us on US.EMAI_USUARIO=CA.EMAIL_USUARIO where US.EMAI_USUARIO=?";
+            
+            List OFERTAS_ASPIRADAS=this.jdbcTemplate.queryForList(sqlAspiraciones,USER);
+            String cantidad_ofertas_asp=OFERTAS_ASPIRADAS.get(0).toString().substring(10, 11);
+            mav.addObject("Aspiradas",cantidad_ofertas_asp);
         
             mav.addObject("Articulos", Articulos);
 
@@ -200,12 +243,7 @@ public class CandidatoController {
             mav.addObject("Error", "Error al ejecutar "+ex.toString());
             mav.addObject("Resultado", resultado);
         } 
-        if (resultado == 1) {
-            return mav;
-        } else {
-            return mav;
-            //return new ModelAndView("redirect:/Home.htm");
-        }
+    return mav;
     }
     @RequestMapping(value = "PerfilCandidato.htm", method = RequestMethod.POST)
     public ModelAndView Perfil(
@@ -218,6 +256,16 @@ public class CandidatoController {
         
         ModelAndView mav = new ModelAndView();
         mav.setViewName("PerfilCandidato");
+        
+         HttpSession session=request.getSession();
+        String DOC=(String)session.getAttribute("DOC");
+        String USER =(String)session.getAttribute("USERNAME");
+        String NombreRol =(String)session.getAttribute("nombre_rol");
+        session.setAttribute("USERNAME", USER);
+        session.setAttribute("NombreRol", NombreRol);
+        session.setAttribute("DOC", DOC);
+        mav.addObject("USER", USER);
+        mav.addObject("NombreRol", NombreRol);
         
         Connection cn = null;
         try {
